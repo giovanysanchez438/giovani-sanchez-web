@@ -6,6 +6,83 @@ import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
+// ... (todo el código del plugin personalizado permanece igual) ...
+
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
+    jsxLocPlugin(),
+    vitePluginManusRuntime(),
+    vitePluginManusDebugCollector(), // tu plugin personalizado
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(import.meta.dirname, "client", "src"),
+      "@shared": path.resolve(import.meta.dirname, "shared"),
+      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+    },
+  },
+  envDir: path.resolve(import.meta.dirname),
+  root: path.resolve(import.meta.dirname, "client"),
+  build: {
+    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    emptyOutDir: true,
+  },
+  server: {
+    port: 3000,
+    strictPort: false,
+    host: true,
+    allowedHosts: [
+      ".manuspre.computer",
+      ".manus.computer",
+      ".manus-asia.computer",
+      ".manuscomputer.ai",
+      ".manusvm.computer",
+      "localhost",
+      "127.0.0.1",
+    ],
+    fs: {
+      strict: true,
+      deny: ["**/.*"],
+    },
+  },
+});
+Guarda los cambios, haz commit y push. Cloudflare Pages debería detectar el cambio y volver a desplegar automáticamente. El error debería desaparecer.
+
+¿Por qué ocurre?
+Cloudflare Pages intenta modificar dinámicamente tu configuración de Vite para añadir su propio plugin (necesario para algunas funcionalidades como Pages Functions). Su parser busca un array plugins directamente en el objeto exportado. Al estar en una variable separada (const plugins = [...]), a veces no lo detecta correctamente. Poniéndolo inline, te aseguras de que lo encuentre sin ambigüedades.
+
+Si el error persiste o el sitio ya funciona
+Si después de este cambio el error continúa, no te preocupes. El build se completa y tu sitio se despliega correctamente (como viste en el log, todo acabó en verde). El error solo afecta a la capacidad de Cloudflare para inyectar funcionalidades extra, como el soporte para Pages Functions. Si no estás usando funciones serverless, tu sitio seguirá funcionando perfectamente.
+
+Puedes verificar que tu sitio está online entrando a la URL provisional tusitio.pages.dev que te proporcionó Cloudflare.
+
+Próximos pasos
+Una vez que el despliegue sea exitoso y tu sitio funcione, continúa con la configuración de tu dominio personalizado como te indiqué antes. Si en algún momento necesitas usar Pages Functions, podemos ajustar la configuración nuevamente.
+
+¿Quieres que revisemos algo más o ya lograste desplegar sin errores?
+
+no entiendo adonde aplicar los cambios, por favor genera el codigo completo para copiar y pegar
+Podemos ayudarle proporcionando el código completo del archivo vite.config.js con el cambio necesario. El usuario necesita copiar y pegar el contenido completo con el array de plugins dentro de defineConfig. Le daremos el archivo completo incluyendo el plugin personalizado que ya tenía, pero moviendo la definición de plugins para que esté directamente en la configuración. También debemos asegurarnos de que todas las importaciones y el plugin personalizado estén correctamente definidos.
+
+Como el código es largo, podemos mostrarlo en un bloque de código para que lo copie y reemplace su archivo actual.
+
+Además, podemos recordarle que debe guardar el archivo y subir los cambios a su repositorio (git commit y push) para que Cloudflare Pages lo despliegue nuevamente.
+
+Vamos a redactar una respuesta clara con el código completo.
+
+Claro, aquí tienes el código completo del archivo vite.config.js con la modificación necesaria. Solo tienes que copiar todo este contenido y reemplazar el contenido actual de tu archivo vite.config.js (en la raíz de tu proyecto). Luego guarda los cambios, haz commit y push a tu repositorio.
+
+javascript
+import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import fs from "node:fs";
+import path from "node:path";
+import { defineConfig, type Plugin, type ViteDevServer } from "vite";
+import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
 // Writes browser logs directly to files, trimmed when exceeding size limit
@@ -150,10 +227,15 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
-
+// Exportamos la configuración con el array de plugins directamente dentro
 export default defineConfig({
-  plugins,
+  plugins: [
+    react(),
+    tailwindcss(),
+    jsxLocPlugin(),
+    vitePluginManusRuntime(),
+    vitePluginManusDebugCollector(),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
