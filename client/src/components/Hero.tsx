@@ -26,7 +26,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container text-center text-white px-4">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 leading-tight text-white" style={{fontFamily: 'Inter, sans-serif', fontWeight: '600', textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
+        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 leading-tight text-white" style={{fontFamily: 'Arial, sans-serif', fontWeight: '600', textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
   Giovani Sánchez V.
 </h1>
         <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-2xl mx-auto">
