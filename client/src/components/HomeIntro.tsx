@@ -14,7 +14,7 @@ export default function HomeIntro() {
         <div className="text-center space-y-6">
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
             Bienvenido a mi espacio profesional. Soy <span className="font-semibold text-primary">Giovani Sánchez V.</span>, 
-            especialista en <span className="font-semibold">finanzas, estrategia comercial y desarrollo empresarial</span>.
+            especialista en <span className="font-semibold">finanzas, fundraising, estrategia comercial y desarrollo empresarial</span>.
           </p>
           
           <p className="text-base md:text-lg text-gray-600 leading-relaxed italic">
