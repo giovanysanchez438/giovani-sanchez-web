@@ -39,7 +39,7 @@ export default function Header() {
 
           {/* Center: Name and Tagline */}
           <div className="flex-1 text-center hidden sm:block">
-            <h1 className="text-xl md:text-2xl text-gray-800 mb-1" style={{fontFamily: ''Montserrat, sans-serif', fontWeight: '400', letterSpacing: '1px'}}>
+            <h1 className="text-xl md:text-2xl text-gray-800 mb-1" style={{fontFamily: 'Montserrat, sans-serif', fontWeight: '400', letterSpacing: '1px'}}>
               Giovani Sánchez V.
             </h1>
             <p className="text-xs md:text-sm text-gray-600 font-medium tracking-wide">
