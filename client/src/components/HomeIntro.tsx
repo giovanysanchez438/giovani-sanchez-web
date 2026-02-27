@@ -23,7 +23,7 @@ export default function HomeIntro() {
           
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
             Con más de <span className="font-semibold">14 años de experiencia</span>, he trabajado con empresas líderes 
-            en sectores privado, público y sin ánimo de lucro, gestionando presupuestos superiores a <span className="font-semibold">COP $2 mil millones</span>.
+            en sectores privado, público y sin ánimo de lucro
           </p>
           
           <p className="text-base md:text-lg text-gray-600 leading-relaxed">
