@@ -41,7 +41,7 @@ const services: Service[] = [
   },
   {
     id: "consultoría-sin-ánimo",
-    title: "Consultoría en entidades sin ánimo de lucro",
+    title: "Consultoría Fundraising ONGs",
     description:
       "Especialidad en organizaciones del sector social. Estrategia de recaudación de fondos (fundraising), gestión de presupuestos, análisis de impacto social, desarrollo de modelos de sostenibilidad financiera.",
     icon: <Target className="w-10 h-10 text-primary" strokeWidth={1.5} />,
