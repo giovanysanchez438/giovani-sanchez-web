@@ -30,7 +30,8 @@ const blogPosts: BlogPost[] = [
     category: "Finanzas",
     date: "26 Feb 2026",
     readTime: "8 min",
-    slug: "estrategias-finanzas-corporativas"
+    slug: "estrategias-finanzas-corporativas",
+    linkedinUrl: "https://www.linkedin.com/posts/giovani-sanchez_%F0%9D%97%9F%F0%9D%97%AE-%F0%9D%97%B6%F0%9D%97%BB%F0%9D%98%81%F0%9D%97%B2%F0%9D%97%B9%F0%9D%97%B6%F0%9D%97%B4%F0%9D%97%B2%F0%9D%97%BB%F0%9D%97%B0%F0%9D%97%B6%F0%9D%97%AE-%F0%9D%97%AE%F0%9D%97%BF%F0%9D%98%81%F0%9D%97%B6-activity-7373742391469686785-aIkj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAizfnIBkuwJvgYRRhwvElAnbuc7vWzrewc&v=202602281220"
   },
   {
     id: "2",
@@ -39,7 +40,8 @@ const blogPosts: BlogPost[] = [
     category: "Marketing",
     date: "24 Feb 2026",
     readTime: "10 min",
-    slug: "marketing-estrategico-datos"
+    slug: "marketing-estrategico-datos",
+    linkedinUrl: "https://www.linkedin.com/posts/giovani-sanchez_inteligenciaartificial-ai-innovacion-activity-7373740251007098880-ZKV_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAizfnIBkuwJvgYRRhwvElAnbuc7vWzrewc&v=202602281220"
   },
   {
     id: "3",
@@ -48,7 +50,8 @@ const blogPosts: BlogPost[] = [
     category: "Finanzas",
     date: "22 Feb 2026",
     readTime: "12 min",
-    slug: "planificacion-financiera-empresarios"
+    slug: "planificacion-financiera-empresarios",
+    linkedinUrl: "https://www.linkedin.com/posts/giovani-sanchez_comunidadong-marketingdigital-fundraising-activity-7373450300336009216-A2wP?v=202602281220"
   },
   {
     id: "4",
@@ -57,7 +60,8 @@ const blogPosts: BlogPost[] = [
     category: "Liderazgo",
     date: "20 Feb 2026",
     readTime: "9 min",
-    slug: "liderazgo-equipos-desempeño"
+    slug: "liderazgo-equipos-desempeño",
+    linkedinUrl: "https://www.linkedin.com/posts/giovani-sanchez_la-evoluci%C3%B3n-de-la-filantrop%C3%ADa-digital-en-activity-7372281549569814529-8NfZ?v=202602281220"
   },
   {
     id: "5",
@@ -66,7 +70,8 @@ const blogPosts: BlogPost[] = [
     category: "Estrategia",
     date: "18 Feb 2026",
     readTime: "11 min",
-    slug: "transformacion-digital-crecimiento"
+    slug: "transformacion-digital-crecimiento",
+    linkedinUrl: "https://www.linkedin.com/pulse/entendiendo-la-ofac-oficina-de-control-activos-giovani-s%C3%A1nchez-vargas-v7orf/?trackingId=3RkFy5rbO%2FghUEed%2B14%2BFw%3D%3D&v=202602281220"
   },
   {
     id: "6",
@@ -75,7 +80,8 @@ const blogPosts: BlogPost[] = [
     category: "Mercado",
     date: "16 Feb 2026",
     readTime: "7 min",
-    slug: "analisis-mercado-herramientas"
+    slug: "analisis-mercado-herramientas",
+    linkedinUrl: "https://www.linkedin.com/pulse/educaci%25C3%25B3n-financiera-el-pilar-fundamental-para-y-s%25C3%25A1nchez-vargas-1gqyc/?trackingId=oWprF8LlQaypkn8NUkzosQ%3D%3D&v=202602281220"
   }
 ];
 
