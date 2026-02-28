@@ -24,7 +24,6 @@ const experiences: ExperienceItem[] = [
     id: "ada",
     title: "Profesional en Marketing",
     company: "ADA S.A.",
-  
     location: "Bogotá",
     description:
       "Desarrollo y lanzamiento de la Plataforma Regional de Economía Circular, marketplace 100% digital financiado por el BID y la Alcaldía de Bogotá.",
@@ -39,7 +38,6 @@ const experiences: ExperienceItem[] = [
     id: "plan",
     title: "Gerente de Mercadeo",
     company: "Fundación PLAN",
-    period: "2022 – 2024",
     location: "Bogotá",
     description:
       "Dirección del área de mercadeo con enfoque en estrategia comercial, fundraising corporativo y campañas omnicanal.",
@@ -70,7 +68,6 @@ const experiences: ExperienceItem[] = [
     id: "habitat",
     title: "Coordinador CRM",
     company: "Habitat for Humanity International",
-    period: "2014 – 2016",
     location: "Bogotá",
     description:
       "Administración de plataforma CRM, gestión de bases de datos de donantes y estrategias de retención de clientes corporativos.",
@@ -85,7 +82,6 @@ const experiences: ExperienceItem[] = [
     id: "aval",
     title: "Analista Senior de Planeación Financiera",
     company: "Grupo Aval",
-    period: "2013 – 2014",
     location: "Bogotá",
     description:
       "Modelación financiera y análisis presupuestal para la dirección ejecutiva del grupo bancario más grande de Colombia.",
@@ -100,7 +96,6 @@ const experiences: ExperienceItem[] = [
     id: "aldeas",
     title: "Asesor Financiero",
     company: "Aldeas Infantiles SOS Colombia",
-    period: "2010 – 2013",
     location: "Bogotá",
     description:
       "Asesoría financiera y comercial a clientes institucionales y corporativos en el sector social.",
@@ -114,7 +109,6 @@ const experiences: ExperienceItem[] = [
     id: "agropar",
     title: "Director de Operaciones – Mesa de Dinero",
     company: "AGROPAR S.A.",
-    period: "2008 – 2009",
     location: "Bogotá",
     description:
       "Dirección de operaciones financieras de la mesa de dinero en entorno B2B del sector financiero.",
@@ -128,7 +122,6 @@ const experiences: ExperienceItem[] = [
     id: "bancacajasocial",
     title: "Auxiliar de Operaciones",
     company: "Banco Caja Social",
-    period: "2008",
     location: "Bogotá",
     description:
       "Gestión operativa y administrativa en entidad bancaria del sector financiero colombiano.",
@@ -142,7 +135,6 @@ const experiences: ExperienceItem[] = [
     id: "labinco",
     title: "Asistente de Tesorería",
     company: "Labinco SA",
-    period: "2004 – 2006",
     location: "Bogotá",
     description:
       "Gestión de tesorería y administración financiera en empresa del sector industrial.",
@@ -156,7 +148,6 @@ const experiences: ExperienceItem[] = [
     id: "challenger",
     title: "Auxiliar Líder Área Comercial",
     company: "CHALLENGER",
-    period: "2001 – 2003",
     location: "Bogotá",
     description:
       "Liderazgo del equipo comercial en puntos de venta especializados del canal moderno colombiano.",
