@@ -90,7 +90,7 @@ export default function About() {
           {/* CTA Buttons */}
           <div className="flex gap-4 flex-wrap">
             <a
-              href="#servicios"
+              href="/servicios"
               className="inline-block bg-white hover:bg-gray-100 text-primary font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
             >
               Conoce mis servicios
