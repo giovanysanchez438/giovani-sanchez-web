@@ -47,7 +47,7 @@ const blogPosts: BlogPost[] = [
     id: "3",
     title: "El Fundraising en la Era Digital",
     excerpt: "Cómo la IA y la Experiencia del Donante Transforman las ONGs.",
-    category: "Finanzas",
+    category: "Estrategia",
     date: "22 Feb 2026",
     readTime: "12 min",
     slug: "Fundraising-Donación-Digital",
@@ -55,13 +55,13 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "4",
-    title: "Liderazgo Efectivo: Construyendo Equipos de Alto Desempeño",
-    excerpt: "Descubre las claves del liderazgo moderno para motivar, desarrollar y retener talento en tu organización.",
-    category: "Liderazgo",
+    title: "PIB 2026",
+    excerpt: "Lo positivo y lo que preocupa de los resultados del PIB en Colombia.",
+    category: "Finanzas",
     date: "20 Feb 2026",
     readTime: "9 min",
-    slug: "liderazgo-equipos-desempeño",
-    linkedinUrl: "https://www.linkedin.com/posts/giovani-sanchez_la-evoluci%C3%B3n-de-la-filantrop%C3%ADa-digital-en-activity-7372281549569814529-8NfZ?v=202602281220"
+    slug: "finanzas-mercados-desempeño",
+    linkedinUrl: "https://www.linkedin.com/pulse/lo-positivo-y-que-preocupa-de-los-resultados-del-pib-s%25C3%25A1nchez-vargas-zdk8e/?trackingId=O20psVHcQzOQbNF4ZRDjWA%3D%3D"
   },
   {
     id: "5",
