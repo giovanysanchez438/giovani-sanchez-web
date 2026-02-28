@@ -35,8 +35,8 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "2",
-    title: "Marketing Estratégico: Cómo Combinar Datos con Visión Comercial",
-    excerpt: "Aprende a integrar análisis de datos con estrategia comercial para crear campañas que generen resultados medibles y sostenibles.",
+    title: "La Inteligencia Artificial en el trabajo",
+    excerpt: "𝗟𝗮 𝗜𝗔 𝗵𝗮𝗰𝗲 𝗲𝗹 𝘁𝗿𝗮𝗯𝗮𝗷𝗼 𝗶𝗻𝘃𝗶𝘀𝗶𝗯𝗹𝗲 𝘆 𝗹𝗮𝘀 𝗽𝗲𝗿𝘀𝗼𝗻𝗮𝘀, 𝗲𝗹 𝗺𝗲𝗺𝗼𝗿𝗮𝗯𝗹𝗲.",
     category: "Marketing",
     date: "24 Feb 2026",
     readTime: "10 min",
