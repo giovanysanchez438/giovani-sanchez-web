@@ -169,7 +169,9 @@ export default function Blog() {
 
                   {/* CTA */}
                   <a
-                    href={`/blog/${post.slug}`}
+                    href={post.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-smooth"
                   >
                     Leer más
