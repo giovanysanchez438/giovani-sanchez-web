@@ -65,13 +65,13 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "5",
-    title: "Transformación Digital: Oportunidades y Desafíos para el Crecimiento",
-    excerpt: "Explora cómo la transformación digital puede impulsar el crecimiento de tu negocio y qué desafíos debes anticipar.",
+    title: "Del Fundraising a la Adquisición de Clientes",
+    excerpt: "El Poder del Marketing Orientado a Resultados en el Crecimiento Empresarial.",
     category: "Estrategia",
     date: "18 Feb 2026",
     readTime: "11 min",
     slug: "transformacion-digital-crecimiento",
-    linkedinUrl: "https://www.linkedin.com/pulse/entendiendo-la-ofac-oficina-de-control-activos-giovani-s%C3%A1nchez-vargas-v7orf/?trackingId=3RkFy5rbO%2FghUEed%2B14%2BFw%3D%3D&v=202602281220"
+    linkedinUrl: "https://www.linkedin.com/pulse/del-fundraising-la-adquisici%25C3%25B3n-de-clientes-el-poder-s%25C3%25A1nchez-vargas-va3uc/?trackingId=O20psVHcQzOQbNF4ZRDjWA%3D%3D"
   },
   {
     id: "6",
