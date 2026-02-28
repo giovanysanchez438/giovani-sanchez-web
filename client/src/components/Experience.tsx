@@ -24,7 +24,7 @@ const experiences: ExperienceItem[] = [
     id: "ada",
     title: "Profesional en Marketing",
     company: "ADA S.A.",
-    period: "2024",
+  
     location: "Bogotá",
     description:
       "Desarrollo y lanzamiento de la Plataforma Regional de Economía Circular, marketplace 100% digital financiado por el BID y la Alcaldía de Bogotá.",
