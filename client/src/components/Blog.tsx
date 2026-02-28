@@ -25,13 +25,13 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "5 Estrategias de Finanzas Corporativas para Maximizar Rentabilidad",
+    title: "Educación Financiera: El Pilar Fundamental para el Crecimiento Personal y Empresarial",
     excerpt: "Descubre cómo optimizar la gestión financiera de tu empresa mediante estrategias probadas que aumentan rentabilidad y reducen riesgos operacionales.",
     category: "Finanzas",
     date: "26 Feb 2026",
     readTime: "8 min",
     slug: "estrategias-finanzas-corporativas",
-    linkedinUrl: "https://www.linkedin.com/posts/giovani-sanchez_%F0%9D%97%9F%F0%9D%97%AE-%F0%9D%97%B6%F0%9D%97%BB%F0%9D%98%81%F0%9D%97%B2%F0%9D%97%B9%F0%9D%97%B6%F0%9D%97%B4%F0%9D%97%B2%F0%9D%97%BB%F0%9D%97%B0%F0%9D%97%B6%F0%9D%97%AE-%F0%9D%97%AE%F0%9D%97%BF%F0%9D%98%81%F0%9D%97%B6-activity-7373742391469686785-aIkj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAizfnIBkuwJvgYRRhwvElAnbuc7vWzrewc&v=202602281220"
+    linkedinUrl: "https://www.linkedin.com/pulse/educaci%25C3%25B3n-financiera-el-pilar-fundamental-para-y-s%25C3%25A1nchez-vargas-1gqyc/?trackingId=oWprF8LlQaypkn8NUkzosQ%3D%3D"
   },
   {
     id: "2",
