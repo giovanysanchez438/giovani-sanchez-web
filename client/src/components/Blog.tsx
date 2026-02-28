@@ -25,8 +25,8 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "Educación Financiera: El Pilar Fundamental para el Crecimiento Personal y Empresarial",
-    excerpt: "Descubre cómo optimizar la gestión financiera de tu empresa mediante estrategias probadas que aumentan rentabilidad y reducen riesgos operacionales.",
+    title: "Educación Financiera",
+    excerpt: ": El Pilar Fundamental para el Crecimiento Personal y Empresarial.",
     category: "Finanzas",
     date: "26 Feb 2026",
     readTime: "8 min",
