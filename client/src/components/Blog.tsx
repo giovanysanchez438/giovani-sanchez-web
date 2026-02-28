@@ -194,7 +194,7 @@ export default function Blog() {
             href="/contacto"
             className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
           >
-            Solicitar Consultoría
+            Solicitar Consultoría   opo
           </a>
         </div>
       </div>
