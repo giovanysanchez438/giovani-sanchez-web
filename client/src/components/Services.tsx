@@ -19,31 +19,31 @@ interface Service {
 
 const services: Service[] = [
   {
-    id: "consultoría-financiera",
-    title: "Consultoría Financiera",
+    id: "Fundraising y Sostenibilidad para ONGs",
+    title: "Fundraising y Sostenibilidad para ONGs",
     description:
-      "Modelación financiera avanzada, planeación presupuestal, análisis de riesgos, valoración de empresas, asesoría en mercado de capitales y gestión de inversiones. Especialidad en estructuración de operaciones complejas.",
+      "Estrategia de recaudación de fondos, gestión de cooperantes internacionales, contratación pública (SECOP II) y modelos de sostenibilidad financiera. Experiencia directa en BID, Save the Children, Habitat for Humanity y Fundación PLAN.",
     icon: <PieChart className="w-10 h-10 text-primary" strokeWidth={1.5} />,
   },
   {
-    id: "planificación-financiera",
-    title: "Planificación Financiera",
+    id: "Estrategia Comercial y Marketing",
+    title: "Estrategia Comercial y Marketing",
     description:
-      "Diseño de estrategias financieras personalizadas, presupuestación integral, análisis de flujos de caja, gestión de riesgos financieros y optimización de recursos. Enfoque en sostenibilidad financiera.",
+      "Planes de mercadeo, posicionamiento de marca, gestión de canales, campañas omnicanal y estrategias de fidelización. Decisiones de marketing respaldadas por análisis financiero real.",
     icon: <TrendingUp className="w-10 h-10 text-primary" strokeWidth={1.5} />,
   },
   {
-    id: "asesoría-financiera",
-    title: "Asesoría Financiera",
+    id: "Consultoría Financiera Empresarial",
+    title: "Consultoría Financiera Empresarial",
     description:
-      "Asesoramiento ejecutivo en decisiones financieras estratégicas, análisis de oportunidades de inversión, evaluación de proyectos y recomendaciones basadas en análisis riguroso de datos.",
+      "Modelación financiera, presupuestación, análisis de viabilidad de proyectos, valoración de empresas y diagnóstico financiero. Números complejos convertidos en decisiones estratégicas claras.",
     icon: <Briefcase className="w-10 h-10 text-primary" strokeWidth={1.5} />,
   },
   {
-    id: "consultoría-sin-ánimo",
-    title: "Consultoría Fundraising ONGs",
+    id: "Mentoría Directiva",
+    title: "Mentoría Directiva",
     description:
-      "Especialidad en organizaciones del sector social. Estrategia de recaudación de fondos (fundraising), gestión de presupuestos, análisis de impacto social, desarrollo de modelos de sostenibilidad financiera.",
+      "Acompañamiento estratégico a directivos y emprendedores que necesitan integrar visión financiera con estrategia comercial. Sesiones estructuradas enfocadas en resolver retos reales de negocio.",
     icon: <Target className="w-10 h-10 text-primary" strokeWidth={1.5} />,
   },
 ];
