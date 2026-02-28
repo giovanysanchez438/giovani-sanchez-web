@@ -188,7 +188,7 @@ export default function Blog() {
         {/* CTA Section */}
         <div className="mt-16 text-center">
           <p className="text-gray-600 mb-6">
-            ¿Tienes una pregunta específica? No dudes en contactarme para una consultoría personalizada.
+            ¿Tienes una pregunta específica? No dudes en contactarme para una consultoría personalizada .
           </p>
           <a
             href="/contacto"
