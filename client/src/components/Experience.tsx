@@ -52,7 +52,6 @@ const experiences: ExperienceItem[] = [
     id: "stc",
     title: "Gerente Nacional de Mercadeo y Fundraising",
     company: "Save the Children International",
-    period: "2016 – 2021",
     location: "Bogotá",
     description:
       "Dirección de la estrategia de mercadeo y fundraising a nivel nacional con alcance y reporte internacional.",
