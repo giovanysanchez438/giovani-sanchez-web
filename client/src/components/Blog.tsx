@@ -75,17 +75,17 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "6",
-    title: "Análisis de Mercado: Herramientas para Tomar Decisiones Estratégicas",
-    excerpt: "Aprende a utilizar herramientas de análisis de mercado para identificar oportunidades y anticipar cambios en tu industria.",
-    category: "Mercado",
+    title: "La Evolución de la Filantropía Digital en Colombia",
+    excerpt: "Hacia la Automatización Inteligente de Donaciones Recurrentes en las Organizaciones Sociales.",
+    category: "Fundraising",
     date: "16 Feb 2026",
     readTime: "7 min",
-    slug: "analisis-mercado-herramientas",
-    linkedinUrl: "https://www.linkedin.com/pulse/educaci%25C3%25B3n-financiera-el-pilar-fundamental-para-y-s%25C3%25A1nchez-vargas-1gqyc/?trackingId=oWprF8LlQaypkn8NUkzosQ%3D%3D&v=202602281220"
+    slug: "Fundraising-Digital-herramientas",
+    linkedinUrl: "https://www.linkedin.com/pulse/la-evoluci%C3%B3n-de-filantrop%C3%ADa-digital-en-colombia-hacia-giovani-s%C3%A1nchez-z1ece/?trackingId=XP7jGRZ5QcmsVleQNJcokA%3D%3D"
   }
 ];
 
-const categories = ["Todos", "Finanzas", "Marketing", "Liderazgo", "Estrategia", "Mercado"];
+const categories = ["Todos", "Finanzas", "Marketing", "Liderazgo", "Estrategia", "Mercado" , "Fundraising" ];
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
