@@ -45,13 +45,13 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "3",
-    title: "Planificación Financiera: Guía Completa para Empresarios",
-    excerpt: "Una guía paso a paso para crear un plan financiero sólido que te permita tomar decisiones informadas y alcanzar tus objetivos empresariales.",
+    title: "El Fundraising en la Era Digital",
+    excerpt: "Cómo la IA y la Experiencia del Donante Transforman las ONGs.",
     category: "Finanzas",
     date: "22 Feb 2026",
     readTime: "12 min",
-    slug: "planificacion-financiera-empresarios",
-    linkedinUrl: "https://www.linkedin.com/posts/giovani-sanchez_comunidadong-marketingdigital-fundraising-activity-7373450300336009216-A2wP?v=202602281220"
+    slug: "Fundraising-Donación-Digital",
+    linkedinUrl: "https://www.linkedin.com/pulse/el-fundraising-en-la-era-digital-c%25C3%25B3mo-ia-y-del-las-s%25C3%25A1nchez-vargas-6a4tf/?trackingId=O20psVHcQzOQbNF4ZRDjWA%3D%3D"
   },
   {
     id: "4",
