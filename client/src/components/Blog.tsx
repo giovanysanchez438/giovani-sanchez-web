@@ -26,7 +26,7 @@ const blogPosts: BlogPost[] = [
   {
     id: "1",
     title: "Educación Financiera",
-    excerpt: ": El Pilar Fundamental para el Crecimiento Personal y Empresarial.",
+    excerpt: "El Pilar Fundamental para el Crecimiento Personal y Empresarial.",
     category: "Finanzas",
     date: "26 Feb 2026",
     readTime: "8 min",
