@@ -1,13 +1,12 @@
-import { Briefcase, MapPin } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 
 /**
  * Experience Section Component
- * 
+ *
  * Diseño: Minimalismo Corporativo Elegante
- * - Timeline vertical de experiencia
- * - Tarjetas con información clara
- * - Logros destacados con iconos
- * - Responsive design
+ * - Timeline vertical
+ * - Achievements visibles por tarjeta
+ * - Períodos y ubicación claros
  */
 
 interface ExperienceItem {
@@ -25,29 +24,29 @@ const experiences: ExperienceItem[] = [
     id: "ada",
     title: "Profesional en Marketing",
     company: "ADA S.A.",
-    period: "Enero 2024 - Septiembre 2024",
+    period: "2024",
     location: "Bogotá",
     description:
-      "Lideré el desarrollo y lanzamiento de la Plataforma Regional de Economía Circular (ecmarketplaceltam.com), un marketplace 100% digital financiado por el BID.",
+      "Desarrollo y lanzamiento de la Plataforma Regional de Economía Circular, marketplace 100% digital financiado por el BID y la Alcaldía de Bogotá.",
     achievements: [
-      "98 usuarios registrados y 58 empresas activas en primera fase",
-      "Estrategia de marketing y posicionamiento de plataforma",
-      "Articulación con Secretaría Distrital de Ambiente de Bogotá",
-      "Coordinación interdisciplinaria con equipos técnicos y operacionales",
+      "98 usuarios registrados y 58 empresas activas en primera fase de lanzamiento",
+      "Estrategia de marketing y posicionamiento en 4 países: Colombia, Ecuador, Perú y Chile",
+      "Articulación con Secretaría Distrital de Ambiente y equipos técnicos del BID",
+      "Coordinación interdisciplinaria con equipos de tecnología, operaciones y comunicación",
     ],
   },
   {
     id: "plan",
     title: "Gerente de Mercadeo",
     company: "Fundación PLAN",
-    period: "Octubre 2022 - Enero 2024",
+    period: "2022 – 2024",
     location: "Bogotá",
     description:
-      "Dirección ejecutiva del área de mercadeo con enfoque en estrategia comercial y fundraising corporativo.",
+      "Dirección del área de mercadeo con enfoque en estrategia comercial, fundraising corporativo y campañas omnicanal.",
     achievements: [
       "Liderazgo de estrategia de fundraising corporativo con empresas del sector privado",
       "Diseño e implementación de campañas omnicanal basadas en insights de mercado",
-      "Coordinación con áreas de operaciones, finanzas y stakeholders internacionales",
+      "Coordinación con operaciones, finanzas y stakeholders internacionales",
       "Gestión de relaciones con cooperantes, aliados institucionales y medios",
     ],
   },
@@ -55,29 +54,29 @@ const experiences: ExperienceItem[] = [
     id: "stc",
     title: "Gerente Nacional de Mercadeo y Fundraising",
     company: "Save the Children International",
-    period: "Julio 2016 - Agosto 2021",
+    period: "2016 – 2021",
     location: "Bogotá",
     description:
-      "Dirección de la estrategia de mercadeo y fundraising a nivel nacional con alcance internacional.",
+      "Dirección de la estrategia de mercadeo y fundraising a nivel nacional con alcance y reporte internacional.",
     achievements: [
-      "Liderazgo de equipos de hasta 15 personas (coordinadores regionales, ejecutivos comerciales)",
+      "Liderazgo de equipos de hasta 15 personas: coordinadores regionales y ejecutivos comerciales",
       "Gestión de presupuesto anual superior a COP $2.000M",
-      "Coordinación en entornos matriciales internacionales (Panamá, Reino Unido, India, Argentina)",
-      "Participación en Congresos Internacionales de Fundraising (Colombia 2016, Argentina 2016, India 2017)",
-      "Elaboración de informes ejecutivos de resultados y propuestas estratégicas",
+      "Coordinación con sede regional (Panamá) y sede global (Reino Unido)",
+      "Participación en Congresos Internacionales de Fundraising: Colombia (2016), Argentina (2016), India (2017)",
+      "Elaboración de informes ejecutivos y propuestas estratégicas para dirección global",
     ],
   },
   {
     id: "habitat",
-    title: "Coordinador CRM Customer Relationship Management",
+    title: "Coordinador CRM",
     company: "Habitat for Humanity International",
-    period: "Mayo 2014 - Julio 2016",
+    period: "2014 – 2016",
     location: "Bogotá",
     description:
-      "Administración de plataforma CRM y bases de datos de donantes corporativos.",
+      "Administración de plataforma CRM, gestión de bases de datos de donantes y estrategias de retención de clientes corporativos.",
     achievements: [
       "Administración de plataforma CRM y garantía de calidad de datos",
-      "Diseño e implementación de estrategias de retención y up-selling",
+      "Diseño e implementación de estrategias de retención y up-selling corporativo",
       "Elaboración de informes de gestión comercial con KPIs de desempeño",
       "Coordinación con equipos de programas para alineación de estrategias",
     ],
@@ -86,45 +85,85 @@ const experiences: ExperienceItem[] = [
     id: "aval",
     title: "Analista Senior de Planeación Financiera",
     company: "Grupo Aval",
-    period: "Octubre 2013 - Marzo 2014",
+    period: "2013 – 2014",
     location: "Bogotá",
     description:
-      "Análisis y modelación financiera para la dirección ejecutiva del grupo.",
+      "Modelación financiera y análisis presupuestal para la dirección ejecutiva del grupo bancario más grande de Colombia.",
     achievements: [
-      "Elaboración de modelos de planeación financiera y presupuestos corporativos",
-      "Consolidación de indicadores financieros y comerciales para reportes ejecutivos",
-      "Manejo de sistemas transaccionales para verificación y ajuste de datos",
-      "Análisis de variaciones y escenarios financieros",
+      "Elaboración de modelos de planeación financiera y presupuestos corporativos en Excel avanzado",
+      "Consolidación de indicadores financieros para reportes a comités directivos",
+      "Análisis de rentabilidad por línea de negocio y modelación de escenarios",
+      "Manejo de SAP para verificación, ajuste y consolidación de datos financieros",
     ],
   },
   {
     id: "aldeas",
     title: "Asesor Financiero",
     company: "Aldeas Infantiles SOS Colombia",
-    period: "Marzo 2010 - Marzo 2013",
+    period: "2010 – 2013",
     location: "Bogotá",
     description:
-      "Asesoría financiera y comercial a clientes institucionales y corporativos.",
+      "Asesoría financiera y comercial a clientes institucionales y corporativos en el sector social.",
     achievements: [
-      "Asesoría financiera y comercial a clientes institucionales y corporativos",
-      "Gestión de relaciones y desarrollo de cartera de donantes",
-      "Apoyo en estrategias de fundraising y captación de fondos",
-      "Elaboración de análisis financieros y reportes de gestión",
+      "Gestión de relaciones y desarrollo de cartera de donantes corporativos",
+      "Apoyo en estrategias de fundraising y captación de fondos institucionales",
+      "Elaboración de análisis financieros y reportes de gestión para la dirección",
     ],
   },
   {
-    id: "profesional-finanzas",
-    title: "Profesional en Finanzas",
-    company: "Diversas Organizaciones",
-    period: "2009 - 2010",
+    id: "agropar",
+    title: "Director de Operaciones – Mesa de Dinero",
+    company: "AGROPAR S.A.",
+    period: "2008 – 2009",
     location: "Bogotá",
     description:
-      "Experiencia inicial en análisis financiero y gestión de recursos en organizaciones del sector.",
+      "Dirección de operaciones financieras de la mesa de dinero en entorno B2B del sector financiero.",
     achievements: [
-      "Análisis de datos financieros y económicos",
-      "Apoyo en procesos de auditoría interna",
-      "Elaboración de reportes financieros",
-      "Desarrollo de habilidades en sistemas contables",
+      "Gestión de instrumentos del mercado de capitales y control de posiciones",
+      "Elaboración de reportes financieros diarios para la alta dirección",
+      "Seguimiento de indicadores de desempeño y análisis de riesgo operacional",
+    ],
+  },
+  {
+    id: "bancacajasocial",
+    title: "Auxiliar de Operaciones",
+    company: "Banco Caja Social",
+    period: "2008",
+    location: "Bogotá",
+    description:
+      "Gestión operativa y administrativa en entidad bancaria del sector financiero colombiano.",
+    achievements: [
+      "Apoyo en operaciones bancarias y procesos administrativos del área",
+      "Manejo de información financiera con alto sentido ético y confidencialidad",
+      "Atención a clientes y soporte en procesos de tesorería y caja",
+    ],
+  },
+  {
+    id: "labinco",
+    title: "Asistente de Tesorería",
+    company: "Labinco SA",
+    period: "2004 – 2006",
+    location: "Bogotá",
+    description:
+      "Gestión de tesorería y administración financiera en empresa del sector industrial.",
+    achievements: [
+      "Apoyo en administración de flujos de caja y operaciones de tesorería",
+      "Manejo de información contable y financiera con rigor y confidencialidad",
+      "Soporte en elaboración de reportes financieros y conciliaciones bancarias",
+    ],
+  },
+  {
+    id: "challenger",
+    title: "Auxiliar Líder Área Comercial",
+    company: "CHALLENGER",
+    period: "2001 – 2003",
+    location: "Bogotá",
+    description:
+      "Liderazgo del equipo comercial en puntos de venta especializados del canal moderno colombiano.",
+    achievements: [
+      "Gestión comercial en puntos de venta Alkosto y Homecenter",
+      "Liderazgo de equipo de ventas en PDV: cumplimiento de metas y visibilidad de marca",
+      "Primer acercamiento al sector retail y canal moderno en Colombia",
     ],
   },
 ];
@@ -133,55 +172,74 @@ export default function Experience() {
   return (
     <section id="experiencia" className="py-20 md:py-32 bg-gray-50">
       <div className="container">
+
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+          <h2
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4"
+            style={{ fontFamily: "Playfair Display, serif" }}
+          >
             Experiencia Profesional
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Más de 14 años de trayectoria en estrategia comercial, marketing, finanzas y liderazgo empresarial
+            Más de 20 años de trayectoria en estrategia comercial, marketing, finanzas y liderazgo en organizaciones de alto impacto
           </p>
         </div>
 
         {/* Timeline */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
-            <div key={exp.id} className="mb-12 relative">
-              {/* Timeline Line */}
-              {index !== experiences.length - 1 && (
-                <div className="absolute left-0 md:left-1/2 top-24 bottom-0 w-1 bg-gradient-to-b from-primary to-blue-200 transform md:-translate-x-1/2" />
-              )}
+            <div key={exp.id} className="relative flex gap-6">
 
-              {/* Timeline Item */}
-              <div className={`flex gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Timeline Dot */}
-                <div className="hidden md:flex items-start justify-center w-1/2 relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white shadow-lg" />
-                </div>
+              {/* Timeline indicator */}
+              <div className="flex flex-col items-center">
+                <div className="w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md mt-1.5 shrink-0" />
+                {index !== experiences.length - 1 && (
+                  <div className="w-0.5 bg-blue-200 flex-1 mt-2" />
+                )}
+              </div>
 
-                {/* Content */}
-                <div className="w-full md:w-1/2 pl-8 md:pl-0">
-                  <div className="bg-white rounded-lg p-6 md:p-8 card-shadow hover:shadow-lg transition-smooth">
-                    {/* Header */}
-                    <div className="mb-4">
-                      <h3 className="text-2xl font-bold text-primary mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
-                        {exp.title}
-                      </h3>
-                      <p className="text-lg font-semibold text-gray-800 mb-3">{exp.company}</p>
+              {/* Card */}
+              <div className="bg-white rounded-lg p-6 card-shadow hover:shadow-lg transition-smooth w-full mb-2">
 
-                      {/* Meta Info */}
-                      <div className="flex flex-col gap-2 text-sm text-gray-600 mb-4">
-                        <div className="flex items-center gap-2">
-                          <MapPin size={16} className="text-primary" />
-                          <span>{exp.location}</span>
-                        </div>
-                      </div>
+                {/* Header */}
+                <div className="mb-3">
+                  <h3
+                    className="text-xl font-bold text-primary mb-1"
+                    style={{ fontFamily: "Playfair Display, serif" }}
+                  >
+                    {exp.title}
+                  </h3>
+                  <p className="text-base font-semibold text-gray-800 mb-2">{exp.company}</p>
+
+                  {/* Meta */}
+                  <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar size={14} className="text-primary" />
+                      <span>{exp.period}</span>
                     </div>
-
-                    {/* Description */}
-                    <p className="text-gray-700 leading-relaxed">{exp.description}</p>
+                    <div className="flex items-center gap-1.5">
+                      <MapPin size={14} className="text-primary" />
+                      <span>{exp.location}</span>
+                    </div>
                   </div>
                 </div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">
+                  {exp.description}
+                </p>
+
+                {/* Achievements */}
+                <ul className="space-y-1.5">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                      <span className="text-primary font-bold mt-0.5 shrink-0">✓</span>
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+
               </div>
             </div>
           ))}
@@ -190,24 +248,34 @@ export default function Experience() {
         {/* Summary Stats */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
-              14+
+            <div
+              className="text-4xl font-bold text-primary mb-2"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              20+
             </div>
             <p className="text-gray-600">Años de Experiencia</p>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
-              7+
+            <div
+              className="text-4xl font-bold text-primary mb-2"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              10
             </div>
-            <p className="text-gray-600">Empresas Líderes</p>
+            <p className="text-gray-600">Organizaciones de Alto Impacto</p>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
+            <div
+              className="text-4xl font-bold text-primary mb-2"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
               COP $2B+
             </div>
             <p className="text-gray-600">Presupuestos Gestionados</p>
           </div>
         </div>
+
       </div>
     </section>
   );
