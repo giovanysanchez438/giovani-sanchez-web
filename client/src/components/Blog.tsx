@@ -20,6 +20,7 @@ interface BlogPost {
   date: string;
   readTime: string;
   slug: string;
+  linkedinUrl: string;
 }
 
 const blogPosts: BlogPost[] = [
@@ -85,27 +86,101 @@ const blogPosts: BlogPost[] = [
   }
 ];
 
-const categories = ["Todos", "Finanzas", "Marketing", "Liderazgo", "Fundraising" ];
+const categories = ["Todos", "Finanzas", "Marketing", "Liderazgo", "Fundraising"];
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
 
-  const filteredPosts = selectedCategory === "Todos" 
-    ? blogPosts 
+  const filteredPosts = selectedCategory === "Todos"
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container">
+
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
             Blog & Artículos
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Comparte mis conocimientos sobre finanzas, estrategia empresarial y liderazgo para ayudarte a tomar mejores decisiones.
           </p>
         </div>
+
+        {/* ── LIBRO DESTACADO ── */}
+        {(selectedCategory === "Todos" || selectedCategory === "Fundraising") && (
+          <div className="mb-12">
+            <article className="rounded-xl overflow-hidden shadow-2xl group relative" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #0d1b3e 60%, #1e3370 100%)' }}>
+              {/* líneas decorativas */}
+              <div className="absolute inset-0 opacity-10" style={{
+                backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(74,127,212,0.3) 60px, rgba(74,127,212,0.3) 61px)'
+              }} />
+
+              <div className="relative px-8 py-10 flex flex-col md:flex-row items-center gap-8">
+
+                {/* Ícono libro */}
+                <div className="flex-shrink-0 w-24 h-24 rounded-xl flex items-center justify-center text-5xl shadow-lg" style={{ background: 'rgba(74,127,212,0.2)', border: '1px solid rgba(111,163,240,0.3)' }}>
+                  📘
+                </div>
+
+                {/* Texto */}
+                <div className="flex-1 text-center md:text-left">
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-3">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: 'rgba(74,127,212,0.25)', color: '#6fa3f0' }}>
+                      Recurso Gratuito
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: 'rgba(74,127,212,0.25)', color: '#6fa3f0' }}>
+                      Libro Interactivo
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{ background: 'rgba(74,127,212,0.25)', color: '#6fa3f0' }}>
+                      Fundraising
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+                    El Arte de <em style={{ color: '#6fa3f0' }}>Captar Fondos</em>
+                  </h3>
+
+                  <p className="text-sm mb-5 max-w-2xl" style={{ color: 'rgba(232,238,248,0.7)' }}>
+                    Guía estratégica completa para directores y fundadores de ONG. Aprende a cultivar donantes, construir alianzas RSE, lanzar campañas digitales y diseñar tu plan de captación en 6 capítulos interactivos.
+                  </p>
+
+                  <div className="flex flex-wrap gap-4 justify-center md:justify-start text-xs mb-6" style={{ color: '#8fa8cc' }}>
+                    <span>📖 6 Capítulos</span>
+                    <span>·</span>
+                    <span>🎯 Donantes · RSE · Digital</span>
+                    <span>·</span>
+                    <span>⏱ ~40 min de lectura</span>
+                    <span>·</span>
+                    <span>✅ Acceso gratuito</span>
+                  </div>
+
+                  <a
+                    href="/libro-ong"
+                    className="inline-flex items-center gap-2 font-bold py-3 px-7 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105"
+                    style={{ background: '#ffffff', color: '#0d1b3e' }}
+                  >
+                    Leer el libro completo
+                    <ArrowRight size={18} />
+                  </a>
+                </div>
+
+                {/* Capítulos preview — solo desktop */}
+                <div className="hidden lg:flex flex-col gap-2 flex-shrink-0 w-52">
+                  {["I. Fundamentos", "II. Cultivar Donantes", "III. Estrategia Digital", "IV. Alianzas RSE", "V. Comunicar Impacto", "VI. Plan de Acción"].map((ch, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(232,238,248,0.6)' }}>
+                      <span style={{ color: '#4a7fd4', fontWeight: 600 }}>{i + 1}</span>
+                      <span>{ch}</span>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
+            </article>
+          </div>
+        )}
 
         {/* Categories Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -190,15 +265,16 @@ export default function Blog() {
         {/* CTA Section */}
         <div className="mt-16 text-center">
           <p className="text-gray-600 mb-6">
-            ¿Tienes una pregunta específica? No dudes en contactarme para una consultoría personalizada .
+            ¿Tienes una pregunta específica? No dudes en contactarme para una consultoría personalizada.
           </p>
           <a
             href="/contacto"
             className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
           >
-            Solicitar Consultoría   opo
+            Solicitar Consultoría
           </a>
         </div>
+
       </div>
     </section>
   );
