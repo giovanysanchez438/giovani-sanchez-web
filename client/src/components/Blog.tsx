@@ -47,7 +47,7 @@ const blogPosts: BlogPost[] = [
     id: "3",
     title: "El Fundraising en la Era Digital",
     excerpt: "Cómo la IA y la Experiencia del Donante Transforman las ONGs.",
-    category: "Estrategia",
+    category: "Liderazgo",
     date: "22 Feb 2026",
     readTime: "12 min",
     slug: "Fundraising-Donación-Digital",
@@ -67,7 +67,7 @@ const blogPosts: BlogPost[] = [
     id: "5",
     title: "Del Fundraising a la Adquisición de Clientes",
     excerpt: "El Poder del Marketing Orientado a Resultados en el Crecimiento Empresarial.",
-    category: "Estrategia",
+    category: "Fundraising",
     date: "18 Feb 2026",
     readTime: "11 min",
     slug: "transformacion-digital-crecimiento",
@@ -85,7 +85,7 @@ const blogPosts: BlogPost[] = [
   }
 ];
 
-const categories = ["Todos", "Finanzas", "Marketing", "Liderazgo", "Estrategia", "Mercado" , "Fundraising" ];
+const categories = ["Todos", "Finanzas", "Marketing", "Liderazgo", "Fundraising" ];
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
