@@ -49,7 +49,7 @@ export default function About() {
           {/* Descripción principal */}
           <div className="space-y-5 text-gray-100 mb-10">
             <p className="text-lg leading-relaxed">
-              Soy <strong className="text-white">Ingeniero Financiero con Maestría en Mercadeo</strong>, con más de 10 años liderando estrategias comerciales, financieras y de marketing en organizaciones de alto impacto: <strong className="text-white">Save the Children International, Habitat for Humanity, Fundación PLAN, Aldeas Infantiles y Grupo Aval.</strong>
+              Soy <strong className="text-white">Ingeniero Financiero con Maestría en Mercadeo</strong>, con más de 15 años liderando estrategias comerciales, financieras y de marketing en organizaciones de alto impacto: <strong className="text-white">Save the Children International, Habitat for Humanity, Fundación PLAN, Aldeas Infantiles y Grupo Aval.</strong>
             </p>
             <p className="text-lg leading-relaxed">
               Lideré el desarrollo de la <strong className="text-white">Plataforma Regional de Economía Circular</strong> financiada por el BID y la Alcaldía de Bogotá — con alcance en Colombia, Ecuador, Perú y Chile — logrando 58 empresas activas en su primera fase.
