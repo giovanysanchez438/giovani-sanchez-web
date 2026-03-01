@@ -3,8 +3,8 @@
  * 
  * Diseño: Minimalismo Corporativo Elegante
  * - Conserva el estilo original de texto centrado
- * - Texto más conciso y directo
- * - Call-to-action
+ * - Títulos académicos como diferencial
+ * - Texto conciso y directo
  */
 export default function HomeIntro() {
   return (
@@ -12,12 +12,13 @@ export default function HomeIntro() {
       <div className="container max-w-3xl mx-auto">
         <div className="text-center space-y-6">
 
-          {/* Propuesta de valor — corta y directa */}
+          {/* Propuesta de valor con títulos académicos */}
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            Soy <span className="font-semibold text-primary">Giovani Sánchez V.</span>, consultor con{" "}
-            <span className="font-semibold">14 años de experiencia</span> ayudando a empresas y organizaciones
-            a crecer con <span className="font-semibold">estrategia financiera</span> y{" "}
-            <span className="font-semibold">visión de mercado</span>.
+            Soy <span className="font-semibold text-primary">Giovani Sánchez V.</span>,{" "}
+            <span className="font-semibold">Ingeniero Financiero y Magíster en Marketing</span>,
+            con <span className="font-semibold">14 años de experiencia</span> ayudando a empresas
+            y organizaciones a crecer con <span className="font-semibold">estrategia financiera</span>{" "}
+            y <span className="font-semibold">visión de mercado</span>.
           </p>
 
           {/* Frase diferenciadora */}
@@ -25,12 +26,14 @@ export default function HomeIntro() {
             "Muchos marketers no saben de números. Muchos financieros no saben de mercado."
           </p>
 
-          {/* Sectores */}
+          {/* Diferencial académico explicado */}
           <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            He trabajado en los sectores{" "}
-            <span className="font-semibold">privado, público y sin ánimo de lucro</span>,
-            combinando análisis riguroso con estrategia comercial para generar{" "}
-            <span className="font-semibold">crecimiento sostenible</span>.
+            Una combinación poco común: el{" "}
+            <span className="font-semibold">rigor del análisis financiero</span> con la{" "}
+            <span className="font-semibold">creatividad y orientación al cliente del marketing</span>.
+            He aplicado esta visión en los sectores{" "}
+            <span className="font-semibold">privado, público y sin ánimo de lucro</span>{" "}
+            para generar <span className="font-semibold">crecimiento sostenible</span>.
           </p>
 
           {/* Servicios como pills sutiles */}
