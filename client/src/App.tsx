@@ -12,7 +12,7 @@ import Certificaciones from "./pages/Certificaciones";
 import Principios from "./pages/Principios";
 import Contacto from "./pages/Contacto";
 import BlogPage from "./pages/Blog";
-
+import LibroONG from "./pages/LibroONG";
 
 function Router() {
   return (
@@ -25,6 +25,7 @@ function Router() {
       <Route path={"/principios"} component={Principios} />
       <Route path={"/contacto"} component={Contacto} />
       <Route path={"/blog"} component={BlogPage} />
+      <Route path={"/libro-ong"} component={LibroONG} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -36,7 +37,6 @@ function Router() {
 // - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
 //   to keep consistent foreground/background color across components
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
