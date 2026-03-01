@@ -11,7 +11,6 @@ import { useState } from "react";
  * - Navegación horizontal limpia
  * - Transiciones suaves
  */
-
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -28,21 +27,23 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
       <div className="container">
+
         {/* Top Section: Logo, Name, Tagline */}
         <div className="py-4 md:py-6 flex items-center justify-between gap-4">
+
           {/* Left: Logo */}
           <a href="/" className="flex-shrink-0 transition-smooth">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white text-lg font-bold" style={{fontFamily: 'Playfair Display, serif'}}>G</span>
+              <span className="text-white text-lg font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>G</span>
             </div>
           </a>
 
-          {/* Center: Name and Tagline */}
-          <div className="flex-1 text-center hidden sm:block">
-            <h1 className="text-xl md:text-2xl text-gray-800 mb-1" style={{fontFamily: 'Montserrat, sans-serif', fontWeight: '400', letterSpacing: '1px'}}>
+          {/* Center: Name and Tagline — ahora visible en TODOS los tamaños */}
+          <div className="flex-1 text-center">
+            <h1 className="text-lg sm:text-xl md:text-2xl text-gray-800 mb-0.5" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '400', letterSpacing: '1px' }}>
               Giovani Sánchez V.
             </h1>
-            <p className="text-xs md:text-sm text-gray-600 font-medium tracking-wide">
+            <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 font-medium tracking-wide">
               GENERADOR DE CRECIMIENTO CON VISIÓN FINANCIERA
             </p>
           </div>
@@ -59,15 +60,15 @@ export default function Header() {
         {/* Divider */}
         <div className="hidden md:block h-px bg-gray-100" />
 
-        {/* Bottom Section: Tagline and Navigation */}
-        <div className="py-3 md:py-4 flex items-center justify-between gap-4">
+        {/* Bottom Section: Quote and Desktop Navigation */}
+        <div className="py-3 md:py-4 hidden md:flex items-center justify-between gap-4">
           {/* Left: Differentiator Quote */}
           <div className="text-xs md:text-sm text-gray-600 italic hidden lg:block max-w-xs">
             "Muchos marketers no saben de números. Muchos financieros no saben de mercado."
           </div>
 
-          {/* Center/Right: Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 md:gap-8 ml-auto">
+          {/* Desktop Navigation */}
+          <nav className="flex items-center gap-6 md:gap-8 ml-auto">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -79,6 +80,7 @@ export default function Header() {
             ))}
           </nav>
         </div>
+
       </div>
 
       {/* Mobile Navigation */}
