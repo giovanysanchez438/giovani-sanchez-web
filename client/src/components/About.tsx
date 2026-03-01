@@ -52,11 +52,7 @@ export default function About() {
             logrando 58 empresas activas en su primera fase.
           </p>
 
-          <p className="text-base md:text-lg text-gray-500 leading-relaxed italic">
-            "Muchos marketers no saben de números. Muchos financieros no saben de mercado. Yo domino ambos mundos."
-          </p>
-
-          <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed">
             Mi enfoque es simple:{" "}
             <span className="font-semibold text-gray-800">análisis riguroso + visión estratégica + ejecución real.</span>{" "}
             Sin fórmulas genéricas — solo soluciones que generan{" "}
