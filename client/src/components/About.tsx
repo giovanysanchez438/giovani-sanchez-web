@@ -7,8 +7,6 @@
  * - Contenido concreto y diferenciador
  */
 export default function About() {
-  const aboutImageUrl =
-    "https://private-us-east-1.manuscdn.com/sessionFile/I1g2OKY8Wx2Uola4rJYRpN/sandbox/lp4B5j2xAjFcvn06pm0C0a-img-3_1772125284000_na1fn_YWJvdXQtc2VjdGlvbi1iZw.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvSTFnMk9LWThXeDJVb2xhNHJKWVJwTi9zYW5kYm94L2xwNEI1ajJ4QWpGY3ZuMDZwbTBDMGEtaW1nLTNfMTc3MjEyNTI4NDAwMF9uYTFmbl9ZV0p2ZFhRdGMyVmpkR2x2YmkxaVp3LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Abx01EJOUxnVKA5vZCiqE9JSSJHjWzght~BSbsY8nBPdtaA-Wn89SzbU41cY3R-QyVPRhGeRga2ppqDgU3C1Zo8QP8TsgcmDNMmye7VJUK15A40LfzeGs3--7jaSsFJHJxlSHrarX6HXa686f-8~SD7ZvHQBs6J64Cw3Pm3linNNGUesL58W0M-zwVp90F82z45JvXUIKKU15FtUrskYhcXrctpAjBR~N11XRinUSmzjMVdRsgNJ23k1Jvty~MxiMAeGPd0glFoE9YVWns8uZ8i4q3L1g53SgAg4Uc31BX2tHVzHrjKAkimOfr4JR4kbkAgD6DGxYl8eWQ8iaSXVdQ__";
 
   const stats = [
     { value: "10+", label: "Años de experiencia" },
@@ -30,10 +28,8 @@ export default function About() {
     <section
       id="perfil"
       className="relative py-20 md:py-32 bg-cover bg-center"
-      style={{ backgroundImage: `url('${aboutImageUrl}')` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 container">
         <div className="max-w-4xl">
