@@ -16,7 +16,7 @@ export default function HomeIntro() {
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
             Soy <span className="font-semibold text-primary">Giovani Sánchez V.</span>,{" "}
             <span className="font-semibold">Ingeniero Financiero y Magíster en Marketing</span>,
-            con <span className="font-semibold">14 años de experiencia</span> ayudando a empresas
+            con <span className="font-semibold">+15 años de experiencia</span> ayudando a empresas
             y organizaciones a crecer con <span className="font-semibold">estrategia financiera</span>{" "}
             y <span className="font-semibold">visión de mercado</span>.
           </p>
