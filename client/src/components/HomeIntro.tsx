@@ -2,44 +2,70 @@
  * Home Intro Component
  * 
  * Diseño: Minimalismo Corporativo Elegante
- * - Resumen del objetivo de la página
- * - Propuesta de valor clara
+ * - Conserva el estilo original de texto centrado
+ * - Texto más conciso y directo
  * - Call-to-action
  */
-
 export default function HomeIntro() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container max-w-3xl mx-auto">
         <div className="text-center space-y-6">
+
+          {/* Propuesta de valor — corta y directa */}
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            Bienvenido a mi espacio profesional. Soy <span className="font-semibold text-primary">Giovani Sánchez V.</span>, 
-            especialista en <span className="font-semibold">finanzas, fundraising, estrategia comercial y desarrollo empresarial</span>.
+            Soy <span className="font-semibold text-primary">Giovani Sánchez V.</span>, consultor con{" "}
+            <span className="font-semibold">14 años de experiencia</span> ayudando a empresas y organizaciones
+            a crecer con <span className="font-semibold">estrategia financiera</span> y{" "}
+            <span className="font-semibold">visión de mercado</span>.
           </p>
-          
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed italic">
+
+          {/* Frase diferenciadora */}
+          <p className="text-base md:text-lg text-gray-500 leading-relaxed italic">
             "Muchos marketers no saben de números. Muchos financieros no saben de mercado."
           </p>
-          
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            Con más de <span className="font-semibold">14 años de experiencia</span>, he trabajado con empresas líderes 
-            en sectores privado, público y sin ánimo de lucro
-          </p>
-          
+
+          {/* Sectores */}
           <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            En este sitio encontrarás información sobre mi <span className="font-semibold">perfil profesional, servicios, 
-            experiencia, certificaciones y principios</span> que guían mi trabajo. Mi objetivo es ayudarte a alcanzar 
-            <span className="font-semibold"> crecimiento sostenible</span> combinando análisis riguroso con visión estratégica.
+            He trabajado en los sectores{" "}
+            <span className="font-semibold">privado, público y sin ánimo de lucro</span>,
+            combinando análisis riguroso con estrategia comercial para generar{" "}
+            <span className="font-semibold">crecimiento sostenible</span>.
           </p>
-          
-          <div className="pt-6">
+
+          {/* Servicios como pills sutiles */}
+          <div className="flex flex-wrap justify-center gap-3 pt-2">
+            {["Finanzas Corporativas", "Fundraising & ONG", "Estrategia Empresarial", "Desarrollo Comercial"].map((s) => (
+              <span
+                key={s}
+                className="text-sm font-medium px-4 py-1.5 rounded-full"
+                style={{
+                  background: '#f4f7fd',
+                  color: '#0d1b3e',
+                  border: '1px solid rgba(74,127,212,0.2)'
+                }}
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+
+          {/* CTAs */}
+          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contacto"
               className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
             >
               Solicitar Consultoría
             </a>
+            <a
+              href="/servicios"
+              className="inline-block border border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200"
+            >
+              Ver servicios →
+            </a>
           </div>
+
         </div>
       </div>
     </section>
