@@ -52,7 +52,7 @@ export default function ContactForm() {
 
     try {
       // Enviar email usando mailto (alternativa simple)
-      const mailtoLink = `mailto:giovanysanchez438@gmail.com?subject=Solicitud de Servicio: ${formData.service}&body=Nombre: ${formData.name}%0AEmail: ${formData.email}%0ATeléfono: ${formData.phone}%0AServicio: ${formData.service}%0A%0AMensaje:%0A${formData.message}`;
+      const mailtoLink = `mailto:consulting@giovanisanchezv.com?subject=Solicitud de Servicio: ${formData.service}&body=Nombre: ${formData.name}%0AEmail: ${formData.email}%0ATeléfono: ${formData.phone}%0AServicio: ${formData.service}%0A%0AMensaje:%0A${formData.message}`;
       
       window.location.href = mailtoLink;
 
@@ -99,8 +99,8 @@ export default function ContactForm() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                <a href="mailto:giovanysanchez438@gmail.com" className="text-gray-600 hover:text-primary transition-smooth">
-                  giovanysanchez438@gmail.com
+                <a href="mailto:consulting@giovanisanchezv.com" className="text-gray-600 hover:text-primary transition-smooth">
+                  consulting@giovanisanchezv.com
                 </a>
               </div>
             </div>
