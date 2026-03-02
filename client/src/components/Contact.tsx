@@ -36,10 +36,10 @@ export default function Contact() {
               </div>
               <h3 className="font-bold text-foreground mb-2" style={{fontFamily: 'Playfair Display, serif'}}>Email</h3>
               <a
-                href="mailto:giovanysanchez438@gmail.com"
+                href="mailto:consulting@giovanisanchezv.com"
                 className="text-gray-600 hover:text-primary transition-smooth"
               >
-                giovanysanchez438@gmail.com
+                consulting@giovanisanchezv.com
               </a>
             </div>
 
@@ -84,7 +84,7 @@ export default function Contact() {
               O déjame un mensaje y me pondré en contacto pronto
             </p>
             <a
-              href="mailto:giovanysanchez438@gmail.com?subject=Solicitud de Consultoría"
+              href="mailto:consulting@giovanisanchezv.com?subject=Solicitud de Consultoría"
               className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
             >
               Enviar Mensaje
