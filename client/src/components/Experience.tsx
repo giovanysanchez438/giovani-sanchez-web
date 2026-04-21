@@ -1,231 +1,155 @@
-import { MapPin, Calendar } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
-/**
- * Experience Section Component
- *
- * Diseño: Minimalismo Corporativo Elegante
- * - Timeline vertical
- * - Achievements visibles por tarjeta
- * - Períodos y ubicación claros
- */
-
-interface ExperienceItem {
+interface BluechipRole {
   id: string;
   title: string;
   company: string;
+  type: string;
   period: string;
-  location: string;
-  description: string;
+  metrics: string[];
   achievements: string[];
 }
 
-const experiences: ExperienceItem[] = [
+interface HistoricalRole {
+  title: string;
+  company: string;
+  period: string;
+}
+
+const bluechipRoles: BluechipRole[] = [
   {
     id: "ada",
-    title: "Profesional en Marketing",
+    title: "Especialista Senior en Marketing Estratégico",
     company: "ADA S.A.",
-    location: "Bogotá",
-    description:
-      "Desarrollo y lanzamiento de la Plataforma Regional de Economía Circular, marketplace 100% digital financiado por el BID y la Alcaldía de Bogotá.",
+    type: "Cooperación Internacional · Proyecto BID",
+    period: "Ene. 2024 – Sept. 2024",
+    metrics: ["4 ciudades", "BID / Economía Circular", "Colombia · Ecuador · Perú · Chile"],
     achievements: [
-      "98 usuarios registrados y 58 empresas activas en primera fase de lanzamiento",
-      "Estrategia de marketing y posicionamiento en 4 países: Colombia, Ecuador, Perú y Chile",
-      "Articulación con Secretaría Distrital de Ambiente y equipos técnicos del BID",
-      "Coordinación interdisciplinaria con equipos de tecnología, operaciones y comunicación",
+      "Único responsable de marketing del Marketplace de Economía Circular del BID durante toda la duración del proyecto.",
+      "Lanzamiento con 98 usuarios registrados y 58 empresas activas en primera fase.",
+      "Articulación directa con Secretaría Distrital de Ambiente, Alcaldía de Bogotá y equipos técnicos del BID.",
+      "Estrategia de posicionamiento ejecutada simultáneamente en Bogotá, Quito, Lima y Santiago de Chile.",
     ],
   },
   {
     id: "plan",
-    title: "Gerente de Mercadeo",
+    title: "Gerente de Marketing, Fundraising y Retención de Donantes",
     company: "Fundación PLAN",
-    location: "Bogotá",
-    description:
-      "Dirección del área de mercadeo con enfoque en estrategia comercial, fundraising corporativo y campañas omnicanal.",
+    type: "ONG Internacional",
+    period: "Oct. 2022 – Ene. 2024",
+    metrics: ["15.000 donantes", "COP $1.500M/año", "Retención >85%", "+30% portafolio"],
     achievements: [
-      "Liderazgo de estrategia de fundraising corporativo con empresas del sector privado",
-      "Diseño e implementación de campañas omnicanal basadas en insights de mercado",
-      "Coordinación con operaciones, finanzas y stakeholders internacionales",
-      "Gestión de relaciones con cooperantes, aliados institucionales y medios",
+      "Gestión de portafolio de 15.000 donantes activos con recaudación de COP $1.500M anuales.",
+      "Retención de donantes superior al 85%, más del doble del promedio del sector nonprofit colombiano (43%).",
+      "Crecimiento del portafolio de donantes en un 30% durante el período.",
+      "Diseño e implementación de campañas omnicanal de captación y retención basadas en insights de CRM.",
     ],
   },
   {
     id: "stc",
-    title: "Gerente Nacional de Mercadeo y Fundraising",
+    title: "Gerente Nacional de Marketing, Fundraising & Estrategia de Crecimiento de Ingresos",
     company: "Save the Children International",
-    location: "Bogotá",
-    description:
-      "Dirección de la estrategia de mercadeo y fundraising a nivel nacional con alcance y reporte internacional.",
+    type: "ONG Internacional",
+    period: "Jul. 2016 – Ago. 2021",
+    metrics: ["35.000 donantes", "COP $1.800M/año", "Retención >85%", "+25% portafolio"],
     achievements: [
-      "Liderazgo de equipos de hasta 15 personas: coordinadores regionales y ejecutivos comerciales",
-      "Gestión de presupuesto anual superior a COP $2.000M",
-      "Coordinación con sede regional (Panamá) y sede global (Reino Unido)",
-      "Participación en Congresos Internacionales de Fundraising: Colombia (2016), Argentina (2016), India (2017)",
-      "Elaboración de informes ejecutivos y propuestas estratégicas para dirección global",
+      "Gestión de portafolio de 35.000 donantes activos con recaudación de COP $1.800M anuales.",
+      "Retención >85% sostenida durante 5 años consecutivos con equipos de hasta 15 personas.",
+      "Crecimiento del portafolio en un 25% mediante estrategias de captación digital y presencial.",
+      "Representación de Colombia en Fundraising Forum India (2017) y congresos AEDROS y AFCOL (2016).",
     ],
   },
   {
     id: "habitat",
-    title: "Coordinador CRM",
+    title: "Coordinador Senior CRM & Gestión de Relaciones con Donantes",
     company: "Habitat for Humanity International",
-    location: "Bogotá",
-    description:
-      "Administración de plataforma CRM, gestión de bases de datos de donantes y estrategias de retención de clientes corporativos.",
+    type: "ONG Internacional",
+    period: "May. 2014 – Jul. 2016",
+    metrics: ["5.000 donantes", "COP $900M/año", "Retención >85%", "+30% portafolio"],
     achievements: [
-      "Administración de plataforma CRM y garantía de calidad de datos",
-      "Diseño e implementación de estrategias de retención y up-selling corporativo",
-      "Elaboración de informes de gestión comercial con KPIs de desempeño",
-      "Coordinación con equipos de programas para alineación de estrategias",
-    ],
-  },
-  {
-    id: "aval",
-    title: "Analista Senior de Planeación Financiera",
-    company: "Grupo Aval",
-    location: "Bogotá",
-    description:
-      "Modelación financiera y análisis presupuestal para la dirección ejecutiva del grupo bancario más grande de Colombia.",
-    achievements: [
-      "Elaboración de modelos de planeación financiera y presupuestos corporativos en Excel avanzado",
-      "Consolidación de indicadores financieros para reportes a comités directivos",
-      "Análisis de rentabilidad por línea de negocio y modelación de escenarios",
-      "Manejo de SAP para verificación, ajuste y consolidación de datos financieros",
+      "Gestión de portafolio de 5.000 donantes activos con recaudación de COP $900M anuales.",
+      "Retención >85% sostenida mediante estrategias de CRM y up-selling corporativo.",
+      "Crecimiento del portafolio en un 30% en dos años de gestión.",
+      "Administración de plataforma CRM con garantía de calidad de datos y KPIs de desempeño.",
     ],
   },
   {
     id: "aldeas",
-    title: "Asesor Financiero",
+    title: "Asesor de Gestión Financiera y Desarrollo de Fondos",
     company: "Aldeas Infantiles SOS Colombia",
-    location: "Bogotá",
-    description:
-      "Asesoría financiera y comercial a clientes institucionales y corporativos en el sector social.",
+    type: "ONG Internacional",
+    period: "Mar. 2010 – Mar. 2013",
+    metrics: ["25.000 donantes", "COP $1.100M/año", "Retención >85%", "+15% portafolio"],
     achievements: [
-      "Gestión de relaciones y desarrollo de cartera de donantes corporativos",
-      "Apoyo en estrategias de fundraising y captación de fondos institucionales",
-      "Elaboración de análisis financieros y reportes de gestión para la dirección",
-    ],
-  },
-  {
-    id: "agropar",
-    title: "Director de Operaciones – Mesa de Dinero",
-    company: "AGROPAR S.A.",
-    location: "Bogotá",
-    description:
-      "Dirección de operaciones financieras de la mesa de dinero en entorno B2B del sector financiero.",
-    achievements: [
-      "Gestión de instrumentos del mercado de capitales y control de posiciones",
-      "Elaboración de reportes financieros diarios para la alta dirección",
-      "Seguimiento de indicadores de desempeño y análisis de riesgo operacional",
-    ],
-  },
-  {
-    id: "bancacajasocial",
-    title: "Auxiliar de Operaciones",
-    company: "Banco Caja Social",
-    location: "Bogotá",
-    description:
-      "Gestión operativa y administrativa en entidad bancaria del sector financiero colombiano.",
-    achievements: [
-      "Apoyo en operaciones bancarias y procesos administrativos del área",
-      "Manejo de información financiera con alto sentido ético y confidencialidad",
-      "Atención a clientes y soporte en procesos de tesorería y caja",
-    ],
-  },
-  {
-    id: "labinco",
-    title: "Asistente de Tesorería",
-    company: "Labinco SA",
-    location: "Bogotá",
-    description:
-      "Gestión de tesorería y administración financiera en empresa del sector industrial.",
-    achievements: [
-      "Apoyo en administración de flujos de caja y operaciones de tesorería",
-      "Manejo de información contable y financiera con rigor y confidencialidad",
-      "Soporte en elaboración de reportes financieros y conciliaciones bancarias",
-    ],
-  },
-  {
-    id: "challenger",
-    title: "Auxiliar Líder Área Comercial",
-    company: "CHALLENGER",
-    location: "Bogotá",
-    description:
-      "Liderazgo del equipo comercial en puntos de venta especializados del canal moderno colombiano.",
-    achievements: [
-      "Gestión comercial en puntos de venta Alkosto y Homecenter",
-      "Liderazgo de equipo de ventas en PDV: cumplimiento de metas y visibilidad de marca",
-      "Primer acercamiento al sector retail y canal moderno en Colombia",
+      "Gestión de portafolio de 25.000 donantes activos con recaudación de COP $1.100M anuales.",
+      "Retención >85% mediante estrategias de desarrollo de fondos institucionales.",
+      "Crecimiento del portafolio en un 15% a través de alianzas corporativas y captación individual.",
+      "Elaboración de análisis financieros y reportes de gestión para dirección nacional.",
     ],
   },
 ];
 
+const historicalRoles: HistoricalRole[] = [
+  { title: "Analista Senior de Planeación Financiera", company: "Grupo Aval", period: "Oct. 2013 – Mar. 2014" },
+  { title: "Director de Operaciones – Mesa de Dinero", company: "AGROPAR S.A.", period: "Nov. 2008 – Abr. 2009" },
+  { title: "Auxiliar de Operaciones", company: "Banco Caja Social", period: "Feb. 2008 – Ago. 2008" },
+  { title: "Asistente de Tesorería", company: "Labinco S.A.", period: "Ago. 2004 – Oct. 2006" },
+  { title: "Auxiliar Líder Área Comercial", company: "Challenger", period: "Mar. 2001 – Dic. 2003" },
+];
+
 export default function Experience() {
+  const [showHistorical, setShowHistorical] = useState(false);
+
   return (
     <section id="experiencia" className="py-20 md:py-32 bg-gray-50">
-      <div className="container">
+      <div className="container max-w-3xl mx-auto px-6">
 
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
-            Experiencia Profesional
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Más de 20 años de trayectoria en estrategia comercial, marketing, finanzas y liderazgo en organizaciones de alto impacto
+        <div className="mb-14">
+          <h2 className="mb-3">Experiencia Profesional</h2>
+          <p className="text-lg text-gray-500">
+            15 años liderando marketing y fundraising en el sector social y la cooperación internacional.
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="max-w-3xl mx-auto space-y-8">
-          {experiences.map((exp, index) => (
-            <div key={exp.id} className="relative flex gap-6">
+        {/* Timeline blue-chip */}
+        <div className="space-y-8">
+          {bluechipRoles.map((role, index) => (
+            <div key={role.id} className="relative flex gap-6">
 
-              {/* Timeline indicator */}
               <div className="flex flex-col items-center">
-                <div className="w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md mt-1.5 shrink-0" />
-                {index !== experiences.length - 1 && (
+                <div className="w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md mt-2 shrink-0" />
+                {index !== bluechipRoles.length - 1 && (
                   <div className="w-0.5 bg-blue-200 flex-1 mt-2" />
                 )}
               </div>
 
-              {/* Card */}
               <div className="bg-white rounded-lg p-6 card-shadow hover:shadow-lg transition-smooth w-full mb-2">
 
-                {/* Header */}
-                <div className="mb-3">
-                  <h3
-                    className="text-xl font-bold text-primary mb-1"
-                    style={{ fontFamily: "Playfair Display, serif" }}
-                  >
-                    {exp.title}
-                  </h3>
-                  <p className="text-base font-semibold text-gray-800 mb-2">{exp.company}</p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-bold text-primary mb-0.5">{role.title}</h3>
+                  <p className="text-base font-semibold text-gray-800">{role.company}</p>
+                  <p className="text-sm text-gray-400 mb-3">{role.type} · {role.period}</p>
 
-                  {/* Meta */}
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar size={14} className="text-primary" />
-                      <span>{exp.period}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <MapPin size={14} className="text-primary" />
-                      <span>{exp.location}</span>
-                    </div>
+                  {/* Badges de métricas */}
+                  <div className="flex flex-wrap gap-2">
+                    {role.metrics.map((m) => (
+                      <span
+                        key={m}
+                        className="text-xs font-semibold px-3 py-1 rounded-full"
+                        style={{ background: "#e8f0fb", color: "#0F3A66" }}
+                      >
+                        {m}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">
-                  {exp.description}
-                </p>
-
-                {/* Achievements */}
-                <ul className="space-y-1.5">
-                  {exp.achievements.map((achievement, i) => (
+                <ul className="space-y-2">
+                  {role.achievements.map((a, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
                       <span className="text-primary font-bold mt-0.5 shrink-0">✓</span>
-                      <span>{achievement}</span>
+                      <span>{a}</span>
                     </li>
                   ))}
                 </ul>
@@ -235,35 +159,29 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* Summary Stats */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-          <div className="text-center">
-            <div
-              className="text-4xl font-bold text-primary mb-2"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              20+
+        {/* Trayectoria financiera colapsable */}
+        <div className="mt-12 border-t border-gray-200 pt-8">
+          <button
+            onClick={() => setShowHistorical(!showHistorical)}
+            className="flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-primary transition-smooth"
+          >
+            {showHistorical ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            Trayectoria financiera anterior ({historicalRoles.length} cargos)
+          </button>
+
+          {showHistorical && (
+            <div className="mt-6 space-y-3">
+              {historicalRoles.map((role) => (
+                <div key={role.title} className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 border-b border-gray-100 last:border-0">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-700">{role.title}</p>
+                    <p className="text-sm text-gray-500">{role.company}</p>
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1 sm:mt-0 sm:text-right shrink-0">{role.period}</p>
+                </div>
+              ))}
             </div>
-            <p className="text-gray-600">Años de Experiencia</p>
-          </div>
-          <div className="text-center">
-            <div
-              className="text-4xl font-bold text-primary mb-2"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              10
-            </div>
-            <p className="text-gray-600">Organizaciones de Alto Impacto</p>
-          </div>
-          <div className="text-center">
-            <div
-              className="text-4xl font-bold text-primary mb-2"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              COP $2B+
-            </div>
-            <p className="text-gray-600">Presupuestos Gestionados</p>
-          </div>
+          )}
         </div>
 
       </div>
