@@ -1,111 +1,61 @@
-/**
- * About Section Component
- *
- * Diseño: Minimalismo Corporativo Elegante
- * - Fondo blanco, letras oscuras
- * - Mismo estilo que HomeIntro
- */
 export default function About() {
-  const stats = [
-    { value: "15+", label: "Años de experiencia" },
-    { value: "4", label: "Países — Proyecto BID" },
-    { value: "$2.000M+", label: "Presupuestos gestionados" },
-    { value: "4", label: "ONGs internacionales" },
-  ];
-
-  const pillars = [
-    "Ingeniería Financiera",
-    "Maestría en Mercadeo",
-    "Sector Social Internacional",
-    "Fintech & BID",
-    "SAP · Power BI · CRM",
-    "SECOP II",
-  ];
-
   return (
-    <section id="perfil" className="py-16 md:py-24 bg-white">
-      <div className="container max-w-4xl mx-auto px-4">
+    <section id="about" className="py-16 md:py-24 bg-white">
+      <div className="container max-w-3xl mx-auto px-6">
 
-        {/* Heading */}
-        <h2
-          className="text-4xl md:text-5xl font-bold text-gray-800 mb-8"
-          style={{ fontFamily: "Playfair Display, serif" }}
-        >
-          Sobre mí
-        </h2>
+        <h2 className="mb-8">Sobre mí</h2>
 
-        {/* Descripción principal */}
-        <div className="space-y-5 text-gray-700 mb-10">
+        <div className="space-y-6 text-gray-700">
+
           <p className="text-lg leading-relaxed">
-            Soy <span className="font-semibold text-primary">Giovani Sánchez V.</span>,{" "}
-            <span className="font-semibold text-gray-800">Ingeniero Financiero con Maestría en Mercadeo</span>,
-            con más de <span className="font-semibold text-gray-800">15 años</span> liderando estrategias
-            comerciales, financieras y de marketing en organizaciones de alto impacto:{" "}
-            <span className="font-semibold text-gray-800">Save the Children International, Habitat for Humanity,
-            Fundación PLAN, Aldeas Infantiles y Grupo Aval.</span>
+            Soy Gerente de Marketing y Fundraising con más de 15 años liderando
+            estrategias de captación, retención y crecimiento de ingresos en el sector
+            social y la cooperación internacional. Mi formación combina
+            <strong> Ingeniería Financiera</strong> y
+            <strong> Maestría en Marketing de la Universidad Externado de Colombia</strong> —
+            una combinación que me permite diseñar campañas con rigor comercial y
+            sustentarlas con la misma disciplina cuantitativa de un analista financiero.
           </p>
 
           <p className="text-lg leading-relaxed">
-            Lideré el desarrollo de la{" "}
-            <span className="font-semibold text-gray-800">Plataforma Regional de Economía Circular</span>{" "}
-            financiada por el BID y la Alcaldía de Bogotá — con alcance en Colombia, Ecuador, Perú y Chile —
-            logrando 58 empresas activas en su primera fase.
+            En organizaciones como Save the Children, Fundación PLAN, Habitat for Humanity
+            y Aldeas Infantiles SOS, he gestionado carteras de hasta
+            <strong> 35.000 donantes activos</strong> con recaudaciones anuales superiores a
+            <strong> COP $1.800 millones</strong> y tasas de retención sostenidas por encima del
+            <strong> 85%</strong>, el doble del promedio del sector nonprofit colombiano.
+            En 2024 lideré como único responsable de marketing el Marketplace de Economía
+            Circular del BID en Bogotá, Quito, Lima y Santiago de Chile.
           </p>
 
-              <p className="text-lg leading-relaxed">
-            Mi enfoque es simple:{" "}
-            <span className="font-semibold text-gray-800">análisis riguroso + visión estratégica + ejecución real.</span>{" "}
-            Sin fórmulas genéricas — solo soluciones que generan{" "}
-            <span className="font-semibold text-gray-800">crecimiento sostenible</span>.
+          <p className="text-lg leading-relaxed">
+            Al concluir el proyecto con el BID tomé una decisión deliberada: antes de volver
+            al mercado quería actualizar mi perfil con las competencias que el sector está
+            exigiendo en 2026. En 18 meses obtuve
+            <strong> 18 certificaciones</strong> en IA generativa (Anthropic, Google Gemini),
+            analítica digital (Google Analytics), contratación pública (SECOP II en sus 6
+            niveles), SAP ERP y gestión presupuestal (Universidad Nacional de Colombia).
+            Hoy llego con un perfil más competitivo que cuando salí.
           </p>
+
         </div>
 
-        {/* Pills de especialidades */}
-        <div className="flex flex-wrap gap-2 mb-10">
-          {pillars.map((p) => (
-            <span
-              key={p}
-              className="text-sm font-medium px-4 py-1.5 rounded-full"
-              style={{
-                background: '#f4f7fd',
-                color: '#0d1b3e',
-                border: '1px solid rgba(74,127,212,0.2)'
-              }}
-            >
-              {p}
-            </span>
-          ))}
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 rounded-xl p-6"
-          style={{ background: '#f4f7fd', border: '1px solid rgba(74,127,212,0.15)' }}>
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-3xl font-bold mb-1"
-                style={{ fontFamily: "Playfair Display, serif", color: '#0d1b3e' }}>
-                {stat.value}
-              </p>
-              <p className="text-gray-500 text-sm">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex gap-4 flex-wrap">
+        <div className="mt-10 flex flex-col sm:flex-row gap-4">
           <a
-            href="/servicios"
-            className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
+            href="/cv.pdf"
+            download
+            className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold
+                       py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
           >
-            Conoce mis servicios
+            Descargar mi CV
           </a>
           <a
-            href="https://www.linkedin.com/in/giovani-sanchez/"
+            href="https://www.linkedin.com/in/giovanisanchezv"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200"
+            className="inline-block border border-primary text-primary hover:bg-primary
+                       hover:text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200"
           >
-            Ver LinkedIn
+            Ver LinkedIn →
           </a>
         </div>
 
