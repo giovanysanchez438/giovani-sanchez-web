@@ -1,75 +1,17 @@
-/**
- * Home Intro Component
- * 
- * Diseño: Minimalismo Corporativo Elegante
- * - Conserva el estilo original de texto centrado
- * - Títulos académicos como diferencial
- * - Texto conciso y directo
- */
 export default function HomeIntro() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container max-w-3xl mx-auto">
-        <div className="text-center space-y-6">
+    <section className="py-16 md:py-20 bg-white border-b border-gray-100">
+      <div className="container max-w-3xl mx-auto px-6 text-center">
 
-          {/* Propuesta de valor con títulos académicos */}
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            Soy <span className="font-semibold text-primary">Giovani Sánchez V.</span>,{" "}
-            <span className="font-semibold">Ingeniero Financiero y Magíster en Marketing</span>,
-            con <span className="font-semibold">+15 años de experiencia</span> ayudando a empresas
-            y organizaciones a crecer con <span className="font-semibold">estrategia financiera</span>{" "}
-            y <span className="font-semibold">visión de mercado</span>.
-          </p>
+        <p className="text-2xl md:text-3xl font-semibold text-[#0F3A66] leading-snug mb-4">
+          "Muchos marketers no saben de números.
+          <br className="hidden sm:block" /> Muchos financieros no saben de mercado."
+        </p>
 
-          {/* Frase diferenciadora */}
-          <p className="text-base md:text-lg text-gray-500 leading-relaxed italic">
-            "Muchos marketers no saben de números. Muchos financieros no saben de mercado."
-          </p>
+        <p className="text-base md:text-lg text-gray-500 leading-relaxed">
+          Yo hablo los dos idiomas.
+        </p>
 
-          {/* Diferencial académico explicado */}
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            Una combinación poco común: el{" "}
-            <span className="font-semibold">rigor del análisis financiero</span> con la{" "}
-            <span className="font-semibold">creatividad y orientación al cliente del marketing</span>.
-            He aplicado esta visión en los sectores{" "}
-            <span className="font-semibold">privado, público y sin ánimo de lucro</span>{" "}
-            para generar <span className="font-semibold">crecimiento sostenible</span>.
-          </p>
-
-          {/* Servicios como pills sutiles */}
-          <div className="flex flex-wrap justify-center gap-3 pt-2">
-            {["Finanzas Corporativas", "Fundraising & ONG", "Estrategia Empresarial", "Desarrollo Comercial"].map((s) => (
-              <span
-                key={s}
-                className="text-sm font-medium px-4 py-1.5 rounded-full"
-                style={{
-                  background: '#f4f7fd',
-                  color: '#0d1b3e',
-                  border: '1px solid rgba(74,127,212,0.2)'
-                }}
-              >
-                {s}
-              </span>
-            ))}
-          </div>
-
-          {/* CTAs */}
-          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contacto"
-              className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
-            >
-              Solicitar Consultoría
-            </a>
-            <a
-              href="/servicios"
-              className="inline-block border border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200"
-            >
-              Ver servicios →
-            </a>
-          </div>
-
-        </div>
       </div>
     </section>
   );
