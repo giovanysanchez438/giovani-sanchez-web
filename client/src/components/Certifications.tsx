@@ -1,248 +1,118 @@
-import { Award, Calendar, Building2, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import { Sparkles, FileText, Users } from "lucide-react";
 
-/**
- * Certifications Section Component
- * 
- * Diseño: Minimalismo Corporativo Elegante
- * - Tarjetas de certificaciones sin imágenes
- * - Información clara y profesional
- * - Grid responsivo
- * - Iconos y badges
- */
-
-interface Certification {
-  id: string;
-  title: string;
-  issuer: string;
-  date: string;
-  category: "certification" | "diploma" | "specialization";
-}
-
-const mainCertifications: Certification[] = [
-  {
-    id: "maestria",
-    title: "Maestría en Mercadeo",
-    issuer: "Universidad Externado de Colombia",
-    date: "2018 - 2020",
-    category: "diploma",
-  },
-  {
-    id: "ingenieria-financiera",
-    title: "Ingeniero Financiero",
-    issuer: "Universidad Piloto de Colombia",
-    date: "2003 - 2009",
-    category: "diploma",
-  },
-  {
-    id: "diplomado-presupuestal",
-    title: "Diplomado Control y Gestión Presupuestal",
-    issuer: "Universidad Nacional de Colombia",
-    date: "2025",
-    category: "diploma",
-  },
-  {
-    id: "diplomado-contabilidad",
-    title: "Diplomado Normas Internacionales de Contabilidad y Financieras",
-    issuer: "Universidad Piloto de Colombia",
-    date: "2011 - 2012",
-    category: "diploma",
-  },
+const tabs = [
+  { id: "ia", label: "IA y Analítica", icon: <Sparkles size={15} /> },
+  { id: "contratacion", label: "Contratación y Finanzas", icon: <FileText size={15} /> },
+  { id: "liderazgo", label: "Liderazgo", icon: <Users size={15} /> },
 ];
 
-const additionalCertifications: Certification[] = [
-  {
-    id: "diplomado-mercado-capitales",
-    title: "Diplomado Mercado de Capitales",
-    issuer: "Universidad Piloto de Colombia",
-    date: "2009",
-    category: "diploma",
-  },
-  {
-    id: "secop-ii",
-    title: "Especialista SECOP II - Niveles 1 al 6",
-    issuer: "Colombia Compra Eficiente",
-    date: "Febrero 2026",
-    category: "specialization",
-  },
-  {
-    id: "google-analytics",
-    title: "Google Analytics Certification",
-    issuer: "Google Skillshop",
-    date: "2026",
-    category: "certification",
-  },
-  {
-    id: "sap-erp",
-    title: "SAP ERP Certification",
-    issuer: "Cafam",
-    date: "2026",
-    category: "certification",
-  },
-  {
-    id: "marketing-ia",
-    title: "Marketing Digital con énfasis en IA",
-    issuer: "CUN",
-    date: "2023",
-    category: "certification",
-  },
-  {
-    id: "gemini-ia",
-    title: "Domina la IA con Gemini",
-    issuer: "Google",
-    date: "2025",
-    category: "certification",
-  },
-  {
-    id: "data-analyst",
-    title: "Data Analyst: Técnicas y Herramientas de Informes",
-    issuer: "LinkedIn Learning",
-    date: "2021",
-    category: "certification",
-  },
-  {
-    id: "gerencia-riesgos",
-    title: "Gerencia de Presupuesto y Manejo de Riesgos",
-    issuer: "Save the Children International",
-    date: "2017",
-    category: "certification",
-  },
-  {
-    id: "congresos-fundraising",
-    title: "Congresos Internacionales de Fundraising",
-    issuer: "Colombia, Argentina, India",
-    date: "2016 - 2017",
-    category: "specialization",
-  },
-];
-
-const getCategoryBadge = (category: string) => {
-  switch (category) {
-    case "diploma":
-      return { label: "Diploma", color: "bg-blue-100 text-blue-700" };
-    case "specialization":
-      return { label: "Especialización", color: "bg-purple-100 text-purple-700" };
-    case "certification":
-      return { label: "Certificación", color: "bg-green-100 text-green-700" };
-    default:
-      return { label: "Certificación", color: "bg-gray-100 text-gray-700" };
-  }
+const certifications: Record<string, { title: string; issuer: string; date: string; featured?: boolean }[]> = {
+  ia: [
+    { title: "Introduction to Agent Skills", issuer: "Anthropic", date: "Abr. 2026", featured: true },
+    { title: "Claude Code 101", issuer: "Anthropic", date: "Abr. 2026", featured: true },
+    { title: "Claude 101", issuer: "Anthropic", date: "Abr. 2026", featured: true },
+    { title: "Domina la IA con Gemini", issuer: "Google", date: "Jul. 2025" },
+    { title: "Google Analytics Certification", issuer: "Google Skillshop", date: "Feb. 2026" },
+    { title: "Aumentar Ventas Offline", issuer: "Google Skillshop", date: "Feb. 2026" },
+    { title: "SAP ERP", issuer: "Cafam", date: "Ene. 2026" },
+  ],
+  contratacion: [
+    { title: "Especialista SECOP II — Nivel 1", issuer: "Colombia Compra Eficiente", date: "Ene. 2026" },
+    { title: "Especialista SECOP II — Nivel 2", issuer: "Colombia Compra Eficiente", date: "Ene. 2026" },
+    { title: "Especialista SECOP II — Nivel 3", issuer: "Colombia Compra Eficiente", date: "Ene. 2026" },
+    { title: "Especialista SECOP II — Nivel 4", issuer: "Colombia Compra Eficiente", date: "Feb. 2026" },
+    { title: "Especialista SECOP II — Nivel 5", issuer: "Colombia Compra Eficiente", date: "Feb. 2026" },
+    { title: "Especialista SECOP II — Nivel 6", issuer: "Colombia Compra Eficiente", date: "Feb. 2026" },
+    { title: "Planeación y Gestión de Finanzas Personales", issuer: "Universidad Piloto de Colombia", date: "Feb. 2026" },
+  ],
+  liderazgo: [
+    { title: "Alto Impacto en Procesos de Selección Alta Gerencia", issuer: "Colsubsidio / Xposible", date: "Sept. 2025" },
+    { title: "Comunicación Asertiva para Líderes", issuer: "Colsubsidio / Xposible", date: "Sept. 2025" },
+    { title: "Inglés Práctico Conversacional", issuer: "Colsubsidio / Xposible", date: "Ago. 2025" },
+  ],
 };
 
+const academicFormation = [
+  { title: "Maestría en Marketing", issuer: "Universidad Externado de Colombia", date: "2018 – 2020" },
+  { title: "Ingeniería Financiera", issuer: "Universidad Piloto de Colombia", date: "2003 – 2009" },
+  { title: "Diplomado Control y Gestión Presupuestal", issuer: "Universidad Nacional de Colombia", date: "2025" },
+  { title: "Diplomado en Mercado de Capitales", issuer: "Universidad Piloto de Colombia", date: "2009" },
+  { title: "Diplomado en NIIF", issuer: "Universidad Piloto de Colombia", date: "2011 – 2012" },
+];
+
 export default function Certifications() {
+  const [activeTab, setActiveTab] = useState("ia");
+
   return (
-    <section id="certificaciones" className="py-20 md:py-32 bg-white">
-      <div className="container">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
-            Certificaciones y Formación
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Credenciales profesionales y formación continua que respaldan mi expertise en finanzas, marketing y gestión empresarial
+    <section id="certificaciones" className="py-20 md:py-28 bg-gray-50">
+      <div className="container max-w-4xl mx-auto px-6">
+
+        <div className="mb-10">
+          <h2 className="mb-3">Actualización 2026</h2>
+          <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
+            18 certificaciones obtenidas entre enero 2025 y abril 2026, en las áreas que el sector
+            exige hoy: IA generativa, analítica digital, contratación pública y liderazgo directivo.
           </p>
         </div>
 
-        {/* Main Certifications Grid */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold text-foreground mb-8" style={{fontFamily: 'Playfair Display, serif'}}>
-            Certificaciones Principales
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {mainCertifications.map((cert) => {
-              const badge = getCategoryBadge(cert.category);
-              return (
-                <div
-                  key={cert.id}
-                  className="bg-white border border-gray-200 rounded-lg p-6 card-shadow hover:shadow-lg hover:border-primary transition-smooth duration-300"
-                >
-                  {/* Header with Icon and Badge */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-3 bg-blue-50 rounded-lg">
-                        <Award size={24} className="text-primary" />
-                      </div>
-                      <span className={`text-xs font-semibold px-3 py-1 rounded-full ${badge.color}`}>
-                        {badge.label}
-                      </span>
-                    </div>
-                  </div>
+        {/* Tabs */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-smooth duration-200 ${
+                activeTab === tab.id
+                  ? "bg-primary text-white shadow-sm"
+                  : "bg-white border border-gray-200 text-gray-500 hover:border-primary hover:text-primary"
+              }`}
+            >
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
+        </div>
 
-                  {/* Title */}
-                  <h4 className="text-lg font-bold text-foreground mb-3" style={{fontFamily: 'Playfair Display, serif'}}>
-                    {cert.title}
-                  </h4>
-
-                  {/* Issuer and Date */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                      <Building2 size={16} className="text-primary flex-shrink-0" />
-                      <span>{cert.issuer}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                      <Calendar size={16} className="text-primary flex-shrink-0" />
-                      <span>{cert.date}</span>
-                    </div>
-                  </div>
+        {/* Cert list */}
+        <div className="bg-white rounded-lg border border-gray-200 divide-y divide-gray-100">
+          {certifications[activeTab].map((cert) => (
+            <div
+              key={cert.title}
+              className={`flex items-center justify-between px-6 py-4 ${cert.featured ? "bg-blue-50/60" : ""}`}
+            >
+              <div className="flex items-center gap-3">
+                {cert.featured && (
+                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-primary text-white shrink-0">
+                    IA
+                  </span>
+                )}
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">{cert.title}</p>
+                  <p className="text-xs text-gray-400">{cert.issuer}</p>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+              <p className="text-xs text-gray-400 shrink-0 ml-4">{cert.date}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Additional Certifications */}
-        <div className="bg-gray-50 rounded-lg p-8 md:p-12">
-          <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3" style={{fontFamily: 'Playfair Display, serif'}}>
-            <Award size={28} className="text-primary" />
-            Otras Certificaciones y Formación
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {additionalCertifications.map((cert) => {
-              const badge = getCategoryBadge(cert.category);
-              return (
-                <div key={cert.id} className="flex gap-4">
-                  {/* Checkmark */}
-                  <div className="flex-shrink-0 pt-1">
-                    <CheckCircle size={20} className="text-primary" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h4 className="font-semibold text-foreground">{cert.title}</h4>
-                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${badge.color}`}>
-                        {badge.label}
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-1">{cert.issuer}</p>
-                    <p className="text-xs text-gray-500">{cert.date}</p>
-                  </div>
+        {/* Formación académica */}
+        <div className="mt-14">
+          <h3 className="text-lg font-bold text-gray-700 mb-6">Formación académica</h3>
+          <div className="space-y-3">
+            {academicFormation.map((item) => (
+              <div key={item.title} className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 border-b border-gray-100 last:border-0">
+                <div>
+                  <p className="text-sm font-semibold text-gray-700">{item.title}</p>
+                  <p className="text-sm text-gray-400">{item.issuer}</p>
                 </div>
-              );
-            })}
+                <p className="text-xs text-gray-400 mt-1 sm:mt-0 shrink-0">{item.date}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Summary Stats */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
-              10+
-            </div>
-            <p className="text-gray-600">Certificaciones</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
-              1
-            </div>
-            <p className="text-gray-600">Maestría</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
-              Continua
-            </div>
-            <p className="text-gray-600">Formación</p>
-          </div>
-        </div>
       </div>
     </section>
   );
