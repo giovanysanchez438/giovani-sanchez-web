@@ -1,120 +1,92 @@
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
-
-/**
- * Contact Section Component
- * 
- * Diseño: Minimalismo Corporativo Elegante
- * - Información de contacto clara
- * - Enlaces a redes sociales
- * - Footer con información legal
- */
+import { Mail, Phone, MapPin, Linkedin, Download } from "lucide-react";
 
 export default function Contact() {
   return (
     <>
-      {/* Contact Section */}
-      <section id="contacto" className="py-20 md:py-32 bg-gray-50">
-        <div className="container">
-          {/* Heading */}
-          <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
-            Contacto
-          </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              ¿Tienes una pregunta o necesitas asesoría? Me encantaría hablar contigo.
+      <section id="contact" className="py-20 md:py-28 bg-white">
+        <div className="container max-w-3xl mx-auto px-6">
+
+          <div className="mb-12">
+            <h2 className="mb-4">Contacto</h2>
+            <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
+              Estoy abierto a oportunidades de tiempo completo como Gerente de Marketing y
+              Fundraising en ONGs internacionales, fundaciones corporativas y organismos de
+              cooperación. También atiendo consultorías puntuales alineadas a mi experiencia sectorial.
             </p>
           </div>
 
-          {/* Contact Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            {/* Email */}
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="p-3 bg-white rounded-lg">
-                  <Mail className="w-8 h-8 text-primary" />
-                </div>
-              </div>
-              <h3 className="font-bold text-foreground mb-2" style={{fontFamily: 'Playfair Display, serif'}}>Email</h3>
-              <a
-                href="mailto:consulting@giovanisanchezv.com"
-                className="text-gray-600 hover:text-primary transition-smooth"
-              >
-                consulting@giovanisanchezv.com
-              </a>
-            </div>
-
-            {/* Phone */}
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="p-3 bg-white rounded-lg">
-                  <Phone className="w-8 h-8 text-primary" />
-                </div>
-              </div>
-              <h3 className="font-bold text-foreground mb-2" style={{fontFamily: 'Playfair Display, serif'}}>Teléfono</h3>
-              <a
-                href="tel:+573123344130"
-                className="text-gray-600 hover:text-primary transition-smooth"
-              >
-                +57 (312) 334-4130
-              </a>
-            </div>
-
-            {/* LinkedIn */}
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="p-3 bg-white rounded-lg">
-                  <Linkedin className="w-8 h-8 text-primary" />
-                </div>
-              </div>
-              <h3 className="font-bold text-foreground mb-2" style={{fontFamily: 'Playfair Display, serif'}}>LinkedIn</h3>
-              <a
-                href="https://linkedin.com/in/giovani-sanchez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-smooth"
-              >
-                Conecta conmigo
-              </a>
-            </div>
-          </div>
-
-          {/* Contact Form CTA */}
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">
-              O déjame un mensaje y me pondré en contacto pronto
-            </p>
+          {/* CTAs principales */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-14">
             <a
-              href="mailto:consulting@giovanisanchezv.com?subject=Solicitud de Consultoría"
-              className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
+              href="/cv.pdf"
+              download
+              className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-blue-800
+                         text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
             >
-              Enviar Mensaje
+              <Download size={16} />
+              Descargar mi CV
+            </a>
+            <a
+              href="mailto:giovanysanchez438@gmail.com?subject=Oportunidad laboral"
+              className="inline-flex items-center justify-center gap-2 border border-primary text-primary
+                         hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200"
+            >
+              Escribirme
             </a>
           </div>
+
+          {/* Datos de contacto */}
+          <div className="space-y-5 border-t border-gray-100 pt-10">
+            <div className="flex items-center gap-4">
+              <div className="p-2.5 bg-blue-50 rounded-lg shrink-0">
+                <Mail className="w-5 h-5 text-primary" />
+              </div>
+              <a href="mailto:giovanysanchez438@gmail.com"
+                 className="text-gray-700 hover:text-primary transition-smooth">
+                giovanysanchez438@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="p-2.5 bg-blue-50 rounded-lg shrink-0">
+                <Phone className="w-5 h-5 text-primary" />
+              </div>
+              <a href="tel:+573123344130"
+                 className="text-gray-700 hover:text-primary transition-smooth">
+                +57 312 334 4130
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="p-2.5 bg-blue-50 rounded-lg shrink-0">
+                <Linkedin className="w-5 h-5 text-primary" />
+              </div>
+              <a href="https://www.linkedin.com/in/giovanisanchezv"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-gray-700 hover:text-primary transition-smooth">
+                linkedin.com/in/giovanisanchezv
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="p-2.5 bg-blue-50 rounded-lg shrink-0">
+                <MapPin className="w-5 h-5 text-primary" />
+              </div>
+              <span className="text-gray-700">Bogotá, Colombia</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-primary text-white py-8">
-        <div className="container">
+      <footer className="bg-[#0F3A66] text-white py-8">
+        <div className="container max-w-5xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Left */}
             <div className="text-center md:text-left">
-              <p className="font-bold mb-1" style={{fontFamily: 'Playfair Display, serif'}}>Giovani Sánchez V.</p>
-              <p className="text-sm text-blue-100">
-                Ingeniero Financiero | Máster en Mercadeo | Estrategia, Finanzas y Liderazgo
+              <p className="font-bold mb-1">Giovani Sánchez Vargas</p>
+              <p className="text-sm text-blue-200">
+                Gerente de Marketing y Fundraising | Sector Social y Nonprofit
               </p>
             </div>
-
-            {/* Right */}
-            <div className="flex items-center gap-6 text-sm text-blue-100">
-              <a href="#" className="hover:text-white transition-smooth">
-                Privacidad
-              </a>
-              <a href="#" className="hover:text-white transition-smooth">
-                Términos
-              </a>
-              <p>© 2026 Giovani Sanchez V. Todos los derechos reservados.</p>
-            </div>
+            <p className="text-sm text-blue-200">© 2026 Giovani Sánchez Vargas</p>
           </div>
         </div>
       </footer>
