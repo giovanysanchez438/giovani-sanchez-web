@@ -1,43 +1,63 @@
-/**
- * Hero Section Component
- * 
- * Diseño: Minimalismo Corporativo Elegante
- * - Imagen de fondo profesional con overlay
- * - Título y subtítulo claros
- * - Call-to-action prominente
- * - Texto blanco sobre fondo oscuro
- */
-
 export default function Hero() {
-  const heroImageUrl = "https://private-us-east-1.manuscdn.com/sessionFile/I1g2OKY8Wx2Uola4rJYRpN/sandbox/lp4B5j2xAjFcvn06pm0C0a-img-1_1772125290000_na1fn_aGVyby1iYWNrZ3JvdW5k.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvSTFnMk9LWThXeDJVb2xhNHJKWVJwTi9zYW5kYm94L2xwNEI1ajJ4QWpGY3ZuMDZwbTBDMGEtaW1nLTFfMTc3MjEyNTI5MDAwMF9uYTFmbl9hR1Z5YnkxaVlXTnJaM0p2ZFc1ay5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=V~ykazX2s6CylSnonQzZuYRqPNh2cz0EIh~LgoNZE8UFE4SvZ9A0WDR92XEqwcDMgv3qtOFCzNRk3Hp6iGuNBF289BJPg-M4ukMCZ8U-TFMF7OjSJBV3Twgr2sBbnqtorzr0eRAQoliJpZSIpzbZvV5kE3ZYHsJ32eyGMebhOi-O~yb5s1B9kh0Dto7BkilR6i8uvC3v6d4FJ4166coflaR4tI8jhAYZtXGasvhNZZ7cHnVDREJjul9zkpmO2mnUU3hckUIlRVqjjfm1wlGhoLUSh8QLt2ZrtfdWtR2DFdQeiC9Ywln6AeNXoBAa~SEQCzazIo12K7C5PtuC8JtmAA__";
-
   return (
-    <section className="relative w-full h-screen md:h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('${heroImageUrl}')`,
-        }}
-      />
+    <section
+      className="w-full flex items-center justify-center py-24 md:py-32"
+      style={{ backgroundColor: "#0F3A66" }}
+    >
+      <div className="container px-6 max-w-4xl mx-auto text-center text-white">
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
-
-      {/* Content */}
-      <div className="relative z-10 container text-center text-white px-4">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 leading-tight text-white" style={{fontFamily: 'Montserrat, sans-serif', fontWeight: '600', textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
-  Giovani Sánchez V.
-</h1>
-        <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-2xl mx-auto">
-          Consultoría profesional en finanzas, fundraising, estrategia y desarrollo empresarial
+        <p className="text-sm md:text-base font-semibold tracking-widest uppercase text-blue-200 mb-6">
+          Gerente de Marketing y Fundraising · Sector Social y Nonprofit
         </p>
-        <a
-          href="/contacto"
-          className="inline-block bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-smooth duration-200 hover:shadow-lg"
-        >
-          Contáctame
-        </a>
+
+        <h1 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-white mb-6">
+          Estrategia de captación, CRM y crecimiento de ingresos con ROI financiero.
+        </h1>
+
+        <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+          He gestionado 83.500 donantes activos y recaudado más de COP&nbsp;$5.200 millones para
+          Save the Children, Fundación PLAN, Habitat for Humanity y Aldeas Infantiles SOS.
+          Combino Ingeniería Financiera con Maestría en Marketing del Externado para diseñar
+          fundraising con ROI medible.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a
+            href="/cv.pdf"
+            download
+            className="inline-block bg-white text-[#0F3A66] font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition-smooth duration-200 shadow-md hover:shadow-lg"
+          >
+            Descargar mi CV
+          </a>
+          <a
+            href="#contact"
+            className="inline-block border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-smooth duration-200"
+          >
+            Contactar
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-white/20 pt-10">
+          <div className="text-center">
+            <p className="text-4xl md:text-5xl font-bold text-white mb-1">+15</p>
+            <p className="text-xs md:text-sm text-blue-200 uppercase tracking-wide leading-snug">
+              años liderando marketing y fundraising en el sector social
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-4xl md:text-5xl font-bold text-white mb-1">83.500</p>
+            <p className="text-xs md:text-sm text-blue-200 uppercase tracking-wide leading-snug">
+              donantes activos gestionados en carrera
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-4xl md:text-5xl font-bold text-white mb-1">$5.200M</p>
+            <p className="text-xs md:text-sm text-blue-200 uppercase tracking-wide leading-snug">
+              COP recaudados acumulados
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
   );
