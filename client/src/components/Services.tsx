@@ -11,9 +11,9 @@ const areas = [
   {
     id: "crm",
     icon: <Users className="w-8 h-8 text-primary" strokeWidth={1.5} />,
-    title: "Gestión CRM y Retención de Donantes",
+    title: "Gestión CRM, Retención y LTV de Donantes",
     description:
-      "Administración de carteras de hasta 35.000 donantes con retención sostenida superior al 85%.",
+      "Administración de carteras de hasta 35.000 donantes con retención y valor de vida (LTV) sostenidos por encima del 85%.",
   },
   {
     id: "alianzas",
