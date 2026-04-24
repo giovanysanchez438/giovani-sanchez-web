@@ -23,6 +23,21 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <a
+            href="/cv.pdf"
+            download
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "cv_download", {
+                  event_category: "engagement",
+                  event_label: "hero_button",
+                });
+              }
+            }}
+            className="inline-block bg-white text-[#0F3A66] font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition-smooth duration-200 shadow-md hover:shadow-lg"
+          >
+            Descargar mi CV
+          </a>
+          <a
             href="#contact"
             className="inline-block border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-smooth duration-200"
           >
