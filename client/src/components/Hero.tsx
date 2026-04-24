@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="container px-6 max-w-4xl mx-auto text-center text-white">
 
         <p className="text-sm md:text-base font-semibold tracking-widest uppercase text-blue-200 mb-6">
-          Gerente de Marketing y Fundraising · Sector Social y Nonprofit
+          Estrategia en Fundraising y Sostenibilidad · ONGs y Cooperación Internacional
         </p>
 
         <h1 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-white mb-6">
