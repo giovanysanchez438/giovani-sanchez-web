@@ -1,18 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import TrustBar from "@/components/TrustBar";
 import HomeIntro from "@/components/HomeIntro";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Experience from "@/components/Experience";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
-
-/**
- * Home Page
- * 
- * Diseño: Minimalismo Corporativo Elegante
- * 
- * Estructura:
- * 1. Header - Navegación
- * 2. Hero - Sección principal con CTA
- * 3. Contact - Footer
- */
 
 export default function Home() {
   return (
@@ -20,7 +14,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <TrustBar />
         <HomeIntro />
+        <About />
+        <Services />
+        <Experience />
+        <Certifications />
       </main>
       <Contact />
     </div>
