@@ -2,15 +2,13 @@ import Header from "@/components/Header";
 import Contact from "@/components/Contact";
 
 /**
- * Página /servicios
+ * Página /servicios — versión integrada con el design system del sitio
  *
- * Estructura coherente con Home.tsx:
- *  - Header arriba
- *  - <main> con todas las secciones
- *  - Contact (footer) al final
- *
- * Tono: primera persona singular. Coherente con dossier ejecutivo.
- * Paleta: navy (#0a2540) + crema/blanco + acentos azul claro.
+ * Usa las variables CSS y clases que ya existen en index.css:
+ *  - --primary (#0F3A66) en lugar de inventar colores
+ *  - .container para anchos coherentes
+ *  - Hereda Playfair Display para h1/h2/h3 automáticamente
+ *  - Usa Inter para cuerpo (heredado del body)
  */
 
 export default function Servicios() {
@@ -19,7 +17,7 @@ export default function Servicios() {
       <Header />
       <main className="flex-grow">
         {/* ============== HERO ============== */}
-        <section className="relative overflow-hidden bg-[#0a2540] text-white w-full">
+        <section className="relative overflow-hidden bg-[var(--primary)]">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
             <div
               className="absolute inset-0"
@@ -31,32 +29,32 @@ export default function Servicios() {
             />
           </div>
 
-          <div className="relative max-w-6xl mx-auto px-6 lg:px-12 pt-24 pb-28 lg:pt-32 lg:pb-36">
+          <div className="container relative py-24 lg:py-32">
             <p className="text-xs lg:text-sm tracking-[0.3em] font-medium text-[#7eb6e6] mb-8 uppercase">
               Consultoría · Sector Social · Latinoamérica
             </p>
 
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-8 max-w-4xl !text-white">
+            <h1 className="!text-white max-w-4xl mb-8">
               Acompaño a tu organización a captar fondos con visión financiera y
               estrategia medible.
             </h1>
 
-            <p className="text-lg lg:text-xl !text-[#c8dcef] leading-relaxed max-w-3xl mb-10">
-              Combino 15+ años en marketing y fundraising con formación en ingeniería
-              financiera para diseñar programas de captación que sí funcionan en
-              cifras, no solo en presentación.
+            <p className="text-lg lg:text-xl text-[#c8dcef] leading-relaxed max-w-3xl mb-10">
+              Combino 15+ años en marketing y fundraising con formación en
+              ingeniería financiera para diseñar programas de captación que sí
+              funcionan en cifras, no solo en presentación.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#contacto"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white !text-[#0a2540] font-semibold rounded-sm hover:bg-[#c8dcef] transition-colors"
+                href="#contacto-cta"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white !text-[var(--primary)] font-semibold rounded-md hover:bg-[#c8dcef] transition-colors"
               >
                 Conversemos
               </a>
               <a
                 href="#pilares"
-                className="inline-flex items-center justify-center px-8 py-4 border border-white/30 !text-white font-semibold rounded-sm hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 border border-white/30 !text-white font-semibold rounded-md hover:bg-white/10 transition-colors"
               >
                 Ver cómo trabajo
               </a>
@@ -65,48 +63,56 @@ export default function Servicios() {
         </section>
 
         {/* ============== DIFERENCIADORES ============== */}
-        <section className="py-20 lg:py-24 px-6 lg:px-12 max-w-6xl mx-auto w-full">
-          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
-            <div>
-              <div className="text-5xl font-serif text-[#0a2540] mb-3">01</div>
-              <h3 className="font-serif text-xl text-[#0a2540] mb-3">Cifras antes que opiniones</h3>
-              <p className="text-[#475569] leading-relaxed">
-                Cada estrategia parte de un diagnóstico financiero del programa de
-                captación. No diseño campañas sin saber primero el ROI esperado.
-              </p>
-            </div>
-            <div>
-              <div className="text-5xl font-serif text-[#0a2540] mb-3">02</div>
-              <h3 className="font-serif text-xl text-[#0a2540] mb-3">Trayectoria verificable</h3>
-              <p className="text-[#475569] leading-relaxed">
-                83.500 donantes gestionados y COP $5.200M captados en Save the
-                Children, Fundación PLAN, Habitat for Humanity, Aldeas SOS y BID.
-              </p>
-            </div>
-            <div>
-              <div className="text-5xl font-serif text-[#0a2540] mb-3">03</div>
-              <h3 className="font-serif text-xl text-[#0a2540] mb-3">Cierre del círculo</h3>
-              <p className="text-[#475569] leading-relaxed">
-                No me retiro dejando un PDF. Te acompaño hasta que tu equipo opera la
-                estrategia con autonomía y métricas claras.
-              </p>
+        <section className="py-20 lg:py-28">
+          <div className="container">
+            <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+              <div>
+                <div className="font-serif text-5xl text-[var(--primary)] mb-3 leading-none">
+                  01
+                </div>
+                <h3 className="!text-2xl mb-3">Cifras antes que opiniones</h3>
+                <p className="text-[var(--muted-foreground)] leading-relaxed">
+                  Cada estrategia parte de un diagnóstico financiero del programa
+                  de captación. No diseño campañas sin saber primero el ROI
+                  esperado.
+                </p>
+              </div>
+              <div>
+                <div className="font-serif text-5xl text-[var(--primary)] mb-3 leading-none">
+                  02
+                </div>
+                <h3 className="!text-2xl mb-3">Trayectoria verificable</h3>
+                <p className="text-[var(--muted-foreground)] leading-relaxed">
+                  83.500 donantes gestionados y COP $5.200M captados en Save the
+                  Children, Fundación PLAN, Habitat for Humanity, Aldeas SOS y
+                  BID.
+                </p>
+              </div>
+              <div>
+                <div className="font-serif text-5xl text-[var(--primary)] mb-3 leading-none">
+                  03
+                </div>
+                <h3 className="!text-2xl mb-3">Cierre del círculo</h3>
+                <p className="text-[var(--muted-foreground)] leading-relaxed">
+                  No me retiro dejando un PDF. Te acompaño hasta que tu equipo
+                  opera la estrategia con autonomía y métricas claras.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ============== TRES PILARES ============== */}
-        <section id="pilares" className="bg-[#f5f3ee] py-24 lg:py-32 w-full">
-          <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        <section id="pilares" className="bg-[#f5f3ee] py-24 lg:py-32">
+          <div className="container">
             <div className="max-w-2xl mb-16">
-              <p className="text-xs tracking-[0.3em] font-medium text-[#0a2540] mb-4 uppercase">
+              <p className="text-xs tracking-[0.3em] font-medium text-[var(--primary)] mb-4 uppercase">
                 Cómo trabajo
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-[#0a2540]">
-                Tres pilares que se complementan, no servicios sueltos.
-              </h2>
+              <h2>Tres pilares que se complementan, no servicios sueltos.</h2>
             </div>
 
-            <div className="space-y-px bg-[#0a2540]/10">
+            <div className="space-y-px bg-[var(--primary)]/10">
               <Pilar
                 numero="I"
                 titulo="Diagnóstico con visión financiera"
@@ -148,44 +154,46 @@ export default function Servicios() {
         </section>
 
         {/* ============== A QUIÉN ACOMPAÑO ============== */}
-        <section className="py-24 lg:py-32 px-6 lg:px-12 max-w-6xl mx-auto w-full">
-          <div className="max-w-2xl mb-16">
-            <p className="text-xs tracking-[0.3em] font-medium text-[#0a2540] mb-4 uppercase">
-              A quién acompaño
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-[#0a2540]">
-              Trabajo con organizaciones del sector social en distintos momentos de
-              su madurez.
-            </h2>
-          </div>
+        <section className="py-24 lg:py-32">
+          <div className="container">
+            <div className="max-w-2xl mb-16">
+              <p className="text-xs tracking-[0.3em] font-medium text-[var(--primary)] mb-4 uppercase">
+                A quién acompaño
+              </p>
+              <h2>
+                Trabajo con organizaciones del sector social en distintos momentos
+                de su madurez.
+              </h2>
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Sector
-              titulo="ONGs medianas y grandes establecidas"
-              descripcion="Organizaciones con base de donantes consolidada que necesitan optimizar ROI, reducir costo de adquisición o reactivar donantes inactivos."
-              ejemplos="5.000+ donantes activos, presupuesto anual COP $1.000M+"
-            />
-            <Sector
-              titulo="ONGs pequeñas o emergentes"
-              descripcion="Fundaciones que están construyendo su programa de fundraising y necesitan estructura, propuesta de valor diferenciada y primeros canales de captación."
-              ejemplos="Equipo pequeño, primeras campañas, búsqueda de sostenibilidad"
-            />
-            <Sector
-              titulo="Fundaciones corporativas"
-              descripcion="Áreas de inversión social de empresas que requieren rigor financiero, medición de impacto y estrategias de relacionamiento con donantes corporativos."
-              ejemplos="Grupos empresariales, cooperación con casa matriz"
-            />
+            <div className="grid md:grid-cols-3 gap-8">
+              <Sector
+                titulo="ONGs medianas y grandes establecidas"
+                descripcion="Organizaciones con base de donantes consolidada que necesitan optimizar ROI, reducir costo de adquisición o reactivar donantes inactivos."
+                ejemplos="5.000+ donantes activos, presupuesto anual COP $1.000M+"
+              />
+              <Sector
+                titulo="ONGs pequeñas o emergentes"
+                descripcion="Fundaciones que están construyendo su programa de fundraising y necesitan estructura, propuesta de valor diferenciada y primeros canales de captación."
+                ejemplos="Equipo pequeño, primeras campañas, búsqueda de sostenibilidad"
+              />
+              <Sector
+                titulo="Fundaciones corporativas"
+                descripcion="Áreas de inversión social de empresas que requieren rigor financiero, medición de impacto y estrategias de relacionamiento con donantes corporativos."
+                ejemplos="Grupos empresariales, cooperación con casa matriz"
+              />
+            </div>
           </div>
         </section>
 
         {/* ============== PROCESO ============== */}
-        <section className="bg-[#0a2540] !text-white py-24 lg:py-32 w-full">
-          <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        <section className="bg-[var(--primary)] py-24 lg:py-32">
+          <div className="container">
             <div className="max-w-2xl mb-16">
               <p className="text-xs tracking-[0.3em] font-medium text-[#7eb6e6] mb-4 uppercase">
                 Cómo arrancamos
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight !text-white">
+              <h2 className="!text-white">
                 Cuatro pasos. Sin sorpresas, sin contratos eternos.
               </h2>
             </div>
@@ -220,65 +228,64 @@ export default function Servicios() {
         </section>
 
         {/* ============== CASO REAL (placeholder) ============== */}
-        <section className="py-24 lg:py-32 px-6 lg:px-12 max-w-5xl mx-auto w-full">
-          <div className="border-l-4 border-[#0a2540] pl-8 lg:pl-12">
-            <p className="text-xs tracking-[0.3em] font-medium text-[#0a2540] mb-4 uppercase">
-              Un caso real
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl mb-10 leading-tight text-[#0a2540]">
-              [Título del caso — pendiente que escribamos juntos]
-            </h2>
+        <section className="py-24 lg:py-32">
+          <div className="container max-w-5xl">
+            <div className="border-l-4 border-[var(--primary)] pl-8 lg:pl-12">
+              <p className="text-xs tracking-[0.3em] font-medium text-[var(--primary)] mb-4 uppercase">
+                Un caso real
+              </p>
+              <h2 className="mb-10">
+                [Título del caso — pendiente que escribamos juntos]
+              </h2>
 
-            <div className="space-y-6 text-lg leading-relaxed text-[#334155]">
-              <div>
-                <h3 className="font-semibold text-[#0a2540] text-base uppercase tracking-wider mb-2">
-                  Situación
-                </h3>
-                <p>
-                  [Aquí va la situación de la organización al momento de empezar.
-                  Cifras concretas: tamaño base donantes, costo adquisición actual,
-                  tasa retención, ingresos.]
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-[#0a2540] text-base uppercase tracking-wider mb-2">
-                  Acción
-                </h3>
-                <p>
-                  [Qué hiciste tú específicamente. Estrategia diseñada, canales
-                  activados, decisiones tomadas, equipo formado.]
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-[#0a2540] text-base uppercase tracking-wider mb-2">
-                  Resultado
-                </h3>
-                <p>
-                  [Cifras de salida: nuevos donantes, ingresos generados, ROI, %
-                  de mejora vs línea base.]
-                </p>
+              <div className="space-y-6 text-lg leading-relaxed text-[var(--muted-foreground)]">
+                <div>
+                  <h4 className="!text-base font-semibold text-[var(--primary)] uppercase tracking-wider mb-2">
+                    Situación
+                  </h4>
+                  <p>
+                    [Aquí va la situación de la organización al momento de
+                    empezar. Cifras concretas: tamaño base donantes, costo
+                    adquisición actual, tasa retención, ingresos.]
+                  </p>
+                </div>
+                <div>
+                  <h4 className="!text-base font-semibold text-[var(--primary)] uppercase tracking-wider mb-2">
+                    Acción
+                  </h4>
+                  <p>
+                    [Qué hiciste tú específicamente. Estrategia diseñada, canales
+                    activados, decisiones tomadas, equipo formado.]
+                  </p>
+                </div>
+                <div>
+                  <h4 className="!text-base font-semibold text-[var(--primary)] uppercase tracking-wider mb-2">
+                    Resultado
+                  </h4>
+                  <p>
+                    [Cifras de salida: nuevos donantes, ingresos generados, ROI,
+                    % de mejora vs línea base.]
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* ============== CTA FINAL ============== */}
-        <section
-          id="contacto-cta"
-          className="bg-[#f5f3ee] py-24 lg:py-32 px-6 lg:px-12 w-full"
-        >
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 text-[#0a2540]">
+        <section id="contacto-cta" className="bg-[#f5f3ee] py-24 lg:py-32">
+          <div className="container max-w-4xl text-center">
+            <h2 className="mb-6">
               ¿Tu organización necesita captar mejor, no solo más?
             </h2>
-            <p className="text-lg text-[#475569] mb-12 max-w-2xl mx-auto leading-relaxed">
-              Conversemos 30 minutos sin compromiso. Te digo si puedo aportar y, si
-              no, te oriento hacia quién sí.
+            <p className="text-lg text-[var(--muted-foreground)] mb-12 max-w-2xl mx-auto leading-relaxed">
+              Conversemos 30 minutos sin compromiso. Te digo si puedo aportar y,
+              si no, te oriento hacia quién sí.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contacto"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#0a2540] !text-white font-semibold rounded-sm hover:bg-[#1a3a5c] transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[var(--primary)] !text-white font-semibold rounded-md hover:opacity-90 transition-opacity"
               >
                 Agendar conversación
               </a>
@@ -286,7 +293,7 @@ export default function Servicios() {
                 href="https://co.linkedin.com/in/giovanisanchezv"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 border border-[#0a2540] !text-[#0a2540] font-semibold rounded-sm hover:bg-[#0a2540] hover:!text-white transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 border border-[var(--primary)] !text-[var(--primary)] font-semibold rounded-md hover:bg-[var(--primary)] hover:!text-white transition-colors"
               >
                 Hablar por LinkedIn
               </a>
@@ -322,19 +329,17 @@ function Pilar({
     <div className="bg-[#f5f3ee] p-8 lg:p-12">
       <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
         <div className="lg:col-span-3">
-          <div className="font-serif text-6xl lg:text-7xl text-[#0a2540] leading-none mb-4">
+          <div className="font-serif text-6xl lg:text-7xl text-[var(--primary)] leading-none mb-4">
             {numero}
           </div>
-          <p className="text-xs tracking-[0.2em] font-medium text-[#475569] uppercase">
+          <p className="text-xs tracking-[0.2em] font-medium text-[var(--muted-foreground)] uppercase">
             Pilar {numero}
           </p>
         </div>
 
         <div className="lg:col-span-9">
-          <h3 className="font-serif text-2xl lg:text-3xl text-[#0a2540] mb-2 leading-tight">
-            {titulo}
-          </h3>
-          <p className="italic text-[#475569] mb-6 text-base lg:text-lg">
+          <h3 className="!text-2xl lg:!text-3xl mb-2">{titulo}</h3>
+          <p className="italic text-[var(--muted-foreground)] mb-6 text-base lg:text-lg">
             {subtitulo}
           </p>
 
@@ -342,26 +347,26 @@ function Pilar({
             {descripcion}
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-6 pt-6 border-t border-[#0a2540]/15">
+          <div className="grid sm:grid-cols-2 gap-6 pt-6 border-t border-[var(--primary)]/15">
             <div>
-              <p className="text-xs tracking-wider font-semibold text-[#0a2540] uppercase mb-2">
+              <p className="text-xs tracking-wider font-semibold text-[var(--primary)] uppercase mb-2">
                 Útil cuando
               </p>
-              <p className="text-sm text-[#475569] leading-relaxed">
+              <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
                 {utilCuando}
               </p>
             </div>
             <div>
-              <p className="text-xs tracking-wider font-semibold text-[#0a2540] uppercase mb-2">
+              <p className="text-xs tracking-wider font-semibold text-[var(--primary)] uppercase mb-2">
                 Entregables típicos
               </p>
               <ul className="space-y-1">
                 {entregables.map((e, i) => (
                   <li
                     key={i}
-                    className="text-sm text-[#475569] leading-relaxed flex"
+                    className="text-sm text-[var(--muted-foreground)] leading-relaxed flex"
                   >
-                    <span className="text-[#0a2540] mr-2">·</span>
+                    <span className="text-[var(--primary)] mr-2">·</span>
                     <span>{e}</span>
                   </li>
                 ))}
@@ -382,14 +387,12 @@ interface SectorProps {
 
 function Sector({ titulo, descripcion, ejemplos }: SectorProps) {
   return (
-    <div className="border-t-2 border-[#0a2540] pt-6">
-      <h3 className="font-serif text-xl text-[#0a2540] mb-4 leading-snug">
-        {titulo}
-      </h3>
-      <p className="text-[#475569] leading-relaxed mb-4 text-sm">
+    <div className="border-t-2 border-[var(--primary)] pt-6">
+      <h3 className="!text-xl mb-4 leading-snug">{titulo}</h3>
+      <p className="text-[var(--muted-foreground)] leading-relaxed mb-4 text-sm">
         {descripcion}
       </p>
-      <p className="text-xs italic text-[#7c8a9c]">
+      <p className="text-xs italic text-[var(--muted-foreground)] opacity-70">
         {ejemplos}
       </p>
     </div>
@@ -409,9 +412,9 @@ function Paso({ numero, titulo, tiempo, descripcion }: PasoProps) {
       <div className="font-serif text-5xl text-[#7eb6e6] mb-4 leading-none">
         {numero}
       </div>
-      <h3 className="font-serif text-2xl mb-2 leading-snug !text-white">{titulo}</h3>
+      <h3 className="!text-2xl mb-2 !text-white">{titulo}</h3>
       <p className="text-sm text-[#7eb6e6] mb-4 tracking-wide">{tiempo}</p>
-      <p className="!text-[#c8dcef] leading-relaxed">{descripcion}</p>
+      <p className="text-[#c8dcef] leading-relaxed">{descripcion}</p>
     </div>
   );
 }
