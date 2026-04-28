@@ -1,18 +1,17 @@
 /**
- * Hero — Versión rediseñada
+ * Hero — Versión 2 (alineada con LinkedIn)
  *
- * Alinea sitio web con LinkedIn:
- *  - Posicionamiento: "Estratega en Fundraising y Sostenibilidad para ONGs"
- *  - Tagline: "Transformo recursos en oportunidades para un mundo más sostenible"
- *  - Pilares: "Liderazgo estratégico · Crecimiento sostenible · Impacto social"
- *  - Foto profesional circular a la derecha
- *  - Mantiene "Muchos marketers no saben de números..." como sello propio
+ * Réplica del posicionamiento completo de LinkedIn:
+ *   "Estratega en Fundraising y Sostenibilidad para ONGs |
+ *    Captación, Retención (LTV) y Relacionamiento Institucional |
+ *    83.500+ donantes gestionados | Ingeniero Financiero"
  *
- * Usa el design system existente:
- *  - var(--primary) #0F3A66 para fondo navy
- *  - Container del sitio
- *  - Playfair Display heredado para h1
- *  - Inter heredado para cuerpo
+ * Jerarquía visual:
+ *   1. Eyebrow: posicionamiento principal
+ *   2. Headline: "Propósito con impacto" (banner LinkedIn)
+ *   3. Tagline: "Transformo recursos en oportunidades..."
+ *   4. Especialización: Captación · Retención (LTV) · Relacionamiento
+ *   5. Credenciales con cifras (línea inferior)
  */
 
 export default function Hero() {
@@ -30,7 +29,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Acento gráfico — esquina superior derecha */}
+      {/* Acento gráfico de luz */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] opacity-20 pointer-events-none">
         <div
           className="absolute inset-0"
@@ -45,13 +44,13 @@ export default function Hero() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* ===== COLUMNA IZQUIERDA: COPY ===== */}
           <div className="lg:col-span-7 order-2 lg:order-1">
-            {/* Eyebrow */}
-            <p className="text-xs lg:text-sm tracking-[0.32em] font-medium text-[#7eb6e6] mb-8 uppercase">
-              Estratega en Fundraising y Sostenibilidad
+            {/* Eyebrow — posicionamiento principal */}
+            <p className="text-xs lg:text-sm tracking-[0.28em] font-semibold text-[#7eb6e6] mb-6 uppercase leading-relaxed">
+              Estratega en Fundraising y Sostenibilidad para ONGs
             </p>
 
-            {/* Banner principal — réplica de tu LinkedIn */}
-            <h1 className="!text-white mb-8 !leading-[1.05]">
+            {/* Headline — banner LinkedIn */}
+            <h1 className="!text-white mb-6 !leading-[1.05]">
               <span className="block">Propósito</span>
               <span className="block">
                 <span className="opacity-95">con </span>
@@ -64,19 +63,24 @@ export default function Hero() {
               Transformo recursos en oportunidades para un mundo más sostenible.
             </p>
 
-            {/* Pilares de marca */}
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-10">
-              <span className="text-sm uppercase tracking-wider text-[#c8dcef] font-medium">
-                Liderazgo estratégico
-              </span>
-              <span className="text-[#7eb6e6]">·</span>
-              <span className="text-sm uppercase tracking-wider text-[#c8dcef] font-medium">
-                Crecimiento sostenible
-              </span>
-              <span className="text-[#7eb6e6]">·</span>
-              <span className="text-sm uppercase tracking-wider text-[#c8dcef] font-medium">
-                Impacto social
-              </span>
+            {/* Especialización — segundo elemento LinkedIn */}
+            <div className="mb-8">
+              <p className="text-xs tracking-[0.2em] uppercase text-[#9ec5e8] mb-3 font-medium">
+                Especialización
+              </p>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <span className="text-base lg:text-lg text-white font-medium">
+                  Captación
+                </span>
+                <span className="text-[#7eb6e6]">·</span>
+                <span className="text-base lg:text-lg text-white font-medium">
+                  Retención <span className="text-[#9ec5e8]">(LTV)</span>
+                </span>
+                <span className="text-[#7eb6e6]">·</span>
+                <span className="text-base lg:text-lg text-white font-medium">
+                  Relacionamiento Institucional
+                </span>
+              </div>
             </div>
 
             {/* Sello diferenciador (frase propia) */}
@@ -88,7 +92,7 @@ export default function Hero() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a
                 href="#perfil"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white !text-[var(--primary)] font-semibold rounded-md hover:bg-[#c8dcef] transition-colors"
@@ -103,24 +107,42 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Footer del hero — credenciales rápidas */}
-            <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-xl">
-              <div>
-                <div className="font-serif text-3xl text-white mb-1">15+</div>
-                <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
-                  Años en ONGs
+            {/* Línea de credenciales con cifras — pruebas + credencial técnica */}
+            <div className="pt-8 border-t border-white/10">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
+                <div>
+                  <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">
+                    83.500+
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
+                    Donantes gestionados
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="font-serif text-3xl text-white mb-1">83.500</div>
-                <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
-                  Donantes
+                <div>
+                  <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">
+                    $5.200M
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
+                    COP captados
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="font-serif text-3xl text-white mb-1">$5.200M</div>
-                <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
-                  COP captados
+                <div>
+                  <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">
+                    15+
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
+                    Años en ONGs
+                  </div>
+                </div>
+                <div>
+                  <div className="font-serif text-base lg:text-lg !text-white mb-1 leading-tight pt-1">
+                    Ingeniero
+                    <br />
+                    Financiero
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
+                    Credencial
+                  </div>
                 </div>
               </div>
             </div>
