@@ -1,19 +1,5 @@
-**
+/**
  * Hero — Versión 4 (alineada con LinkedIn, mayo 2026 — versión actualizada)
- *
- * Titular LinkedIn:
- *   "Impulso el fundraising de ONG hacia la sostenibilidad financiera real,
- *    aplicando ingeniería financiera al sector social. | +15 años"
- *
- * Propuesta de valor (Acerca de):
- *   "En muchas ONG hay algo que no cuadra: recaudan año tras año, pero vuelven a
- *    empezar de cero. Yo ayudo a que el fundraising deje de ser supervivencia y
- *    se vuelva sostenibilidad financiera real. A esto le llamo Fundraising con
- *    Rigor Financiero."
- *
- * Posicionamiento consultivo:
- *   "Me llaman cuando una fundación pierde donantes y las soluciones tradicionales
- *    no han funcionado."
  */
 
 export default function Hero() {
@@ -48,12 +34,10 @@ export default function Hero() {
           {/* ===== COLUMNA IZQUIERDA: COPY ===== */}
           <div className="lg:col-span-7 order-2 lg:order-1">
 
-            {/* Eyebrow — concepto ancla */}
             <p className="text-xs lg:text-sm tracking-[0.28em] font-semibold text-[#7eb6e6] mb-6 uppercase leading-relaxed">
               Fundraising con Rigor Financiero · +15 años · América Latina
             </p>
 
-            {/* Headline principal — titular LinkedIn */}
             <h1 className="!text-white mb-6 !leading-[1.05]">
               <span className="block">Impulso el fundraising</span>
               <span className="block">
@@ -63,13 +47,11 @@ export default function Hero() {
               <span className="block text-[#7eb6e6]">financiera real.</span>
             </h1>
 
-            {/* Propuesta de valor — primera línea del Acerca de */}
             <p className="text-xl lg:text-2xl text-white leading-relaxed max-w-2xl mb-8 font-light">
               En muchas ONG hay algo que no cuadra: recaudan año tras año,
               pero vuelven a empezar de cero.
             </p>
 
-            {/* Diferenciador — segundo párrafo del Acerca de */}
             <div className="border-l-2 border-[#7eb6e6] pl-5 mb-10 max-w-xl">
               <p className="text-base lg:text-lg italic text-[#c8dcef] leading-relaxed">
                 "Aplico ingeniería financiera al fundraising: diagnóstico financiero,
@@ -78,15 +60,14 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* CTAs — el principal es conversación, no CV */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a
+              
                 href="/contacto"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white !text-[var(--primary)] font-semibold rounded-md hover:bg-[#c8dcef] transition-colors"
               >
                 Conversemos 20 minutos
               </a>
-              <a
+              
                 href="https://www.linkedin.com/in/giovanisanchezv"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -99,88 +80,8 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Métricas de credibilidad */}
             <div className="pt-8 border-t border-white/10">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
                 <div>
-                  <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">
-                    83.500+
-                  </div>
-                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
-                    Donantes gestionados
-                  </div>
-                </div>
-                <div>
-                  <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">
-                    $5.200M
-                  </div>
-                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
-                    COP recaudados
-                  </div>
-                </div>
-                <div>
-                  <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">
-                    85%
-                  </div>
-                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
-                    Retención sostenida
-                  </div>
-                </div>
-                <div>
-                  <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">
-                    15+
-                  </div>
-                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">
-                    Años en sector social
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Organizaciones */}
-            <div className="pt-6 mt-6 border-t border-white/10">
-              <p className="text-xs uppercase tracking-widest text-[#7eb6e6] mb-4 font-medium">
-                Experiencia verificable en
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "Save the Children",
-                  "Fundación PLAN",
-                  "Habitat for Humanity",
-                  "Aldeas Infantiles SOS",
-                  "BID · Alcaldía de Bogotá",
-                ].map((org) => (
-                  <span
-                    key={org}
-                    className="text-xs text-[#c8dcef] border border-white/20 rounded-full px-3 py-1"
-                  >
-                    {org}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* ===== COLUMNA DERECHA: FOTO ===== */}
-          <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-[#7eb6e6]/20 to-transparent blur-2xl" />
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px]">
-                <div className="absolute inset-0 rounded-full border-2 border-white/20" />
-                <img
-                  src="/profile-hero.jpg"
-                  alt="Giovani Sánchez Vargas — Fundraising con Rigor Financiero"
-                  className="relative w-full h-full object-cover rounded-full shadow-2xl"
-                  loading="eager"
-                />
-                <div className="absolute -bottom-2 -right-2 w-6 h-6 rounded-full bg-[#7eb6e6]" />
-                <div className="absolute -top-2 -left-2 w-3 h-3 rounded-full bg-white/40" />
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
+                  <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">83.500+</div>
+                  <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">Donantes gestionados</div>
