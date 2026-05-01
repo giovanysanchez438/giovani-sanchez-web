@@ -37,20 +37,23 @@ function Router() {
 // - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
 //   to keep consistent foreground/background color across components
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
+// ... tus otros imports
+import Header from "./components/Header"; 
+
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
+          {/* AQUÍ colocamos la cinta azul para que sea la corona de la web */}
+          <Header /> 
           <Router />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
+}
 }
 
 export default App;
