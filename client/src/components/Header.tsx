@@ -20,20 +20,17 @@ export default function Header() {
           </Link>
 
           {/* NAVEGACIÓN: La "Cinta" Estilo Huron */}
-          <nav className="hidden lg:flex items-center gap-10">
-            <Link href="/perfil">
-              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Perfil</a>
-            </Link>
-            <Link href="/servicios">
-              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Servicios</a>
-            </Link>
-            <Link href="/experiencia">
-              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Experiencia</a>
-            </Link>
-            <Link href="/certificaciones">
-              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Certificaciones</a>
-            </Link>
-          </nav>
+    // Dentro de tu Header.tsx, cambia los <Link> por <a> simples para anclas:
+
+<nav className="hidden lg:flex items-center gap-10">
+  <a href="#experiencia" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">
+    Experiencia
+  </a>
+  <a href="#servicios" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">
+    Servicios
+  </a>
+  {/* ... otros enlaces */}
+</nav>
 
           {/* ACCIÓN: Botón de Conversión Directa */}
           <Link href="/contacto">
