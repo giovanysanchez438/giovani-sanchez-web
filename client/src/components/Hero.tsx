@@ -21,10 +21,9 @@ export default function Hero() {
               financiera <span className="italic font-serif">real.</span>
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
-              Dejo atrás la improvisación. Aplico **ingeniería financiera** para que las ONG 
-              tomen decisiones basadas en datos y métricas de retención.
-            </p>
+<p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
+  Dejo atrás la improvisación. Aplico <span className="font-bold text-[#003366]">ingeniería financiera</span> para que las ONG tomen decisiones basadas en datos.
+</p>
 
             <div className="flex flex-wrap gap-4 mb-12">
               <a href="/contacto" className="flex items-center gap-2 px-8 py-4 bg-[#003366] text-white font-bold rounded shadow-xl hover:bg-[#004a94] transition-all">
