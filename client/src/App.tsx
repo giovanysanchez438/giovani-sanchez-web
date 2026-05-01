@@ -1,50 +1,54 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import Perfil from "./pages/Perfil";
-import Servicios from "./pages/Servicios";
-import Experiencia from "./pages/Experiencia";
-import Certificaciones from "./pages/Certificaciones";
-import Principios from "./pages/Principios";
-import Contacto from "./pages/Contacto";
-import BlogPage from "./pages/Blog";
-import LibroONG from "./pages/LibroONG";
-import NotFound from "@/pages/NotFound";
+import { useState } from "react";
+import { Link } from "wouter";
+import { Menu, X } from "lucide-react";
 
-function Router() {
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const menuItems = [
+    { name: "Inicio", href: "/" },
+    { name: "Perfil", href: "/perfil" },
+    { name: "Servicios", href: "/servicios" },
+    { name: "Blog", href: "/blog" },
+    { name: "Libro ONG", href: "/libro-ong" },
+    { name: "Contacto", href: "/contacto" },
+  ];
+
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/perfil" component={Perfil} />
-      <Route path="/servicios" component={Servicios} />
-      <Route path="/experiencia" component={Experiencia} />
-      <Route path="/certificaciones" component={Certificaciones} />
-      <Route path="/principios" component={Principios} />
-      <Route path="/contacto" component={Contacto} />
-      <Route path="/blog" component={BlogPage} />
-      <Route path="/libro-ong" component={LibroONG} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+    <header className="bg-[#003366] text-white sticky top-0 z-50 shadow-lg">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href="/">
+          <a className="flex items-center gap-3 shrink-0">
+            <div className="bg-white text-[#003366] font-bold w-9 h-9 flex items-center justify-center rounded">G</div>
+            <span className="font-bold tracking-tighter text-sm uppercase hidden xs:block sm:block">Giovani Sánchez V.</span>
+          </a>
+        </Link>
 
-// ... imports
-import Header from "./components/Header"; 
+        {/* Desktop Menu */}
+        <nav className="hidden lg:flex items-center gap-6">
+          {menuItems.map((item) => (
+            <Link key={item.name} href={item.href}>
+              <a className="text-[10px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">{item.name}</a>
+            </Link>
+          ))}
+        </nav>
 
-export default function App() {
-  return (
-    <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Header /> {/* ESTA ES LA ÚNICA QUE DEBE EXISTIR */}
-          <Router />
-          <Toaster />
-        </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+        {/* Botón de 3 líneas para Celular */}
+        <button className="lg:hidden p-2 text-white" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Menú Desplegable Celular */}
+      {isOpen && (
+        <div className="lg:hidden bg-[#003366] border-t border-white/10 py-6 flex flex-col items-center gap-6">
+          {menuItems.map((item) => (
+            <Link key={item.name} href={item.href} onClick={() => setIsOpen(false)}>
+              <a className="text-sm font-bold uppercase tracking-widest">{item.name}</a>
+            </Link>
+          ))}
+        </div>
+      )}
+    </header>
   );
 }
