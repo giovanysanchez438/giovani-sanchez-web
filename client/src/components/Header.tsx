@@ -19,20 +19,23 @@ export default function Header() {
             </a>
           </Link>
 
-          {/* NAVEGACIÓN: La "Cinta" Estilo Huron */}
-    // Dentro de tu Header.tsx, cambia los <Link> por <a> simples para anclas:
+          {/* NAVEGACIÓN: Estilo Huron */}
+          <nav className="hidden lg:flex items-center gap-10">
+            <Link href="/perfil">
+              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Perfil</a>
+            </Link>
+            <Link href="/servicios">
+              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Servicios</a>
+            </Link>
+            <Link href="/experiencia">
+              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Experiencia</a>
+            </Link>
+            <Link href="/certificaciones">
+              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Certificaciones</a>
+            </Link>
+          </nav>
 
-<nav className="hidden lg:flex items-center gap-10">
-  <a href="#experiencia" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">
-    Experiencia
-  </a>
-  <a href="#servicios" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">
-    Servicios
-  </a>
-  {/* ... otros enlaces */}
-</nav>
-
-          {/* ACCIÓN: Botón de Conversión Directa */}
+          {/* ACCIÓN: Botón de Conversión */}
           <Link href="/contacto">
             <a className="hidden sm:block px-6 py-2 bg-[#7eb6e6] text-[#003366] font-bold text-[10px] uppercase tracking-widest rounded hover:bg-white hover:shadow-xl transition-all duration-300">
               Contacto
