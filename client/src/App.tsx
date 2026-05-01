@@ -3,7 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Header from "./components/Header";
+import Header from "./components/Header"; // Importación única
 import Home from "./pages/Home";
 import Perfil from "./pages/Perfil";
 import BlogPage from "./pages/Blog";
@@ -27,8 +27,8 @@ export default function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
-          <div className="flex flex-col min-h-screen">
-            <Header />
+          <div className="flex flex-col min-h-screen bg-white">
+            <Header /> {/* Solo aquí debe existir el Header */}
             <Router />
             <Toaster />
           </div>
