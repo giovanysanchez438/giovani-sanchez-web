@@ -19,16 +19,16 @@ export default function Hero() {
             
             <h1 className="text-4xl lg:text-6xl font-extrabold !text-white leading-[1.1] mb-8">
               Impulso el fundraising de las <span className="text-[#7eb6e6]">ONG</span> hacia la <br />
-              sostenibilidad financiera <span className="italic font-serif">real.</span>
+              sostenibilidad financiera <span className="italic font-serif text-[#7eb6e6]">real.</span>
             </h1>
 
-            <p className="text-xl text-blue-50/90 leading-relaxed mb-8 max-w-2xl font-light">
+            <p className="text-xl text-white leading-relaxed mb-8 max-w-2xl font-light">
               Aplico **ingeniería financiera** al sector social: diagnóstico, 
-              estrategia de captación recurrente y métricas para decidir con datos, no con intuición.
+              estrategia de captación recurrente y métricas para decidir con datos.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
-              <a href="/contacto" className="flex items-center gap-2 px-8 py-4 bg-white !text-[#003366] font-bold rounded hover:bg-blue-50 transition-all">
+              <a href="/contacto" className="flex items-center gap-2 px-8 py-4 bg-white !text-[#003366] font-bold rounded hover:bg-blue-50 transition-all shadow-lg">
                 <LucideCalendar className="w-5 h-5" />
                 Conversemos 20 minutos
               </a>
@@ -38,31 +38,29 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Credenciales rápidas (SEO & Trust) */}
-            <div className="flex flex-wrap gap-6 text-sm text-blue-200/80 border-t border-white/10 pt-8">
+            {/* Credenciales rápidas */}
+            <div className="flex flex-wrap gap-6 text-sm text-blue-100 border-t border-white/10 pt-8">
               <span className="flex items-center gap-2"><LucideCheckCircle className="w-4 h-4 text-[#7eb6e6]" /> +15 años de experiencia</span>
               <span className="flex items-center gap-2"><LucideCheckCircle className="w-4 h-4 text-[#7eb6e6]" /> Estrategia basada en datos</span>
-              <span className="flex items-center gap-2"><LucideCheckCircle className="w-4 h-4 text-[#7eb6e6]" /> Especialista en LATAM</span>
             </div>
           </div>
 
-          {/* IMAGEN: Tu fotografía profesional */}
+          {/* IMAGEN: Tu fotografía profesional a color */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative">
-              {/* Decoración detrás de la foto */}
+              {/* Marco decorativo */}
               <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[#7eb6e6] rounded-2xl z-0" />
               
-              {/* Aquí debes asegurarte de que el archivo 'giovani.jpg' esté en tu carpeta /public */}
               <img 
                 src="/giovani.png" 
-                alt="Giovani Sánchez Vargas - Especialista en Fundraising Financiero" 
-                className="relative z-10 w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
+                alt="Giovani Sánchez Vargas" 
+                className="relative z-10 w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300"
               />
               
-              {/* Etiqueta de confianza */}
+              {/* Badge de confianza */}
               <div className="absolute -bottom-6 -left-6 bg-white p-4 shadow-xl rounded-lg z-20 hidden sm:block">
                 <p className="text-[#003366] font-bold text-sm">Ingeniería Financiera</p>
-                <p className="text-gray-500 text-xs text-center">Aplicada al Sector Social</p>
+                <p className="text-gray-500 text-xs text-center">Estrategia Senior</p>
               </div>
             </div>
           </div>
