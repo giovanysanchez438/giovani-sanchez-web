@@ -2,68 +2,77 @@ import { LucideLinkedin, LucideCalendar, LucideCheckCircle } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#003366] py-16 lg:py-24">
-      {/* Fondo con sutil textura profesional */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
-      </div>
-
-      <div className="container relative mx-auto px-6">
+    <section className="relative overflow-hidden bg-white py-16 lg:py-28">
+      {/* Acento sutil en el fondo (Solo un toque de color) */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 hidden lg:block z-0" />
+      
+      <div className="container relative mx-auto px-6 z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* TEXTO: Posicionamiento Estratégico */}
+          {/* TEXTO: Máxima Claridad y Lectura */}
           <div className="lg:col-span-7">
-            <p className="text-[#7eb6e6] text-sm tracking-[0.3em] font-bold uppercase mb-6">
-              Fundraising con Rigor Financiero · América Latina
-            </p>
+            <div className="inline-block px-3 py-1 bg-blue-50 text-[#003366] text-xs tracking-[0.2em] font-bold uppercase rounded-full mb-6">
+              Fundraising con Rigor Financiero
+            </div>
             
-            <h1 className="text-4xl lg:text-6xl font-extrabold !text-white leading-[1.1] mb-8">
-              Impulso el fundraising de las <span className="text-[#7eb6e6]">ONG</span> hacia la <br />
-              sostenibilidad financiera <span className="italic font-serif text-[#7eb6e6]">real.</span>
+            <h1 className="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-8">
+              Impulso el fundraising <br />
+              hacia la <span className="text-[#0052a3]">sostenibilidad</span> <br />
+              financiera <span className="italic font-serif">real.</span>
             </h1>
 
-            <p className="text-xl text-white leading-relaxed mb-8 max-w-2xl font-light">
-              Aplico ingeniería financiera al sector social: diagnóstico, 
-              estrategia de captación recurrente y métricas para decidir con datos.
+            <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
+              Dejo atrás la improvisación. Aplico **ingeniería financiera** para que las ONG 
+              tomen decisiones basadas en datos y métricas de retención.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-10">
-              <a href="/contacto" className="flex items-center gap-2 px-8 py-4 bg-white !text-[#003366] font-bold rounded hover:bg-blue-50 transition-all shadow-lg">
+            <div className="flex flex-wrap gap-4 mb-12">
+              <a href="/contacto" className="flex items-center gap-2 px-8 py-4 bg-[#003366] text-white font-bold rounded shadow-xl hover:bg-[#004a94] transition-all">
                 <LucideCalendar className="w-5 h-5" />
-                Conversemos 20 minutos
+                Agendar Consultoría
               </a>
-              <a href="https://www.linkedin.com/in/giovanisanchezv" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-8 py-4 border border-white/40 !text-white font-semibold rounded hover:bg-white/10 transition-all">
-                <LucideLinkedin className="w-5 h-5" />
-                Perfil en LinkedIn
+              <a href="https://www.linkedin.com/in/giovanisanchezv" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-8 py-4 border-2 border-slate-200 text-slate-700 font-bold rounded hover:bg-slate-50 transition-all">
+                <LucideLinkedin className="w-5 h-5 text-[#0077b5]" />
+                LinkedIn
               </a>
             </div>
 
-            {/* Credenciales rápidas */}
-            <div className="flex flex-wrap gap-6 text-sm text-blue-100 border-t border-white/10 pt-8">
-              <span className="flex items-center gap-2"><LucideCheckCircle className="w-4 h-4 text-[#7eb6e6]" /> +15 años de experiencia</span>
-              <span className="flex items-center gap-2"><LucideCheckCircle className="w-4 h-4 text-[#7eb6e6]" /> Estrategia basada en datos</span>
+            {/* Credenciales con iconos de color */}
+            <div className="flex flex-wrap gap-8 pt-8 border-t border-slate-100">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-blue-50 rounded-lg">
+                  <LucideCheckCircle className="w-5 h-5 text-[#0052a3]" />
+                </div>
+                <span className="text-sm font-semibold text-slate-700">+15 años en LATAM</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-blue-50 rounded-lg">
+                  <LucideCheckCircle className="w-5 h-5 text-[#0052a3]" />
+                </div>
+                <span className="text-sm font-semibold text-slate-700">Decisiones basadas en Datos</span>
+              </div>
             </div>
           </div>
 
-          {/* IMAGEN: Fotografía Profesional con Encuadre Completo */}
-<div className="lg:col-span-5 flex justify-center lg:justify-end">
-  <div className="relative">
-    {/* Marco decorativo que se adapta al tamaño de la foto */}
-    <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[#7eb6e6] rounded-2xl z-0" />
-    
-    <img 
-      src="/giovani.png" 
-      alt="Giovani Sánchez Vargas - Consultor de Fundraising" 
-      className="relative z-10 w-full max-w-[320px] lg:max-w-[420px] h-auto rounded-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300"
-    />
-    
-    {/* Badge de confianza reposicionado */}
-    <div className="absolute -bottom-4 -left-8 bg-white p-4 shadow-2xl rounded-lg z-20 hidden sm:block border-l-4 border-[#003366]">
-      <p className="text-[#003366] font-bold text-sm">Ingeniería Financiera</p>
-      <p className="text-gray-500 text-xs">Estrategia de Alto Impacto</p>
-    </div>
-  </div>
-</div>
+          {/* IMAGEN: Tu perfil destacando sobre el blanco */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Círculo decorativo de fondo */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-50 rounded-full blur-3xl opacity-50 z-0" />
+              
+              <img 
+                src="/giovani.png" 
+                alt="Giovani Sánchez Vargas" 
+                className="relative z-10 w-full max-w-[380px] h-auto rounded-3xl shadow-2xl transition-transform hover:scale-[1.01] duration-500"
+              />
+              
+              {/* Badge Profesional Blanco */}
+              <div className="absolute -bottom-6 -left-6 bg-white p-5 shadow-2xl rounded-2xl z-20 border border-slate-100">
+                <p className="text-[#003366] font-extrabold text-lg">83.500+</p>
+                <p className="text-slate-500 text-xs font-medium uppercase tracking-tighter">Donantes Gestionados</p>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
