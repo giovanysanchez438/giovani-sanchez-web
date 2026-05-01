@@ -7,11 +7,12 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-white">
+      {/* Solo el contenido, sin Header aquí */}
       <Hero />
-      <section id="servicios"><Services /></section>
-      <section id="experiencia"><Experience /></section>
-      <section id="certificaciones"><Certifications /></section>
-      <section id="contacto"><Contact /></section>
+      <Services />
+      <Experience />
+      <Certifications />
+      <Contact />
     </main>
   );
 }
