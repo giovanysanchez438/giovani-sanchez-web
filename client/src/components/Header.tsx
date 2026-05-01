@@ -1,96 +1,49 @@
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Link } from "wouter";
 
-/**
- * Header — Versión 3 (alineado con nuevo LinkedIn, mayo 2026)
- *
- * Tagline = concepto ancla del nuevo posicionamiento
- * Frase = diferenciador del Acerca de
- */
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navItems = [
-    { label: "PERFIL", href: "/perfil" },
-    { label: "SERVICIOS", href: "/servicios" },
-    { label: "EXPERIENCIA", href: "/experiencia" },
-    { label: "CERTIFICACIONES", href: "/certificaciones" },
-    { label: "PRINCIPIOS", href: "/principios" },
-    { label: "BLOG", href: "/blog" },
-    { label: "CONTACTO", href: "/contacto" },
-  ];
-
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <div className="container">
+    <header className="bg-[#003366] text-white sticky top-0 z-50 shadow-lg">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          
+          {/* IDENTIDAD: Logo tipo Sello de Autoridad */}
+          <Link href="/">
+            <a className="flex items-center gap-4 group">
+              <div className="bg-white text-[#003366] font-bold w-10 h-10 flex items-center justify-center rounded shadow-md group-hover:bg-[#7eb6e6] transition-colors duration-300">
+                <span className="text-xl">G</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg font-bold tracking-tight leading-none uppercase">Giovani Sánchez V.</span>
+                <span className="text-[9px] tracking-[0.25em] text-[#7eb6e6] font-semibold mt-1">FUNDRAISING CON RIGOR FINANCIERO</span>
+              </div>
+            </a>
+          </Link>
 
-        <div className="py-4 md:py-6 flex items-center justify-between gap-4">
-          <a href="/" className="flex-shrink-0 transition-smooth">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white text-lg font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>G</span>
-            </div>
-          </a>
-
-          <div className="flex-1 text-center">
-            <h1 className="text-lg sm:text-xl md:text-2xl text-gray-800 mb-0.5" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '400', letterSpacing: '1px' }}>
-              Giovani Sánchez V.
-            </h1>
-            {/* Tagline = concepto ancla del posicionamiento */}
-            <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 font-medium tracking-wide">
-              FUNDRAISING CON RIGOR FINANCIERO · ONG · LATAM
-            </p>
-          </div>
-
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-smooth flex-shrink-0"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        <div className="hidden md:block h-px bg-gray-100" />
-
-        <div className="py-3 md:py-4 hidden md:flex items-center justify-between gap-4">
-          {/* Diferenciador del Acerca de */}
-          <div className="text-xs md:text-sm text-gray-600 italic hidden lg:block max-w-xs">
-            "El fundraising deja de ser supervivencia y se vuelve sostenibilidad financiera real."
-          </div>
-
-          <nav className="flex items-center gap-6 md:gap-8 ml-auto">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-xs md:text-sm font-medium text-gray-700 hover:text-primary transition-smooth duration-200 whitespace-nowrap"
-              >
-                {item.label}
-              </a>
-            ))}
+          {/* NAVEGACIÓN: La "Cinta" Estilo Huron */}
+          <nav className="hidden lg:flex items-center gap-10">
+            <Link href="/perfil">
+              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Perfil</a>
+            </Link>
+            <Link href="/servicios">
+              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Servicios</a>
+            </Link>
+            <Link href="/experiencia">
+              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Experiencia</a>
+            </Link>
+            <Link href="/certificaciones">
+              <a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Certificaciones</a>
+            </Link>
           </nav>
+
+          {/* ACCIÓN: Botón de Conversión Directa */}
+          <Link href="/contacto">
+            <a className="hidden sm:block px-6 py-2 bg-[#7eb6e6] text-[#003366] font-bold text-[10px] uppercase tracking-widest rounded hover:bg-white hover:shadow-xl transition-all duration-300">
+              Contacto
+            </a>
+          </Link>
+
         </div>
-
       </div>
-
-      {isMenuOpen && (
-        <nav className="md:hidden border-t border-gray-200 bg-white">
-          <div className="container py-4 space-y-3">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="block text-sm font-medium text-gray-700 hover:text-primary transition-smooth py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
-            <div className="pt-4 border-t border-gray-100 text-xs text-gray-600 italic">
-              "El fundraising deja de ser supervivencia y se vuelve sostenibilidad financiera real."
-            </div>
-          </div>
-        </nav>
-      )}
     </header>
   );
 }
