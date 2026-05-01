@@ -1,73 +1,13 @@
-/**
- * Hero — Versión 4 (alineada con LinkedIn, mayo 2026 — versión actualizada)
- */
-
-export default function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-[var(--primary)]">
-      {/* Patrón decorativo sutil */}
-      <div className="absolute inset-0 opacity-[0.035] pointer-events-none">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 25% 25%, rgba(255,255,255,.5) 0px, transparent 1.5px)",
-            backgroundSize: "36px 36px",
-          }}
-        />
-      </div>
-
-      {/* Acento gráfico de luz */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] opacity-20 pointer-events-none">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 70% 30%, rgba(126,182,230,.4) 0%, transparent 60%)",
-          }}
-        />
-      </div>
-
-      <div className="container relative py-20 lg:py-28">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-
-          {/* ===== COLUMNA IZQUIERDA: COPY ===== */}
-          <div className="lg:col-span-7 order-2 lg:order-1">
-
-            <p className="text-xs lg:text-sm tracking-[0.28em] font-semibold text-[#7eb6e6] mb-6 uppercase leading-relaxed">
-              Fundraising con Rigor Financiero · +15 años · América Latina
-            </p>
-
-            <h1 className="!text-white mb-6 !leading-[1.05]">
-              <span className="block">Impulso el fundraising</span>
-              <span className="block">
-                hacia la{" "}
-                <span className="text-[#7eb6e6]">sostenibilidad</span>
-              </span>
-              <span className="block text-[#7eb6e6]">financiera real.</span>
-            </h1>
-
-            <p className="text-xl lg:text-2xl text-white leading-relaxed max-w-2xl mb-8 font-light">
-              En muchas ONG hay algo que no cuadra: recaudan año tras año,
-              pero vuelven a empezar de cero.
-            </p>
-
-            <div className="border-l-2 border-[#7eb6e6] pl-5 mb-10 max-w-xl">
-              <p className="text-base lg:text-lg italic text-[#c8dcef] leading-relaxed">
-                "Aplico ingeniería financiera al fundraising: diagnóstico financiero,
-                estrategia de captación recurrente, modelos de retención y métricas
-                para decidir con datos. Nada de improvisación."
-              </p>
-            </div>
-
+{/* Botones de acción corregidos */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              
+              <a
                 href="/contacto"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white !text-[var(--primary)] font-semibold rounded-md hover:bg-[#c8dcef] transition-colors"
               >
                 Conversemos 20 minutos
               </a>
               
+              <a
                 href="https://www.linkedin.com/in/giovanisanchezv"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -80,8 +20,21 @@ export default function Hero() {
               </a>
             </div>
 
+            {/* Estadísticas */}
             <div className="pt-8 border-t border-white/10">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
                 <div>
                   <div className="font-serif text-2xl lg:text-3xl !text-white mb-1">83.500+</div>
                   <div className="text-xs uppercase tracking-wider text-[#9ec5e8]">Donantes gestionados</div>
+                </div>
+              </div>
+            </div>
+          </div> {/* Fin Columna Izquierda */}
+
+          {/* Aquí podrías añadir una columna derecha (ej. una imagen) si lo deseas */}
+
+        </div> {/* Fin Grid */}
+      </div> {/* Fin Container */}
+    </section>
+  );
+}
