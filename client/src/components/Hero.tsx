@@ -54,7 +54,7 @@ export default function Hero() {
               
               {/* Aquí debes asegurarte de que el archivo 'giovani.jpg' esté en tu carpeta /public */}
               <img 
-                src="/giovani.jpg" 
+                src="/giovani.png" 
                 alt="Giovani Sánchez Vargas - Especialista en Fundraising Financiero" 
                 className="relative z-10 w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
               />
