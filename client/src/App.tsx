@@ -32,12 +32,15 @@ function Router() {
   );
 }
 
+// ... imports
+import Header from "./components/Header"; 
+
 export default function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
-          <Header />
+          <Header /> {/* ESTA ES LA ÚNICA QUE DEBE EXISTIR */}
           <Router />
           <Toaster />
         </TooltipProvider>
