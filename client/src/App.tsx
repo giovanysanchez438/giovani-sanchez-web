@@ -1,9 +1,9 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Header from "./components/Header";
 import Home from "./pages/Home";
 import Perfil from "./pages/Perfil";
 import Servicios from "./pages/Servicios";
@@ -13,47 +13,35 @@ import Principios from "./pages/Principios";
 import Contacto from "./pages/Contacto";
 import BlogPage from "./pages/Blog";
 import LibroONG from "./pages/LibroONG";
+import NotFound from "@/pages/NotFound";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/perfil"} component={Perfil} />
-      <Route path={"/servicios"} component={Servicios} />
-      <Route path={"/experiencia"} component={Experiencia} />
-      <Route path={"/certificaciones"} component={Certificaciones} />
-      <Route path={"/principios"} component={Principios} />
-      <Route path={"/contacto"} component={Contacto} />
-      <Route path={"/blog"} component={BlogPage} />
-      <Route path={"/libro-ong"} component={LibroONG} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/perfil" component={Perfil} />
+      <Route path="/servicios" component={Servicios} />
+      <Route path="/experiencia" component={Experiencia} />
+      <Route path="/certificaciones" component={Certificaciones} />
+      <Route path="/principios" component={Principios} />
+      <Route path="/contacto" component={Contacto} />
+      <Route path="/blog" component={BlogPage} />
+      <Route path="/libro-ong" component={LibroONG} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-// ... tus otros imports
-import Header from "./components/Header"; 
-
-function App() {
+export default function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
-          <Toaster />
-          {/* AQUÍ colocamos la cinta azul para que sea la corona de la web */}
-          <Header /> 
+          <Header />
           <Router />
+          <Toaster />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
 }
-}
-
-export default App;
