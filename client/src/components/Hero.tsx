@@ -21,7 +21,7 @@ export default function Hero() {
               financiera <span className="italic font-serif">real.</span>
             </h1>
 
-<p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
+<p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
   Dejo atrás la improvisación. Aplico <span className="font-bold text-[#003366]">ingeniería financiera</span> para que las ONG tomen decisiones basadas en datos.
 </p>
 
