@@ -15,13 +15,13 @@ export default function Header() {
           </a>
         </Link>
 
-        {/* Menú Desktop */}
+        {/* Menú Desktop: Ahora usa # para no salir de la Home */}
         <nav className="hidden lg:flex items-center gap-8">
-          <a href="#servicios" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Servicios</a>
-          <a href="#experiencia" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Experiencia</a>
+          <a href="/#servicios" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Servicios</a>
+          <a href="/#experiencia" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6] transition-colors">Experiencia</a>
           <Link href="/blog"><a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6]">Blog</a></Link>
           <Link href="/libro-ong"><a className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6]">Libro ONG</a></Link>
-          <a href="#contacto" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6]">Contacto</a>
+          <a href="/#contacto" className="text-[11px] font-bold tracking-widest uppercase hover:text-[#7eb6e6]">Contacto</a>
         </nav>
 
         <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
@@ -29,11 +29,11 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Menú Móvil */}
+      {/* Menú Móvil corregido */}
       {isOpen && (
         <div className="lg:hidden bg-[#003366] border-t border-white/10 py-6 flex flex-col items-center gap-6">
-          <a href="#servicios" onClick={() => setIsOpen(false)} className="text-sm font-bold uppercase tracking-widest">Servicios</a>
-          <a href="#experiencia" onClick={() => setIsOpen(false)} className="text-sm font-bold uppercase tracking-widest">Experiencia</a>
+          <a href="/#servicios" onClick={() => setIsOpen(false)} className="text-sm font-bold uppercase tracking-widest">Servicios</a>
+          <a href="/#experiencia" onClick={() => setIsOpen(false)} className="text-sm font-bold uppercase tracking-widest">Experiencia</a>
           <Link href="/blog" onClick={() => setIsOpen(false)}><a className="text-sm font-bold uppercase tracking-widest">Blog</a></Link>
           <Link href="/libro-ong" onClick={() => setIsOpen(false)}><a className="text-sm font-bold uppercase tracking-widest">Libro ONG</a></Link>
         </div>
