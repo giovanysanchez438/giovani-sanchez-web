@@ -23,7 +23,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-xl text-white leading-relaxed mb-8 max-w-2xl font-light">
-              Aplico **ingeniería financiera** al sector social: diagnóstico, 
+              Aplico ingeniería financiera al sector social: diagnóstico, 
               estrategia de captación recurrente y métricas para decidir con datos.
             </p>
 
