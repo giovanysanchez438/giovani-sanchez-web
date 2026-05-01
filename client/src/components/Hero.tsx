@@ -45,25 +45,25 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* IMAGEN: Tu fotografía profesional a color */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Marco decorativo */}
-              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[#7eb6e6] rounded-2xl z-0" />
-              
-              <img 
-                src="/giovani.png" 
-                alt="Giovani Sánchez Vargas" 
-                className="relative z-10 w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300"
-              />
-              
-              {/* Badge de confianza */}
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 shadow-xl rounded-lg z-20 hidden sm:block">
-                <p className="text-[#003366] font-bold text-sm">Ingeniería Financiera</p>
-                <p className="text-gray-500 text-xs text-center">Estrategia Senior</p>
-              </div>
-            </div>
-          </div>
+          {/* IMAGEN: Fotografía Profesional con Encuadre Completo */}
+<div className="lg:col-span-5 flex justify-center lg:justify-end">
+  <div className="relative">
+    {/* Marco decorativo que se adapta al tamaño de la foto */}
+    <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[#7eb6e6] rounded-2xl z-0" />
+    
+    <img 
+      src="/giovani.png" 
+      alt="Giovani Sánchez Vargas - Consultor de Fundraising" 
+      className="relative z-10 w-full max-w-[320px] lg:max-w-[420px] h-auto rounded-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300"
+    />
+    
+    {/* Badge de confianza reposicionado */}
+    <div className="absolute -bottom-4 -left-8 bg-white p-4 shadow-2xl rounded-lg z-20 hidden sm:block border-l-4 border-[#003366]">
+      <p className="text-[#003366] font-bold text-sm">Ingeniería Financiera</p>
+      <p className="text-gray-500 text-xs">Estrategia de Alto Impacto</p>
+    </div>
+  </div>
+</div>
 
         </div>
       </div>
