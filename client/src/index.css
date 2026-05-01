@@ -1,86 +1,197 @@
-<!doctype html>
-<html lang="es-CO">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Giovani Sánchez Vargas — Fundraising con Rigor Financiero | ONG Colombia LATAM</title>
-    <meta name="description" content="Impulso el fundraising de ONG hacia la sostenibilidad financiera real, aplicando ingeniería financiera al sector social. 83.500+ donantes, COP $5.200M recaudados, 85% retención. Save the Children, Fundación PLAN, BID." />
-    <meta name="author" content="Giovani Sánchez Vargas" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#0a2540" />
-    <link rel="canonical" href="https://giovanisanchezv.com/" />
+@import "tailwindcss";
+@import "tw-animate-css";
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+@custom-variant dark (&:is(.dark *));
 
-    <meta property="og:type" content="profile" />
-    <meta property="og:site_name" content="Giovani Sánchez Vargas" />
-    <meta property="og:title" content="Giovani Sánchez Vargas — Fundraising con Rigor Financiero" />
-    <meta property="og:description" content="Impulso el fundraising de ONG hacia la sostenibilidad financiera real. Diagnóstico financiero, captación recurrente, retención y métricas. 83.500+ donantes gestionados." />
-    <meta property="og:url" content="https://giovanisanchezv.com/" />
-    <meta property="og:image" content="https://giovanisanchezv.com/og-image.jpg?v=1" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Giovani Sánchez Vargas — Fundraising con Rigor Financiero" />
-    <meta property="og:locale" content="es_CO" />
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Giovani Sánchez Vargas — Fundraising con Rigor Financiero" />
-    <meta name="twitter:description" content="83.500+ donantes · $5.200M COP · 85% retención · Save the Children · Fundación PLAN · BID · Ingeniero Financiero + Maestría Marketing" />
-    <meta name="twitter:image" content="https://giovanisanchezv.com/og-image.jpg?v=1" />
+:root {
+  --primary: #0F3A66;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #0F3A66;
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #0F3A66;
+  --chart-2: #1e5a96;
+  --chart-3: #2d7ab8;
+  --chart-4: #3c9ada;
+  --chart-5: #4baafe;
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.235 0.015 65);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.235 0.015 65);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.235 0.015 65);
+  --secondary: oklch(0.98 0.001 286.375);
+  --secondary-foreground: oklch(0.4 0.015 65);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: #0F3A66;
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: #0F3A66;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.235 0.015 65);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.623 0.214 259.815);
+}
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Giovani Sánchez Vargas",
-      "jobTitle": "Especialista en Fundraising con Rigor Financiero para ONG",
-      "description": "Impulso el fundraising de ONG hacia la sostenibilidad financiera real, aplicando ingeniería financiera al sector social. +15 años. 83.500+ donantes gestionados.",
-      "url": "https://giovanisanchezv.com",
-      "image": "https://giovanisanchezv.com/profile-photo.jpg",
-      "email": "giovanysanchez438@gmail.com",
-      "telephone": "+573123344130",
-      "sameAs": ["https://www.linkedin.com/in/giovanisanchezv"],
-      "alumniOf": [
-        { "@type": "CollegeOrUniversity", "name": "Universidad Externado de Colombia", "description": "Maestría en Marketing" },
-        { "@type": "CollegeOrUniversity", "name": "Universidad Piloto de Colombia", "description": "Ingeniería Financiera" }
-      ],
-      "knowsAbout": [
-        "Fundraising estratégico ONG",
-        "Sostenibilidad financiera nonprofit",
-        "Retención de donantes",
-        "Diagnóstico financiero fundraising",
-        "Captación recurrente donantes",
-        "CRM nonprofit",
-        "Cooperación internacional BID",
-        "Sector social Colombia LATAM"
-      ],
-      "address": { "@type": "PostalAddress", "addressLocality": "Bogotá", "addressCountry": "CO" }
+.dark {
+  --primary: #0F3A66;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #0F3A66;
+  --sidebar-primary-foreground: #FFFFFF;
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.85 0.005 65);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.85 0.005 65);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.85 0.005 65);
+  --secondary: oklch(0.24 0.006 286.033);
+  --secondary-foreground: oklch(0.7 0.005 65);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground:  oklch(0.92 0.005 65);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.488 0.243 264.376);
+  --chart-1: #0F3A66;
+  --chart-2: #1e5a96;
+  --chart-3: #2d7ab8;
+  --chart-4: #3c9ada;
+  --chart-5: #4baafe;
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.85 0.005 65);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground:  oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.488 0.243 264.376);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
-    </script>
+  }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-70LLT5ZS2G"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-70LLT5ZS2G');
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
-    <div style="display: flex; justify-content: center; padding: 40px 20px; z-index: 10;">
-      <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="giovanisanchezv" data-version="v1">
-        <a class="badge-base__link LI-simple-link" href="https://co.linkedin.com/in/giovanisanchezv?trk=profile-badge">
-          Giovani Sánchez Vargas
-        </a>
-      </div>
-    </div>
-  </body>
-</html>
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight text-foreground;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight text-foreground;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-tight text-foreground;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl leading-tight text-foreground;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+  }
+
+  .card-shadow {
+    @apply shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .transition-smooth {
+    @apply transition-all duration-200 ease-in-out;
+  }
+}
