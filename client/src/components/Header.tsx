@@ -2,14 +2,10 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 /**
- * Header Component
- * 
- * Diseño: Minimalismo Corporativo Elegante
- * - Nombre en firma manuscrita
- * - Tagline profesional
- * - Frase diferenciadora
- * - Navegación horizontal limpia
- * - Transiciones suaves
+ * Header — Versión 3 (alineado con nuevo LinkedIn, mayo 2026)
+ *
+ * Tagline = concepto ancla del nuevo posicionamiento
+ * Frase = diferenciador del Acerca de
  */
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,27 +24,23 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
       <div className="container">
 
-        {/* Top Section: Logo, Name, Tagline */}
         <div className="py-4 md:py-6 flex items-center justify-between gap-4">
-
-          {/* Left: Logo */}
           <a href="/" className="flex-shrink-0 transition-smooth">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-white text-lg font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>G</span>
             </div>
           </a>
 
-          {/* Center: Name and Tagline — ahora visible en TODOS los tamaños */}
           <div className="flex-1 text-center">
             <h1 className="text-lg sm:text-xl md:text-2xl text-gray-800 mb-0.5" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '400', letterSpacing: '1px' }}>
               Giovani Sánchez V.
             </h1>
+            {/* Tagline = concepto ancla del posicionamiento */}
             <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 font-medium tracking-wide">
-              GENERADOR DE CRECIMIENTO CON VISIÓN FINANCIERA
+              FUNDRAISING CON RIGOR FINANCIERO · ONG · LATAM
             </p>
           </div>
 
-          {/* Right: Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-smooth flex-shrink-0"
@@ -57,17 +49,14 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Divider */}
         <div className="hidden md:block h-px bg-gray-100" />
 
-        {/* Bottom Section: Quote and Desktop Navigation */}
         <div className="py-3 md:py-4 hidden md:flex items-center justify-between gap-4">
-          {/* Left: Differentiator Quote */}
+          {/* Diferenciador del Acerca de */}
           <div className="text-xs md:text-sm text-gray-600 italic hidden lg:block max-w-xs">
-            "Muchos marketers no saben de números. Muchos financieros no saben de mercado."
+            "El fundraising deja de ser supervivencia y se vuelve sostenibilidad financiera real."
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="flex items-center gap-6 md:gap-8 ml-auto">
             {navItems.map((item) => (
               <a
@@ -83,7 +72,6 @@ export default function Header() {
 
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
         <nav className="md:hidden border-t border-gray-200 bg-white">
           <div className="container py-4 space-y-3">
@@ -98,7 +86,7 @@ export default function Header() {
               </a>
             ))}
             <div className="pt-4 border-t border-gray-100 text-xs text-gray-600 italic">
-              "Muchos marketers no saben de números. Muchos financieros no saben de mercado."
+              "El fundraising deja de ser supervivencia y se vuelve sostenibilidad financiera real."
             </div>
           </div>
         </nav>
