@@ -1,16 +1,11 @@
-export default function LibroONG() {
+import LibroONG from "@/components/LibroONG";
+
+export default function LibroONGPage() {
   return (
-    <div style={{ margin: 0, padding: 0, height: "100vh", overflow: "hidden" }}>
-      <iframe
-        src="/libro-finanzas-ong.html"
-        style={{
-          width: "100%",
-          height: "100vh",
-          border: "none",
-          display: "block",
-        }}
-        title="El Arte de Captar Fondos - Giovani Sánchez V."
-      />
+    <div className="min-h-screen flex flex-col bg-white">
+      <main className="flex-1">
+        <LibroONG />
+      </main>
     </div>
   );
 }
