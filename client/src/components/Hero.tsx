@@ -62,13 +62,18 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Derecha — foto de perfil completa */}
+          {/* Derecha — foto completa sin recorte */}
           <div className="relative">
             <img
               src="/giovani.png"
               alt="Giovani Sánchez Vargas"
-              className="w-full object-cover object-center rounded-t-[3px]"
-              style={{ maxHeight: "400px", objectFit: "cover", objectPosition: "center top" }}
+              className="w-full rounded-t-[3px]"
+              style={{
+                maxHeight: "460px",
+                objectFit: "contain",
+                objectPosition: "center",
+                background: "#f0ede8",
+              }}
             />
             {/* Badge */}
             <div className="absolute bottom-4 left-4 bg-white px-3 py-2.5 shadow-md rounded-[2px]">
