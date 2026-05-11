@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
 import { ArrowRight } from "lucide-react";
 
-/* ─── Datos verificados del CV ───────────────────────────── */
+const serif = { fontFamily: "Georgia,'Times New Roman',serif" };
 
 const PROBLEMAS = [
   {
@@ -28,22 +28,18 @@ const PROBLEMAS = [
 ];
 
 const CAPACIDADES = [
-  { num: "01", titulo: "Plan anual con ROI medible",            desc: "KPIs, presupuesto y reporte para juntas directivas y organismos internacionales." },
-  { num: "02", titulo: "CRM & segmentación de cartera",         desc: "LTV, churn, automatización de fidelización y reducción de abandono involuntario." },
-  { num: "03", titulo: "Ingeniería financiera nonprofit",        desc: "Modelos de proyección, análisis de cartera y construcción de reservas institucionales." },
-  { num: "04", titulo: "Alianzas corporativas",                  desc: "Partnerships con empresas, fundaciones corporativas y cooperación multilateral." },
-  { num: "05", titulo: "Captación F2F y digital integrada",      desc: "Campañas presenciales y digitales con análisis de CPA y segmentación real." },
-  { num: "06", titulo: "Reporting ejecutivo",                    desc: "Resultados bajo estándares de organismos de cooperación técnica internacional." },
+  { num: "01", titulo: "Plan anual con ROI medible",             desc: "KPIs, presupuesto y reporte para juntas directivas y organismos internacionales." },
+  { num: "02", titulo: "CRM & segmentación de cartera",          desc: "LTV, churn, automatización de fidelización y reducción de abandono involuntario." },
+  { num: "03", titulo: "Ingeniería financiera nonprofit",         desc: "Modelos de proyección, análisis de cartera y construcción de reservas institucionales." },
+  { num: "04", titulo: "Alianzas corporativas",                   desc: "Partnerships con empresas, fundaciones corporativas y cooperación multilateral." },
+  { num: "05", titulo: "Captación F2F y digital integrada",       desc: "Campañas presenciales y digitales con análisis de CPA y segmentación real." },
+  { num: "06", titulo: "Reporting ejecutivo",                     desc: "Resultados bajo estándares de organismos de cooperación técnica internacional." },
 ];
 
 const TRAYECTORIA = [
   {
-    periodo: "2024",
-    duracion: "9 meses",
-    iniciales: "BID",
-    color: "#0a7bc4",
-    tag: "Cooperación Internacional",
-    tagColor: "tag-coop",
+    periodo: "2024", duracion: "9 meses", iniciales: "BID", color: "#0a7bc4",
+    tag: "Cooperación Internacional", tagColor: "bg-[#e8f5e9] text-[#2e7d32]",
     org: "ADA S.A. — Proyecto BID / Economía Circular",
     rol: "Especialista Senior en Marketing Estratégico",
     desc: "Lideré la estrategia integral del Marketplace de Economía Circular en 4 países en el marco del Convenio BID-Alcaldía de Bogotá. Gestioné articulación con stakeholders institucionales bajo estándares multilaterales.",
@@ -53,12 +49,8 @@ const TRAYECTORIA = [
     ],
   },
   {
-    periodo: "2022–2024",
-    duracion: "16 meses",
-    iniciales: "PL",
-    color: "#e8281e",
-    tag: "ONG Internacional",
-    tagColor: "tag-intl",
+    periodo: "2022–2024", duracion: "16 meses", iniciales: "PL", color: "#e8281e",
+    tag: "ONG Internacional", tagColor: "bg-[#e6f1fb] text-[#1565c0]",
     org: "Fundación PLAN Colombia",
     rol: "Gerente de Marketing, Fundraising y Retención de Donantes",
     desc: "Lideré la estrategia integral de marketing y fundraising. Incrementé el portafolio de donantes activos e ingresos en un 30% mediante campañas optimizadas por segmentación de audiencias.",
@@ -68,12 +60,8 @@ const TRAYECTORIA = [
     ],
   },
   {
-    periodo: "2016–2021",
-    duracion: "5 años",
-    iniciales: "SC",
-    color: "#e8281e",
-    tag: "ONG Internacional",
-    tagColor: "tag-intl",
+    periodo: "2016–2021", duracion: "5 años", iniciales: "SC", color: "#e8281e",
+    tag: "ONG Internacional", tagColor: "bg-[#e6f1fb] text-[#1565c0]",
     org: "Save the Children International",
     rol: "Gerente Nacional de Marketing, Fundraising & Estrategia de Crecimiento",
     desc: "Lideré durante 5 años la estrategia nacional. Mantuve una tasa de retención superior al 85% durante 5 años consecutivos — triplicando el promedio del sector (43%) — mediante estrategias de fidelización y CRM.",
@@ -84,12 +72,8 @@ const TRAYECTORIA = [
     ],
   },
   {
-    periodo: "2014–2016",
-    duracion: "2 años",
-    iniciales: "HH",
-    color: "#00a0e0",
-    tag: "ONG Internacional",
-    tagColor: "tag-intl",
+    periodo: "2014–2016", duracion: "2 años", iniciales: "HH", color: "#00a0e0",
+    tag: "ONG Internacional", tagColor: "bg-[#e6f1fb] text-[#1565c0]",
     org: "Hábitat for Humanity International",
     rol: "Coordinador Senior CRM & Gestión de Relaciones con Donantes",
     desc: "Gestioné el CRM e implementé flujos de seguimiento automatizado para donantes recurrentes, reduciendo abandono involuntario por vencimiento de medios de pago.",
@@ -99,12 +83,8 @@ const TRAYECTORIA = [
     ],
   },
   {
-    periodo: "2010–2013",
-    duracion: "3 años",
-    iniciales: "AI",
-    color: "#c8002a",
-    tag: "Sector Social",
-    tagColor: "tag-social",
+    periodo: "2010–2013", duracion: "3 años", iniciales: "AI", color: "#c8002a",
+    tag: "Sector Social", tagColor: "bg-[#f3e5f5] text-[#6a1b9a]",
     org: "Aldeas Infantiles SOS Colombia",
     rol: "Asesor de Gestión Financiera y Desarrollo de Fondos",
     desc: "Gestioné el área financiera y de desarrollo de fondos. Coordiné indicadores de seguimiento de la cartera de donantes. Reconocido como pieza fundamental del equipo de Desarrollo de Fondos.",
@@ -136,35 +116,22 @@ const ARTICULOS = [
   },
 ];
 
-/* ─── Componente ─────────────────────────────────────────── */
-
-const serif = { fontFamily: "Georgia,'Times New Roman',serif" };
-
-const tagStyles: Record<string, string> = {
-  "tag-intl":  "bg-[#e6f1fb] text-[#1565c0]",
-  "tag-coop":  "bg-[#e8f5e9] text-[#2e7d32]",
-  "tag-social":"bg-[#f3e5f5] text-[#6a1b9a]",
-};
-
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-white">
 
-      {/* 1 ── HERO */}
+      {/* 1 — HERO */}
       <Hero />
 
-      {/* 2 ── QUIÉN SOY */}
+      {/* 2 — QUIÉN SOY */}
       <section className="bg-white border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="grid lg:grid-cols-[200px_1fr] gap-14 items-start">
-            {/* Foto en contexto */}
             <img
-              src="/giovani-contexto.png"
-              alt="Giovani Sánchez Vargas en contexto de trabajo"
-              className="w-full rounded-[3px] object-cover h-[240px] object-center bg-[#dde4ec]"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.background = "#dde4ec";
-              }}
+              src="/giovani.png"
+              alt="Giovani Sánchez Vargas"
+              className="w-full rounded-[3px] object-cover"
+              style={{ maxHeight: "260px", objectFit: "cover", objectPosition: "center top" }}
             />
             <div>
               <p className="text-[10px] tracking-[0.12em] uppercase text-[#bbb] mb-4">Quién soy</p>
@@ -204,7 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3 ── CÓMO PUEDO AYUDARTE */}
+      {/* 3 — CÓMO PUEDO AYUDARTE */}
       <section className="bg-[#f9f8f6] border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <h2 style={serif} className="text-[1.3rem] font-normal text-[#111] tracking-tight mb-3">
@@ -219,7 +186,6 @@ export default function Home() {
             , y diseño un acompañamiento que funcione para ti — sea una colaboración continua o un
             proyecto puntual. Ahora mismo estoy ayudando a organizaciones a:
           </p>
-
           <div className="flex flex-col">
             {PROBLEMAS.map((p, i) => (
               <div
@@ -241,8 +207,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          <div className="mt-6">
+          <div className="mt-8">
             <a
               href="/contacto"
               className="inline-flex items-center gap-1.5 bg-[#111] text-white text-[11px] font-medium px-5 py-2.5 rounded-[2px] hover:bg-[#333] transition-colors"
@@ -253,25 +218,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4 ── TRAYECTORIA */}
+      {/* 4 — TRAYECTORIA */}
       <section className="bg-[#f5f4f1] border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-0">
-            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">
-              Trayectoria profesional
-            </h2>
-            <span className="text-[10px] text-[#bbb] uppercase tracking-wider">
-              +15 años · sector social LATAM
-            </span>
+            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">Trayectoria profesional</h2>
+            <span className="text-[10px] text-[#bbb] uppercase tracking-wider">+15 años · sector social LATAM</span>
           </div>
-
           <div className="flex flex-col">
             {TRAYECTORIA.map((t) => (
-              <div
-                key={t.org}
-                className="grid grid-cols-[120px_1fr] border-b border-[#e8e6e1] last:border-b-0"
-              >
-                {/* Izquierda */}
+              <div key={t.org} className="grid grid-cols-[120px_1fr] border-b border-[#e8e6e1] last:border-b-0">
                 <div className="py-6 pr-5 border-r border-[#e8e6e1]">
                   <p className="text-[11px] text-[#111] font-medium">{t.periodo}</p>
                   <p className="text-[10px] text-[#bbb] mt-0.5">{t.duracion}</p>
@@ -282,10 +238,8 @@ export default function Home() {
                     {t.iniciales}
                   </div>
                 </div>
-
-                {/* Derecha */}
                 <div className="py-6 pl-5">
-                  <span className={`inline-block text-[9px] px-2 py-0.5 rounded-full font-medium tracking-wide mb-2.5 ${tagStyles[t.tagColor]}`}>
+                  <span className={`inline-block text-[9px] px-2 py-0.5 rounded-full font-medium tracking-wide mb-2.5 ${t.tagColor}`}>
                     {t.tag}
                   </span>
                   <p className="text-[13px] font-medium text-[#111] mb-0.5">{t.org}</p>
@@ -306,7 +260,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5 ── CAPACIDADES */}
+      {/* 5 — CAPACIDADES */}
       <section className="bg-white border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-8">
@@ -325,7 +279,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6 ── LIBRO ONG */}
+      {/* 6 — LIBRO ONG */}
       <section className="bg-[#f9f8f6] border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="grid lg:grid-cols-[1fr_260px] gap-12 items-center">
@@ -354,9 +308,13 @@ export default function Home() {
                 </p>
                 <p className="text-[9px] text-white/30 mt-2">Giovani Sánchez Vargas</p>
               </div>
-              {["Fundamentos del fundraising sostenible", "Retención y valor de vida del donante",
-                "Segmentación y CRM aplicado", "Métricas financieras para ONG",
-                "Captación digital y F2F integrada", "Sostenibilidad y reservas institucionales"
+              {[
+                "Fundamentos del fundraising sostenible",
+                "Retención y valor de vida del donante",
+                "Segmentación y CRM aplicado",
+                "Métricas financieras para ONG",
+                "Captación digital y F2F integrada",
+                "Sostenibilidad y reservas institucionales",
               ].map((cap) => (
                 <div key={cap} className="flex items-center gap-2 text-[11px] text-[#888] py-1.5 border-b border-[#f0ede8] last:border-b-0">
                   <div className="w-1 h-1 rounded-full bg-[#ccc] flex-shrink-0" />
@@ -368,13 +326,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7 ── ARTÍCULOS */}
+      {/* 7 — ARTÍCULOS */}
       <section className="bg-white border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-0">
-            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">
-              Perspectivas & artículos
-            </h2>
+            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">Perspectivas & artículos</h2>
             <a
               href="https://www.linkedin.com/in/giovanisanchezv"
               target="_blank"
@@ -393,9 +349,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group pt-6 pb-2 px-5 first:pl-0 last:pr-0 hover:bg-[#fafaf8] transition-colors"
               >
-                <span className="text-[9px] letter-spacing-wider uppercase text-[#ccc] tracking-wider block mb-2">
-                  {a.tag}
-                </span>
+                <span className="text-[9px] uppercase text-[#ccc] tracking-wider block mb-2">{a.tag}</span>
                 <p className="text-[12.5px] font-medium text-[#111] leading-snug mb-2.5 group-hover:text-[#333]">
                   {a.titulo}
                 </p>
@@ -408,7 +362,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8 ── CTA FINAL */}
+      {/* 8 — CTA FINAL */}
       <section className="bg-[#f5f4f1] border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
@@ -437,7 +391,7 @@ export default function Home() {
                 href="/giovani-sanchez-cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 bg-white text-[#111] text-[11px] font-medium px-6 py-2.5 rounded-[2px] border border-[#ccc] hover:border-[#111] hover:bg-[#f0ede8] transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-1.5 bg-white text-[#111] text-[11px] font-medium px-6 py-2.5 rounded-[2px] border border-[#ccc] hover:border-[#111] transition-colors whitespace-nowrap"
               >
                 Descargar CV
               </a>
@@ -445,7 +399,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/giovanisanchezv"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 bg-white text-[#111] text-[11px] font-medium px-6 py-2.5 rounded-[2px] border border-[#ccc] hover:border-[#111] hover:bg-[#f0ede8] transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-1.5 bg-white text-[#111] text-[11px] font-medium px-6 py-2.5 rounded-[2px] border border-[#ccc] hover:border-[#111] transition-colors whitespace-nowrap"
               >
                 LinkedIn ↗
               </a>
@@ -454,7 +408,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9 ── CONTACTO */}
+      {/* 9 — CONTACTO */}
       <section id="contacto">
         <Contact />
       </section>
