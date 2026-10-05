@@ -76,20 +76,6 @@ export default function Contact() {
 
         </div>
       </section>
-
-      <footer className="bg-[#0F3A66] text-white py-8">
-        <div className="container max-w-5xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-center md:text-left">
-              <p className="font-bold mb-1">Giovani Sánchez Vargas</p>
-              <p className="text-sm text-blue-200">
-                Gerente de Marketing y Fundraising | Sector Social y Nonprofit
-              </p>
-            </div>
-            <p className="text-sm text-blue-200">© 2026 Giovani Sánchez Vargas</p>
-          </div>
-        </div>
-      </footer>
     </>
   );
 }

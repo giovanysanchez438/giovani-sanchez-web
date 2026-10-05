@@ -32,7 +32,7 @@ export default function SobreMi() {
               />
               <div className="mt-4 flex flex-col gap-2">
                 <a
-                  href="/giovani-sanchez-cv.pdf"
+                  href="/cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-1.5 bg-[#111] text-white text-[11px] font-medium px-4 py-2.5 rounded-[2px] hover:bg-[#333] transition-colors w-full"

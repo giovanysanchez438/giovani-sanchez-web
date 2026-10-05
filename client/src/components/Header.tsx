@@ -3,11 +3,12 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 
 const menuItems = [
-  { name: "Sobre mí",    href: "/sobre-mi"   },
-  { name: "Trabajo",     href: "/trabajo"    },
-  { name: "Experiencia", href: "/experiencia"},
-  { name: "Artículos",   href: "/blog"       },
-  { name: "Libro ONG",   href: "/libro-ong"  },
+  { name: "Inicio",      href: "/"            },
+  { name: "Perfil",      href: "/sobre-mi"    },
+  { name: "Servicios",   href: "/trabajo"     },
+  { name: "Trayectoria", href: "/experiencia" },
+  { name: "Libro",       href: "/libro-ong"   },
+  { name: "Artículos",   href: "/blog"        },
 ];
 
 export default function Header() {

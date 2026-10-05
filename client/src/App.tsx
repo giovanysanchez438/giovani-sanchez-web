@@ -4,6 +4,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 /* Páginas */
 import Home            from "./pages/Home";
@@ -42,6 +43,7 @@ export default function App() {
             <main className="flex-grow">
               <Router />
             </main>
+            <Footer />
             <Toaster />
           </div>
         </TooltipProvider>

@@ -125,7 +125,7 @@ export default function Trabajo() {
                 Hablemos hoy <ArrowRight className="w-3.5 h-3.5" />
               </a>
               <a
-                href="/giovani-sanchez-cv.pdf"
+                href="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 bg-white text-[#111] text-[11px] font-medium px-6 py-2.5 rounded-[2px] border border-[#ccc] hover:border-[#111] transition-colors whitespace-nowrap"
