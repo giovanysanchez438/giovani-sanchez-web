@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 
@@ -11,7 +10,6 @@ import Contact from "@/components/Contact";
 export default function Certificaciones() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Header />
       <main className="flex-1">
         <Certifications />
       </main>

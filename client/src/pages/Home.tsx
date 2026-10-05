@@ -1,8 +1,18 @@
 import Hero from "@/components/Hero";
-import Contact from "@/components/Contact";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Briefcase, Mic, BookOpen, PenLine } from "lucide-react";
 
 const serif = { fontFamily: "Georgia,'Times New Roman',serif" };
+
+const AREAS = [
+  { icon: Briefcase, titulo: "Consultoría",            desc: "Diagnóstico y diseño de estrategias de fundraising, retención y CRM con ROI medible.", href: "/trabajo",   cta: "Ver servicios" },
+  { icon: Mic,       titulo: "Conferencias y talleres", desc: "Formación para equipos directivos y de captación sobre retención, datos y sostenibilidad.", href: "/contacto",  cta: "Solicitar" },
+  { icon: BookOpen,  titulo: "Libro",                  desc: "El Arte de Captar Fondos para ONG: 6 capítulos de estrategia aplicada. Acceso gratuito.", href: "/libro-ong", cta: "Leer el libro" },
+  { icon: PenLine,   titulo: "Artículos",              desc: "Análisis y perspectivas sobre fundraising, finanzas nonprofit y filantropía digital.", href: "/blog",      cta: "Ver artículos" },
+];
+
+const ORGANIZACIONES = [
+  "Save the Children", "Fundación PLAN", "Habitat for Humanity", "Aldeas Infantiles SOS", "BID",
+];
 
 const PROBLEMAS = [
   {
@@ -120,10 +130,36 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-white">
 
-      {/* 1 — HERO */}
+      {/* HERO */}
       <Hero />
 
-      {/* 2 — QUIÉN SOY */}
+      {/* ÁREAS DE TRABAJO */}
+      <section className="bg-white border-b border-[#e8e6e1]">
+        <div className="container mx-auto px-6 py-16">
+          <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-8">
+            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">Áreas de trabajo</h2>
+            <span className="text-[10px] text-[#bbb] uppercase tracking-wider">Consultoría · Formación · Publicaciones</span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {AREAS.map(({ icon: Icon, titulo, desc, href, cta }) => (
+              <a
+                key={titulo}
+                href={href}
+                className="group flex flex-col bg-[#f9f8f6] border border-[#e8e6e1] rounded-[3px] p-6 hover:border-[#111] hover:-translate-y-0.5 transition-all"
+              >
+                <Icon className="w-5 h-5 text-[#0a2540] mb-4" strokeWidth={1.5} />
+                <p style={serif} className="text-[1rem] text-[#111] leading-snug mb-2">{titulo}</p>
+                <p className="text-[12px] text-[#666] leading-[1.75] mb-5 flex-grow">{desc}</p>
+                <span className="inline-flex items-center gap-1.5 text-[11px] text-[#111] font-medium">
+                  {cta} <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* QUIÉN SOY */}
       <section className="bg-white border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="grid lg:grid-cols-[200px_1fr] gap-14 items-start">
@@ -171,115 +207,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3 — CÓMO PUEDO AYUDARTE */}
-      <section className="bg-[#f9f8f6] border-b border-[#e8e6e1]">
-        <div className="container mx-auto px-6 py-16">
-          <h2 style={serif} className="text-[1.3rem] font-normal text-[#111] tracking-tight mb-3">
-            ¿Cómo puedo ayudarte?
-          </h2>
-          <p className="text-[0.875rem] text-[#555] leading-[1.9] mb-8 max-w-[580px]">
-            No hay dos organizaciones iguales — ni dos problemas iguales. Por eso no trabajo con
-            recetas genéricas.{" "}
-            <strong className="text-[#111] font-medium">
-              Escucho primero, entiendo tu situación específica
-            </strong>
-            , y diseño un acompañamiento que funcione para ti — sea una colaboración continua o un
-            proyecto puntual. Ahora mismo estoy ayudando a organizaciones a:
-          </p>
-          <div className="flex flex-col">
-            {PROBLEMAS.map((p, i) => (
-              <div
-                key={i}
-                className="grid lg:grid-cols-[1fr_auto] gap-8 items-start py-6 border-b border-[#e8e6e1] last:border-b-0"
-              >
-                <div>
-                  <p style={serif} className="text-[1rem] text-[#111] leading-[1.4] mb-2.5 font-normal">
-                    {p.pregunta}
-                  </p>
-                  <p className="text-[0.8125rem] text-[#666] leading-[1.8]">{p.respuesta}</p>
-                </div>
-                <a
-                  href="/trabajo"
-                  className="inline-flex items-center gap-1.5 text-[11px] text-[#111] border-b border-[#111] pb-px whitespace-nowrap hover:text-[#555] hover:border-[#555] transition-colors mt-1"
-                >
-                  Cómo lo resuelvo <ArrowRight className="w-3 h-3" />
-                </a>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <a
-              href="/contacto"
-              className="inline-flex items-center gap-1.5 bg-[#111] text-white text-[11px] font-medium px-5 py-2.5 rounded-[2px] hover:bg-[#333] transition-colors"
-            >
-              Resuelve el problema. Hablemos. <ArrowRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 4 — TRAYECTORIA */}
-      <section className="bg-[#f5f4f1] border-b border-[#e8e6e1]">
-        <div className="container mx-auto px-6 py-16">
-          <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-0">
-            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">Trayectoria profesional</h2>
-            <span className="text-[10px] text-[#bbb] uppercase tracking-wider">+15 años · sector social LATAM</span>
-          </div>
-          <div className="flex flex-col">
-            {TRAYECTORIA.map((t) => (
-              <div key={t.org} className="grid grid-cols-[120px_1fr] border-b border-[#e8e6e1] last:border-b-0">
-                <div className="py-6 pr-5 border-r border-[#e8e6e1]">
-                  <p className="text-[11px] text-[#111] font-medium">{t.periodo}</p>
-                  <p className="text-[10px] text-[#bbb] mt-0.5">{t.duracion}</p>
-                  <div
-                    className="w-7 h-7 rounded-[3px] flex items-center justify-center mt-3 text-[9px] font-bold text-white"
-                    style={{ background: t.color }}
-                  >
-                    {t.iniciales}
-                  </div>
-                </div>
-                <div className="py-6 pl-5">
-                  <span className={`inline-block text-[9px] px-2 py-0.5 rounded-full font-medium tracking-wide mb-2.5 ${t.tagColor}`}>
-                    {t.tag}
-                  </span>
-                  <p className="text-[13px] font-medium text-[#111] mb-0.5">{t.org}</p>
-                  <p className="text-[10px] text-[#888] uppercase tracking-wider mb-2.5">{t.rol}</p>
-                  <p className="text-[12px] text-[#555] leading-[1.75] mb-3">{t.desc}</p>
-                  <div className="flex gap-3 flex-wrap">
-                    {t.metricas.map((m) => (
-                      <div key={m.label} className="bg-white rounded-[3px] px-2.5 py-1.5">
-                        <p style={serif} className="text-[0.9rem] text-[#111] leading-none">{m.num}</p>
-                        <p className="text-[9px] text-[#aaa] uppercase tracking-wide mt-1">{m.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5 — CAPACIDADES */}
-      <section className="bg-white border-b border-[#e8e6e1]">
-        <div className="container mx-auto px-6 py-16">
-          <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-8">
-            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">Capacidades clave</h2>
-            <span className="text-[10px] text-[#bbb] uppercase tracking-wider">+15 años · sector social</span>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
-            {CAPACIDADES.map((c) => (
-              <div key={c.num} className="border-t border-[#ddd] pt-3.5">
-                <p className="text-[10px] text-[#ddd] tracking-wider mb-1.5">{c.num}</p>
-                <p className="text-[12.5px] font-medium text-[#111] leading-snug mb-1.5">{c.titulo}</p>
-                <p className="text-[11.5px] text-[#999] leading-relaxed">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6 — LIBRO ONG */}
+      {/* LIBRO ONG */}
       <section className="bg-[#f9f8f6] border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="grid lg:grid-cols-[1fr_260px] gap-12 items-center">
@@ -326,7 +254,129 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7 — ARTÍCULOS */}
+      {/* CÓMO PUEDO AYUDARTE */}
+      <section className="bg-[#f9f8f6] border-b border-[#e8e6e1]">
+        <div className="container mx-auto px-6 py-16">
+          <h2 style={serif} className="text-[1.3rem] font-normal text-[#111] tracking-tight mb-3">
+            ¿Cómo puedo ayudarte?
+          </h2>
+          <p className="text-[0.875rem] text-[#555] leading-[1.9] mb-8 max-w-[580px]">
+            No hay dos organizaciones iguales — ni dos problemas iguales. Por eso no trabajo con
+            recetas genéricas.{" "}
+            <strong className="text-[#111] font-medium">
+              Escucho primero, entiendo tu situación específica
+            </strong>
+            , y diseño un acompañamiento que funcione para ti — sea una colaboración continua o un
+            proyecto puntual. Ahora mismo estoy ayudando a organizaciones a:
+          </p>
+          <div className="flex flex-col">
+            {PROBLEMAS.map((p, i) => (
+              <div
+                key={i}
+                className="grid lg:grid-cols-[1fr_auto] gap-8 items-start py-6 border-b border-[#e8e6e1] last:border-b-0"
+              >
+                <div>
+                  <p style={serif} className="text-[1rem] text-[#111] leading-[1.4] mb-2.5 font-normal">
+                    {p.pregunta}
+                  </p>
+                  <p className="text-[0.8125rem] text-[#666] leading-[1.8]">{p.respuesta}</p>
+                </div>
+                <a
+                  href="/trabajo"
+                  className="inline-flex items-center gap-1.5 text-[11px] text-[#111] border-b border-[#111] pb-px whitespace-nowrap hover:text-[#555] hover:border-[#555] transition-colors mt-1"
+                >
+                  Cómo lo resuelvo <ArrowRight className="w-3 h-3" />
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <a
+              href="/contacto"
+              className="inline-flex items-center gap-1.5 bg-[#111] text-white text-[11px] font-medium px-5 py-2.5 rounded-[2px] hover:bg-[#333] transition-colors"
+            >
+              Resuelve el problema. Hablemos. <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* TRAYECTORIA */}
+      <section className="bg-[#f5f4f1] border-b border-[#e8e6e1]">
+        <div className="container mx-auto px-6 py-16">
+          <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-0">
+            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">Trayectoria profesional</h2>
+            <span className="text-[10px] text-[#bbb] uppercase tracking-wider">+15 años · sector social LATAM</span>
+          </div>
+          <div className="flex flex-col">
+            {TRAYECTORIA.map((t) => (
+              <div key={t.org} className="grid grid-cols-[120px_1fr] border-b border-[#e8e6e1] last:border-b-0">
+                <div className="py-6 pr-5 border-r border-[#e8e6e1]">
+                  <p className="text-[11px] text-[#111] font-medium">{t.periodo}</p>
+                  <p className="text-[10px] text-[#bbb] mt-0.5">{t.duracion}</p>
+                  <div
+                    className="w-7 h-7 rounded-[3px] flex items-center justify-center mt-3 text-[9px] font-bold text-white"
+                    style={{ background: t.color }}
+                  >
+                    {t.iniciales}
+                  </div>
+                </div>
+                <div className="py-6 pl-5">
+                  <span className={`inline-block text-[9px] px-2 py-0.5 rounded-full font-medium tracking-wide mb-2.5 ${t.tagColor}`}>
+                    {t.tag}
+                  </span>
+                  <p className="text-[13px] font-medium text-[#111] mb-0.5">{t.org}</p>
+                  <p className="text-[10px] text-[#888] uppercase tracking-wider mb-2.5">{t.rol}</p>
+                  <p className="text-[12px] text-[#555] leading-[1.75] mb-3">{t.desc}</p>
+                  <div className="flex gap-3 flex-wrap">
+                    {t.metricas.map((m) => (
+                      <div key={m.label} className="bg-white rounded-[3px] px-2.5 py-1.5">
+                        <p style={serif} className="text-[0.9rem] text-[#111] leading-none">{m.num}</p>
+                        <p className="text-[9px] text-[#aaa] uppercase tracking-wide mt-1">{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ORGANIZACIONES */}
+      <section className="bg-white border-b border-[#e8e6e1]">
+        <div className="container mx-auto px-6 py-10">
+          <p className="text-center text-[10px] tracking-[0.12em] uppercase text-[#bbb] mb-6">
+            Organizaciones con las que he trabajado
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            {ORGANIZACIONES.map((o) => (
+              <span key={o} style={serif} className="text-[0.95rem] text-[#888]">{o}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CAPACIDADES */}
+      <section className="bg-white border-b border-[#e8e6e1]">
+        <div className="container mx-auto px-6 py-16">
+          <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-8">
+            <h2 style={serif} className="text-[1.1rem] font-normal text-[#111]">Capacidades clave</h2>
+            <span className="text-[10px] text-[#bbb] uppercase tracking-wider">+15 años · sector social</span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5">
+            {CAPACIDADES.map((c) => (
+              <div key={c.num} className="border-t border-[#ddd] pt-3.5">
+                <p className="text-[10px] text-[#ddd] tracking-wider mb-1.5">{c.num}</p>
+                <p className="text-[12.5px] font-medium text-[#111] leading-snug mb-1.5">{c.titulo}</p>
+                <p className="text-[11.5px] text-[#999] leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ARTÍCULOS */}
       <section className="bg-white border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="flex items-baseline justify-between border-b border-[#111] pb-4 mb-0">
@@ -362,7 +412,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8 — CTA FINAL */}
+      {/* CTA FINAL */}
       <section className="bg-[#f5f4f1] border-b border-[#e8e6e1]">
         <div className="container mx-auto px-6 py-16">
           <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
@@ -388,7 +438,7 @@ export default function Home() {
                 Hablemos hoy <ArrowRight className="w-3.5 h-3.5" />
               </a>
               <a
-                href="/giovani-sanchez-cv.pdf"
+                href="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 bg-white text-[#111] text-[11px] font-medium px-6 py-2.5 rounded-[2px] border border-[#ccc] hover:border-[#111] transition-colors whitespace-nowrap"
@@ -406,11 +456,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 9 — CONTACTO */}
-      <section id="contacto">
-        <Contact />
       </section>
 
     </main>
